@@ -48,8 +48,11 @@ export const problem = {
     "Pero en ese foco en el resultado, algo queda afuera: el día a día del equipo. El proceso. El método. El acompañamiento humano que determina si los objetivos se cumplen o no.",
     "No porque no quieran. Sino porque el negocio no les deja espacio para hacerlo.",
   ],
-  highlight:
-    "Soy el socio estratégico que trabaja lo que ellos no pueden — el cómo, el proceso y las personas — para que ellos puedan enfocarse en lo que les corresponde.",
+  highlight: {
+    before: "Soy el socio estratégico que trabaja lo que ellos no pueden — ",
+    emphasis: "el cómo, el proceso y las personas",
+    after: " — para que ellos puedan enfocarse en lo que les corresponde.",
+  },
 };
 
 export const about = {

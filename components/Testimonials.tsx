@@ -58,7 +58,7 @@ function TestimonialCard({
         <button
           type="button"
           onClick={() => onReadMore(t)}
-          className="mt-4 self-start text-sm font-semibold text-slate-blue underline-offset-4 transition-colors hover:text-ink hover:underline"
+          className="mt-2 self-start py-2 text-sm font-semibold text-slate-blue underline-offset-4 transition-colors hover:text-ink hover:underline"
         >
           Leer testimonio completo →
         </button>

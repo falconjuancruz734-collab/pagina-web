@@ -53,7 +53,7 @@ export function Hero() {
           </FadeIn>
 
           <FadeIn immediate delay={0.25}>
-            <h1 className="text-[2.6rem] leading-[0.98] text-ink sm:text-6xl lg:text-7xl">
+            <h1 className="text-4xl leading-[0.98] text-ink sm:text-6xl lg:text-7xl">
               <span className="block font-normal tracking-[-0.06em]">{hero.hookLine1}</span>
               <span className="block font-medium tracking-[-0.06em]">{hero.hookLine2}</span>
               <em className="block font-serif font-semibold italic leading-[1.02] tracking-[-0.01em] text-slate-blue">
@@ -83,7 +83,7 @@ export function Hero() {
               </a>
               <a
                 href="#lente-ai"
-                className="flex shrink-0 items-center justify-center whitespace-nowrap rounded-full border border-slate-blue/30 px-5 py-3.5 text-center font-serif text-[15px] font-semibold italic leading-tight text-slate-blue sm:leading-normal transition-colors hover:border-sand sm:px-8 sm:py-4 sm:text-lg"
+                className="flex shrink-0 items-center justify-center whitespace-nowrap rounded-full border border-slate-blue/30 px-5 py-3.5 text-center font-serif text-[15px] font-bold italic leading-tight text-slate-blue sm:leading-normal transition-colors hover:border-sand sm:px-8 sm:py-4 sm:text-lg"
               >
                 Conocé Lente AI
               </a>

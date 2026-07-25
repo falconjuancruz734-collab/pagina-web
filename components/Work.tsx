@@ -12,8 +12,8 @@ export function Work() {
           <div className="text-center">
             <SectionLabel align="center">Notas y trabajos</SectionLabel>
             <h2 className="text-4xl font-semibold leading-[1.02] tracking-[-0.06em] text-ink md:text-5xl">
-              Lo que se dijo, lo que se{" "}
-              <em className="font-serif italic tracking-[-0.01em] text-slate-blue">hizo</em>
+              Lo que escribo, lo que{" "}
+              <em className="font-serif italic tracking-[-0.01em] text-slate-blue">pienso</em>
             </h2>
           </div>
         </FadeIn>

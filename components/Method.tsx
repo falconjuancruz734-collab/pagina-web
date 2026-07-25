@@ -36,7 +36,7 @@ export function Method() {
                 {step.anchor && (
                   <a
                     href={step.anchor}
-                    className="mt-5 inline-block text-sm font-medium text-slate-blue transition-colors hover:text-sand"
+                    className="mt-3 inline-block py-2 text-sm font-medium text-slate-blue transition-colors hover:text-sand"
                   >
                     Conocé Lente ↓
                   </a>

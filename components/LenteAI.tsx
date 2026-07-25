@@ -122,7 +122,7 @@ const bubbleVariants = {
 /* Íconos decorativos de la barra del input (estilo lucide, trazo fino) */
 function ToolbarIcon({ children }: { children: ReactNode }) {
   return (
-    <span className="flex h-8 w-8 items-center justify-center rounded-lg text-ivory/45">
+    <span className="flex h-8 w-8 items-center justify-center rounded-lg text-ink/40">
       <svg
         viewBox="0 0 24 24"
         fill="none"
@@ -182,31 +182,25 @@ function ChatDemo() {
   const cancelled = useRef(false);
   const inputRef = useRef<HTMLDivElement>(null);
   const rootRef = useRef<HTMLDivElement>(null);
-  // La conversación solo se actúa mientras el chat está en pantalla
-  const [inView, setInView] = useState(false);
-  // Se conserva entre entradas y salidas para no repetir siempre el mismo guion
+  // La animación arranca la primera vez que el chat entra en pantalla
+  // y de ahí en más sigue corriendo normal (no se reinicia al re-entrar)
+  const [started, setStarted] = useState(false);
   const convCursor = useRef(0);
-
-  // Y tampoco corre si la pestaña está en segundo plano: ahí el navegador
-  // estrangula los timers y la conversación se vería entrecortada
-  const [tabVisible, setTabVisible] = useState(true);
 
   useEffect(() => {
     const el = rootRef.current;
     if (!el) return;
     const observer = new IntersectionObserver(
-      ([entry]) => setInView(entry.isIntersecting),
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStarted(true);
+          observer.disconnect();
+        }
+      },
       { threshold: 0.35 },
     );
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const onVisibility = () => setTabVisible(!document.hidden);
-    onVisibility();
-    document.addEventListener("visibilitychange", onVisibility);
-    return () => document.removeEventListener("visibilitychange", onVisibility);
   }, []);
 
   // Como en un input real: el texto arranca desde la izquierda y, cuando
@@ -217,7 +211,7 @@ function ChatDemo() {
   }, [inputValue]);
 
   useEffect(() => {
-    if (reduce || !inView || !tabVisible) return;
+    if (reduce || !started) return;
     cancelled.current = false;
 
     let timer: ReturnType<typeof setTimeout>;
@@ -298,7 +292,7 @@ function ChatDemo() {
       cancelled.current = true;
       clearTimeout(timer);
     };
-  }, [reduce, inView, tabVisible]);
+  }, [reduce, started]);
 
   const conv = conversations[convIndex];
   const bubbles: (ChatMessage & { key: string; streaming?: boolean })[] = conv
@@ -318,7 +312,7 @@ function ChatDemo() {
   return (
     <div ref={rootRef}>
       {/* Alto fijo: los mensajes se apilan desde abajo y los viejos salen por arriba */}
-      <div className="chat-fade relative flex h-[23rem] flex-col justify-end gap-4 overflow-hidden">
+      <div className="chat-fade relative flex h-[23rem] flex-col justify-end gap-6 overflow-hidden">
         {/* Estado vacío: saludo centrado hasta que llega el primer mensaje */}
         <AnimatePresence>
           {bubbles.length === 0 && !thinking && (
@@ -333,10 +327,10 @@ function ChatDemo() {
               exit={{ opacity: 0, y: -8, transition: { duration: 0.3 } }}
               className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
             >
-              <p className="whitespace-nowrap text-[1.35rem] font-semibold tracking-[-0.03em] text-ivory sm:text-2xl md:text-[1.75rem]">
-                ¿En qué te ayudo <span className="text-ivory/50">hoy?</span>
+              <p className="whitespace-nowrap text-[1.35rem] font-semibold tracking-[-0.03em] text-ink sm:text-2xl md:text-[1.75rem]">
+                ¿En qué te ayudo <span className="text-ink/35">hoy?</span>
               </p>
-              <p className="mt-3 text-balance text-sm text-ivory/45">
+              <p className="mt-3 text-balance text-sm text-ink/45">
                 Preguntame por un cliente, una reunión o una objeción
               </p>
             </motion.div>
@@ -357,11 +351,12 @@ function ChatDemo() {
               }`}
             >
               <p
-                className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm leading-relaxed tracking-[-0.06em] ${
+                className={
                   message.from === "user"
-                    ? "rounded-br-md bg-ivory text-ink"
-                    : "rounded-bl-md bg-sand/90 text-ink"
-                }`}
+                    ? "max-w-[85%] rounded-2xl rounded-br-md bg-slate-blue px-4 py-3 text-sm leading-relaxed tracking-[-0.06em] text-ivory"
+                    : // Lente responde sin globo: texto plano sobre el card, como un agente real
+                      "w-full px-1 text-sm leading-relaxed tracking-[-0.04em] text-ink"
+                }
               >
                 {message.streaming
                   ? message.text.split(" ").map((word, w) => (
@@ -392,21 +387,21 @@ function ChatDemo() {
       {/* Input simulado: decorativo, el "vendedor" escribe y envía solo */}
       <div
         aria-hidden
-        className="pointer-events-none mt-6 select-none border-t border-ivory/10 pt-5"
+        className="pointer-events-none mt-6 select-none border-t border-ink/10 pt-5"
       >
         {/* Campo de texto */}
         <div
           ref={inputRef}
-          className="flex min-h-[2.75rem] w-full min-w-0 items-center overflow-hidden rounded-xl bg-ivory/[0.06] px-4 ring-1 ring-ivory/10"
+          className="flex min-h-[2.75rem] w-full min-w-0 items-center overflow-hidden rounded-xl bg-ink/[0.04] px-4 ring-1 ring-ink/10"
         >
           {inputValue ? (
-            <span className="whitespace-nowrap text-sm text-ivory">
+            <span className="whitespace-nowrap text-sm text-ink">
               {inputValue}
-              <span className="ml-0.5 inline-block h-4 w-[2px] animate-caret-blink bg-ivory/80 align-middle" />
+              <span className="ml-0.5 inline-block h-4 w-[2px] animate-caret-blink bg-ink/70 align-middle" />
             </span>
           ) : (
-            <span className="whitespace-nowrap text-sm text-ivory/35">
-              <span className="mr-0.5 inline-block h-4 w-[2px] animate-caret-blink bg-ivory/70 align-middle" />
+            <span className="whitespace-nowrap text-sm text-ink/35">
+              <span className="mr-0.5 inline-block h-4 w-[2px] animate-caret-blink bg-ink/60 align-middle" />
               Escribile a Lente…
             </span>
           )}
@@ -414,7 +409,7 @@ function ChatDemo() {
 
         {/* Barra de herramientas */}
         <div className="mt-3 flex items-center gap-2">
-          <div className="rounded-xl px-1.5 py-1 ring-1 ring-ivory/10">
+          <div className="rounded-xl px-1.5 py-1 ring-1 ring-ink/10">
             <ToolbarIcon>
               {/* Agregar imagen */}
               <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
@@ -422,7 +417,7 @@ function ChatDemo() {
               <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
             </ToolbarIcon>
           </div>
-          <div className="rounded-xl px-1.5 py-1 ring-1 ring-ivory/10">
+          <div className="rounded-xl px-1.5 py-1 ring-1 ring-ink/10">
             <ToolbarIcon>
               {/* Micrófono */}
               <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
@@ -437,7 +432,7 @@ function ChatDemo() {
               opacity: inputValue ? 1 : 0.5,
             }}
             transition={{ duration: 0.15 }}
-            className="ml-auto flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sand text-ink shadow-lg shadow-sand/20"
+            className="ml-auto flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-slate-blue text-ivory shadow-lg shadow-slate-blue/25"
           >
             <svg
               viewBox="0 0 24 24"
@@ -526,35 +521,32 @@ export function LenteAI() {
         {/* Mockup de chat con estética glass.
             min-w-0 evita que el texto del input (nowrap) estire la columna. */}
         <FadeIn delay={0.2} y={40} className="min-w-0">
-          <div className="relative overflow-hidden rounded-[28px] border border-ivory/10 bg-gradient-to-b from-ivory/[0.08] via-ivory/[0.04] to-ivory/[0.02] p-6 shadow-2xl shadow-ink/40 backdrop-blur-2xl">
+          <div className="relative overflow-hidden rounded-[28px] border border-white/60 bg-gradient-to-b from-white/95 via-white/90 to-white/85 p-6 shadow-2xl shadow-ink/40 backdrop-blur-2xl">
             {/* Brillo superior sutil del vidrio */}
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ivory/25 to-transparent"
+              className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent"
             />
 
-            <div className="mb-6 flex items-center gap-2 border-b border-ivory/10 pb-4">
-              <Image
-                src="/lente-ai.png"
-                alt=""
-                aria-hidden
-                width={30}
-                height={30}
-                className="-m-0.5 h-[30px] w-[30px] object-contain"
-              />
-              <p className="text-sm font-medium text-ivory">Lente AI</p>
+            <div className="mb-6 flex items-center gap-2 border-b border-ink/10 pb-4">
+              {/* El isologo es blanco, así que va sobre un badge oscuro */}
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-blue">
+                <Image
+                  src="/lente-ai.png"
+                  alt=""
+                  aria-hidden
+                  width={26}
+                  height={26}
+                  className="h-[26px] w-[26px] object-contain"
+                />
+              </span>
+              <p className="text-sm font-medium text-ink">Lente AI</p>
               <span className="relative ml-1 flex h-2.5 w-2.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
               </span>
 
               <div className="ml-auto flex items-center gap-2">
-                <span className="rounded-full bg-ivory/10 px-3 py-1 text-xs font-medium text-ivory/80">
-                  Coach IA
-                </span>
-                <span className="rounded-full bg-sand/15 px-3 py-1 text-xs font-semibold text-sand ring-1 ring-sand/30">
-                  Pro
-                </span>
                 <svg
                   aria-hidden
                   viewBox="0 0 24 24"
@@ -562,7 +554,7 @@ export function LenteAI() {
                   stroke="currentColor"
                   strokeWidth="2"
                   strokeLinecap="round"
-                  className="ml-1 h-4 w-4 text-ivory/40"
+                  className="ml-1 h-4 w-4 text-ink/30"
                 >
                   <path d="M18 6 6 18" />
                   <path d="m6 6 12 12" />
