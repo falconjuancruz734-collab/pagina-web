@@ -38,7 +38,7 @@ export function Problem() {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <blockquote className="flex h-full items-center rounded-3xl border-l-4 border-sand bg-white/70 p-8 text-lg font-medium leading-relaxed text-slate-blue md:p-10">
+            <blockquote className="flex h-full items-center rounded-3xl border-l-4 border-sand bg-white/70 p-8 font-serif text-xl italic leading-relaxed tracking-[-0.01em] text-slate-blue md:p-10">
               {problem.highlight}
             </blockquote>
           </FadeIn>

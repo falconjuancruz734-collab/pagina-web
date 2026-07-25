@@ -181,6 +181,33 @@ function ChatDemo() {
   const [sendPressed, setSendPressed] = useState(false);
   const cancelled = useRef(false);
   const inputRef = useRef<HTMLDivElement>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
+  // La conversación solo se actúa mientras el chat está en pantalla
+  const [inView, setInView] = useState(false);
+  // Se conserva entre entradas y salidas para no repetir siempre el mismo guion
+  const convCursor = useRef(0);
+
+  // Y tampoco corre si la pestaña está en segundo plano: ahí el navegador
+  // estrangula los timers y la conversación se vería entrecortada
+  const [tabVisible, setTabVisible] = useState(true);
+
+  useEffect(() => {
+    const el = rootRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setInView(entry.isIntersecting),
+      { threshold: 0.35 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const onVisibility = () => setTabVisible(!document.hidden);
+    onVisibility();
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => document.removeEventListener("visibilitychange", onVisibility);
+  }, []);
 
   // Como en un input real: el texto arranca desde la izquierda y, cuando
   // desborda, el scroll acompaña para que siempre se vea lo último tipeado
@@ -190,7 +217,7 @@ function ChatDemo() {
   }, [inputValue]);
 
   useEffect(() => {
-    if (reduce) return;
+    if (reduce || !inView || !tabVisible) return;
     cancelled.current = false;
 
     let timer: ReturnType<typeof setTimeout>;
@@ -201,7 +228,7 @@ function ChatDemo() {
     const halted = () => cancelled.current;
 
     (async () => {
-      let idx = 0;
+      let idx = convCursor.current;
       while (!halted()) {
         const conv = conversations[idx];
         setConvIndex(idx);
@@ -263,6 +290,7 @@ function ChatDemo() {
         setVisible(0);
         await sleep(conv.length * CLEAR_STAGGER_S * 1000 + 600);
         idx = (idx + 1) % conversations.length;
+        convCursor.current = idx;
       }
     })();
 
@@ -270,7 +298,7 @@ function ChatDemo() {
       cancelled.current = true;
       clearTimeout(timer);
     };
-  }, [reduce]);
+  }, [reduce, inView, tabVisible]);
 
   const conv = conversations[convIndex];
   const bubbles: (ChatMessage & { key: string; streaming?: boolean })[] = conv
@@ -288,7 +316,7 @@ function ChatDemo() {
   }
 
   return (
-    <div>
+    <div ref={rootRef}>
       {/* Alto fijo: los mensajes se apilan desde abajo y los viejos salen por arriba */}
       <div className="chat-fade relative flex h-[23rem] flex-col justify-end gap-4 overflow-hidden">
         {/* Estado vacío: saludo centrado hasta que llega el primer mensaje */}

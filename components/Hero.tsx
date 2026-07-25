@@ -47,7 +47,7 @@ export function Hero() {
       <div className="relative mx-auto w-full max-w-6xl px-6 pb-4 pt-24 sm:pt-28 lg:pb-24 lg:pt-36">
         <div className="max-w-xl lg:max-w-2xl xl:max-w-3xl">
           <FadeIn immediate delay={0.1}>
-            <p className="mb-6 text-[13px] font-medium uppercase tracking-[0.32em] text-slate-blue/60">
+            <p className="mb-4 text-[13px] sm:mb-6 font-medium uppercase tracking-[0.32em] text-slate-blue/60">
               {hero.title}
             </p>
           </FadeIn>
@@ -64,24 +64,26 @@ export function Hero() {
           </FadeIn>
 
           <FadeIn immediate delay={0.4}>
-            <p className="mt-8 max-w-xl text-lg font-medium leading-[1.5] tracking-[-0.02em] text-ink/80">
+            <p className="mt-5 max-w-xl text-lg sm:mt-8 font-medium leading-[1.5] tracking-[-0.02em] text-ink/80">
               {hero.subtitle}
             </p>
           </FadeIn>
 
           <FadeIn immediate delay={0.55}>
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+            {/* Mobile: los dos CTA entran en una sola fila con tipografía y
+                padding más chicos; desde sm vuelven a su tamaño normal. */}
+            <div className="mt-6 flex items-stretch gap-3 sm:mt-10 sm:flex-wrap sm:items-center sm:gap-4">
               <a
                 href={site.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full bg-slate-blue px-8 py-4 font-semibold text-ivory transition-all hover:scale-105 hover:shadow-xl hover:shadow-slate-blue/25"
+                className="flex shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-slate-blue px-5 py-3.5 text-center text-sm font-semibold leading-tight text-ivory sm:leading-normal transition-all hover:scale-105 hover:shadow-xl hover:shadow-slate-blue/25 sm:px-8 sm:py-4 sm:text-base"
               >
-                Agendar llamada de diagnóstico
+                Agendar llamada
               </a>
               <a
                 href="#lente-ai"
-                className="rounded-full border border-slate-blue/30 px-8 py-4 font-serif text-lg font-semibold italic text-slate-blue transition-colors hover:border-sand"
+                className="flex shrink-0 items-center justify-center whitespace-nowrap rounded-full border border-slate-blue/30 px-5 py-3.5 text-center font-serif text-[15px] font-semibold italic leading-tight text-slate-blue sm:leading-normal transition-colors hover:border-sand sm:px-8 sm:py-4 sm:text-lg"
               >
                 Conocé Lente AI
               </a>
