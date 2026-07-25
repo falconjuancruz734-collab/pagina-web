@@ -289,7 +289,8 @@ function ChatDemo() {
 
   return (
     <div>
-      <div className="relative min-h-[23rem] space-y-4">
+      {/* Alto fijo: los mensajes se apilan desde abajo y los viejos salen por arriba */}
+      <div className="chat-fade relative flex h-[23rem] flex-col justify-end gap-4 overflow-hidden">
         {/* Estado vacío: saludo centrado hasta que llega el primer mensaje */}
         <AnimatePresence>
           {bubbles.length === 0 && !thinking && (
@@ -323,7 +324,7 @@ function ChatDemo() {
               initial="initial"
               animate="animate"
               exit="exit"
-              className={`flex ${
+              className={`flex shrink-0 ${
                 message.from === "user" ? "justify-end" : "justify-start"
               }`}
             >
@@ -352,6 +353,7 @@ function ChatDemo() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, transition: { duration: 0.15 } }}
               transition={{ duration: 0.25 }}
+              className="shrink-0"
             >
               <ThinkingStatus labels={thinking} />
             </motion.div>
@@ -367,7 +369,7 @@ function ChatDemo() {
         {/* Campo de texto */}
         <div
           ref={inputRef}
-          className="flex min-h-[2.75rem] items-center overflow-hidden rounded-xl bg-ivory/[0.06] px-4 ring-1 ring-ivory/10"
+          className="flex min-h-[2.75rem] w-full min-w-0 items-center overflow-hidden rounded-xl bg-ivory/[0.06] px-4 ring-1 ring-ivory/10"
         >
           {inputValue ? (
             <span className="whitespace-nowrap text-sm text-ivory">
@@ -493,8 +495,9 @@ export function LenteAI() {
           </FadeIn>
         </div>
 
-        {/* Mockup de chat con estética glass */}
-        <FadeIn delay={0.2} y={40}>
+        {/* Mockup de chat con estética glass.
+            min-w-0 evita que el texto del input (nowrap) estire la columna. */}
+        <FadeIn delay={0.2} y={40} className="min-w-0">
           <div className="relative overflow-hidden rounded-[28px] border border-ivory/10 bg-gradient-to-b from-ivory/[0.08] via-ivory/[0.04] to-ivory/[0.02] p-6 shadow-2xl shadow-ink/40 backdrop-blur-2xl">
             {/* Brillo superior sutil del vidrio */}
             <div

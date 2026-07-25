@@ -11,13 +11,13 @@ export function About() {
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid items-center gap-14 md:grid-cols-2">
           <FadeIn>
-            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-3xl bg-ivory shadow-2xl shadow-ink/30 ring-1 ring-ivory/10">
+            <div className="relative aspect-square w-full overflow-hidden rounded-3xl bg-ivory shadow-2xl shadow-ink/30 ring-1 ring-ivory/10 md:aspect-[4/5]">
               <Image
                 src="/juan-standing.png"
                 alt="Juan Cruz Falcón"
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
-                className="object-cover object-[85%_0%]"
+                className="object-cover object-[100%_0%] md:object-[85%_0%]"
               />
             </div>
           </FadeIn>

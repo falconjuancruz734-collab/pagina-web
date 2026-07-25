@@ -10,7 +10,7 @@ export function Hero() {
     <section
       id="inicio"
       /* #f7f5f4: mismo tono que el aire de la foto — sin banda visible bajo el navbar transparente */
-      className="relative flex min-h-svh items-center overflow-hidden bg-[#f7f5f4]"
+      className="relative flex min-h-svh flex-col overflow-hidden bg-[#f7f5f4] lg:flex-row lg:items-center"
     >
       {/* Foto a escala natural, anclada abajo a la derecha (solo desktop) —
           Juan entero con el sillón, como el mockup. El sobrante de aire blanco
@@ -44,7 +44,7 @@ export function Hero() {
         />
       </motion.div>
 
-      <div className="relative mx-auto w-full max-w-6xl px-6 pb-16 pt-32 lg:pb-24 lg:pt-36">
+      <div className="relative mx-auto w-full max-w-6xl px-6 pb-4 pt-24 sm:pt-28 lg:pb-24 lg:pt-36">
         <div className="max-w-xl lg:max-w-2xl xl:max-w-3xl">
           <FadeIn immediate delay={0.1}>
             <p className="mb-6 text-[13px] font-medium uppercase tracking-[0.32em] text-slate-blue/60">
@@ -89,6 +89,30 @@ export function Hero() {
           </FadeIn>
         </div>
       </div>
+
+      {/* Mobile: la foto ocupa el fondo del hero, a todo el ancho y anclada abajo.
+          object-[86%_bottom] recorta el aire blanco de la izquierda y deja a Juan
+          con el sillón centrado, cortado por el borde inferior (como el mockup). */}
+      <motion.div
+        initial={{ opacity: 0, y: 32 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.4, ease: [0.21, 0.47, 0.32, 0.98] }}
+        className="relative mt-auto h-[48svh] min-h-[320px] w-full lg:hidden"
+      >
+        <Image
+          src="/juan-hero.png"
+          alt="Juan Cruz Falcón, coach de ventas"
+          fill
+          priority
+          sizes="(min-width: 1024px) 1px, 100vw"
+          className="object-cover object-[86%_bottom]"
+        />
+        {/* Scrim muy leve: suaviza el corte del borde superior sin velar la foto */}
+        <div
+          aria-hidden
+          className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-[#f7f5f4]/70 to-transparent"
+        />
+      </motion.div>
 
       {/* Indicador de scroll */}
       <motion.div

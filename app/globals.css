@@ -124,6 +124,12 @@ body {
   animation: word-in 0.7s ease-out both;
 }
 
+/* Los mensajes del chat se funden al salir por arriba, en vez de cortarse en seco */
+.chat-fade {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 14%);
+  mask-image: linear-gradient(to bottom, transparent, #000 14%);
+}
+
 /* Las tarjetas se funden en los bordes */
 .marquee-fade {
   -webkit-mask-image: linear-gradient(
