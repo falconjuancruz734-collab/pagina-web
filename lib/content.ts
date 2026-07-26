@@ -29,17 +29,18 @@ export const hero = {
     "Acompaño a tu equipo a cumplir sus objetivos y lo potencio para lograr su máxima performance.",
 };
 
-/* Empresas para el carrusel de logos — wordmarks tipográficos hasta tener los SVG reales.
-   Mezcla de marcas donde trabajó Juan y clientes de Lente. */
-export const companies = [
-  "Hewlett Packard",
-  "Renault",
-  "GA.MA Italy",
-  "Wyder",
-  "Urquiza Motos",
-  "Jobly",
-  "Anthea",
-  "Grosomono",
+/* Empresas para el carrusel de logos — mezcla de marcas donde trabajó Juan
+   y clientes de Lente. Si falta `logo` (en /public/empresas), se muestra
+   el nombre como wordmark tipográfico. */
+export const companies: { name: string; logo?: string }[] = [
+  { name: "Hewlett Packard", logo: "/empresas/hp.png" },
+  { name: "Renault", logo: "/empresas/renault.png" },
+  { name: "GA.MA Italy", logo: "/empresas/gama.png" },
+  { name: "Wyder", logo: "/empresas/Wyder.png" },
+  { name: "Urquiza Motos", logo: "/empresas/urquiza.png" },
+  { name: "Jobly", logo: "/empresas/Jobly.png" },
+  { name: "Anthea", logo: "/empresas/anthea.png" },
+  { name: "Grosomono", logo: "/empresas/grosomono.png" },
 ];
 
 export const problem = {

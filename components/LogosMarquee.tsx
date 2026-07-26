@@ -1,6 +1,7 @@
+import Image from "next/image";
 import { companies } from "@/lib/content";
 
-/** Carrusel de logos de empresas — wordmarks tipográficos hasta tener los SVG reales. */
+/** Carrusel de logos de empresas — imágenes reales con fallback tipográfico. */
 export function LogosMarquee() {
   const doubled = [...companies, ...companies];
 
@@ -14,16 +15,24 @@ export function LogosMarquee() {
       </p>
       <div className="marquee-fade overflow-hidden">
         <div className="animate-marquee flex items-center gap-16 pl-16">
-          {doubled.map((name, i) => (
+          {doubled.map((company, i) => (
             <span
-              key={`${name}-${i}`}
-              className={`shrink-0 whitespace-nowrap text-ink/35 transition-colors hover:text-ink/60 ${
-                i % 2 === 0
-                  ? "text-lg font-semibold uppercase tracking-[0.18em]"
-                  : "font-serif text-2xl font-medium italic"
-              }`}
+              key={`${company.name}-${i}`}
+              className="shrink-0 opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0"
             >
-              {name}
+              {company.logo ? (
+                <Image
+                  src={company.logo}
+                  alt={company.name}
+                  width={360}
+                  height={240}
+                  className="h-12 w-auto object-contain"
+                />
+              ) : (
+                <span className="whitespace-nowrap text-lg font-semibold uppercase tracking-[0.18em] text-ink/60">
+                  {company.name}
+                </span>
+              )}
             </span>
           ))}
         </div>

@@ -51,7 +51,7 @@ Banda de logos en loop horizontal debajo del hero, con el rótulo "Empresas que 
 
 Hewlett Packard · Renault · GA.MA Italy · Wyder · Urquiza Motos · Jobly · Anthea · Grosomono
 
-🔴 **Pendiente:** hoy son wordmarks tipográficos (texto estilizado). Cuando estén los SVG/PNG de los logos reales, se reemplazan en `LogosMarquee.tsx`.
+✅ **Logos reales** en `/public/empresas` (jul 2026), en escala de grises con hover a color. Única excepción: **Urquiza Motos** sigue como wordmark tipográfico hasta tener su logo — al agregarlo, solo hay que sumar `logo: "/empresas/..."` en `companies` de `lib/content.ts`.
 
 ---
 

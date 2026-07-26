@@ -116,22 +116,6 @@ export function Hero() {
         />
       </motion.div>
 
-      {/* Indicador de scroll */}
-      <motion.div
-        aria-hidden
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.4 }}
-        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 lg:block"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          className="h-10 w-6 rounded-full border border-ink/20 p-1.5"
-        >
-          <div className="mx-auto h-2 w-1 rounded-full bg-sand" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }
