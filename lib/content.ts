@@ -12,10 +12,11 @@ export const site = {
   role: "Sales Coach",
   // [PLACEHOLDER] — reemplazar por el número real de WhatsApp (formato internacional, sin +)
   whatsapp: "https://wa.me/5491100000000",
+  // Agenda de Juan — sin los UTM de Instagram (esta es la web, no el link-in-bio)
+  calendly: "https://calendly.com/jc-falcon-/meet-con-juan-cruz-falcon",
   email: "jcf@juancruzfalcon.com",
   instagram: "https://www.instagram.com/juancruz.falcon_",
   linkedin: "https://www.linkedin.com/in/juan-cruz-falcon-1a12b668/",
-  lente: "https://lenteconsulting.com/",
 };
 
 export const hero = {

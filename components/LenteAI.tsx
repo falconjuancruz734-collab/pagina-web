@@ -5,7 +5,7 @@ import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { ShiningText } from "@/components/ui/ShiningText";
-import { lente, site } from "@/lib/content";
+import { lente } from "@/lib/content";
 
 /* Demo ilustrativa: Lente como copilot del vendedor.
    Cada conversación se "actúa" completa: el mensaje del vendedor se tipea solo
@@ -501,18 +501,10 @@ export function LenteAI() {
           <FadeIn delay={0.35}>
             <div className="mt-10 flex flex-wrap gap-4">
               <a
-                href={site.lente}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contacto"
                 className="rounded-full bg-sand px-8 py-3.5 font-semibold text-ink transition-transform hover:scale-105"
               >
-                Conocer Lente →
-              </a>
-              <a
-                href="#contacto"
-                className="rounded-full border border-ivory/25 px-8 py-3.5 font-medium text-ivory transition-colors hover:border-sand hover:text-sand"
-              >
-                Quiero implementarlo
+                Quiero implementarlo →
               </a>
             </div>
           </FadeIn>

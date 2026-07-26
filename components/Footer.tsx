@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { site } from "@/lib/content";
 
 const nav = [
@@ -15,9 +16,18 @@ export function Footer() {
     <footer className="bg-slate-deep py-14">
       <div className="mx-auto max-w-6xl px-6">
         <div className="flex flex-col items-center justify-between gap-10 md:flex-row md:items-start">
-          <div className="text-center md:text-left">
-            <p className="font-signature text-4xl text-ivory">jcf.</p>
-            <p className="mt-2 text-[10px] font-medium uppercase tracking-[0.35em] text-sand">
+          <div className="flex flex-col items-center md:items-start">
+            <Image
+              src="/Firma Blanco.png"
+              alt="Firma de Juan Cruz Falcón"
+              width={1254}
+              height={1254}
+              className="h-20 w-20 object-contain"
+            />
+            <p className="mt-2 text-[13px] font-semibold uppercase leading-none tracking-[0.18em] text-ivory">
+              Juan Cruz Falcon
+            </p>
+            <p className="mt-1.5 text-[11px] font-medium uppercase leading-none tracking-[0.19em] text-sand">
               Sales Coach
             </p>
           </div>

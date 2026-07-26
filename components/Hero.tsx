@@ -74,7 +74,7 @@ export function Hero() {
                 padding más chicos; desde sm vuelven a su tamaño normal. */}
             <div className="mt-6 flex items-stretch gap-3 sm:mt-10 sm:flex-wrap sm:items-center sm:gap-4">
               <a
-                href={site.whatsapp}
+                href={site.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-slate-blue px-5 py-3.5 text-center text-sm font-semibold leading-tight text-ivory sm:leading-normal transition-all hover:scale-105 hover:shadow-xl hover:shadow-slate-blue/25 sm:px-8 sm:py-4 sm:text-base"

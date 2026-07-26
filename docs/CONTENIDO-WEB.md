@@ -19,8 +19,8 @@
 | 5 | [Cómo trabajo](#5-cómo-trabajo) | `Method.tsx` | ✅ Listo |
 | 6 | [Lente — agente comercial con IA](#6-lente--tu-agente-comercial-con-ia) | `LenteAI.tsx` | ✅ Listo |
 | 7 | [Modalidades](#7-modalidades) | `Modalities.tsx` | ✅ Listo |
-| 8 | [Testimonios](#8-testimonios) | `Testimonials.tsx` | ⚠️ Revisar |
-| 9 | [Notas y prensa](#9-notas-y-prensa) | `Work.tsx` | 🔴 Placeholder |
+| 8 | [Testimonios](#8-testimonios) | `Testimonials.tsx` | ✅ 5 reales con foto |
+| 9 | [Notas y prensa](#9-notas-y-prensa) | `Work.tsx` | ✅ 3 notas reales |
 | 10 | [CTA final + contacto](#10-cta-final--contacto) | `Contact.tsx`, `Footer.tsx` | ⚠️ Revisar |
 
 Al final: [pendientes abiertos](#pendientes-abiertos), [tono de voz](#tono-de-voz), [referencias visuales](#referencias-visuales), [qué tiene cada demo](#qué-tiene-cada-demo) y el [checklist de implementación](#checklist-de-implementación).
@@ -178,22 +178,21 @@ En la web hay **5 testimonios reales tomados de lenteconsulting.com**:
 | Gastón Tenorio | GA.MA Italy | Cuidado personal | Capacitándolos y asesorándolos en Venta Consultiva para lograr un diferencial de la competencia. |
 | Francisco Laplume | Grosomono | Agencia de publicidad | Lente nos acompañó para verdaderamente entender los puntos de dolor que necesitamos resolver. |
 
-⚠️ **A confirmar con Juan:** si estos 5 son los definitivos, o si va a mandar los 3 testimonios propios que quedaron pendientes en el documento.
+✅ Los 5 están en la web con foto y versión extendida ("Leer testimonio completo"). El `.docx` pedía 3 propios que nunca llegaron — si Juan los manda, se suman o reemplazan en `testimonials` de `lib/content.ts`.
 
 ---
 
 ## 9. Notas y prensa
 
-🔴 **Sección no incluida en el `.docx`.** Hoy la web muestra **tres notas de ejemplo** con medio, fecha y título inventados y links a `#`.
+✅ **Resuelta** (no estaba en el `.docx`; se completó con notas reales):
 
-Para completarla hacen falta, por cada nota:
+| Medio | Fecha | Título |
+|-------|-------|--------|
+| LinkedIn | Jul 2026 | La tendencia que está frenando el crecimiento comercial de empresas de Latam |
+| LinkedIn | Jul 2026 | Primera reunión con un posible cliente |
+| El Economista | Mar 2025 | ¿Las palabras venden? Utiliza el discurso para enamorar al cliente |
 
-- Medio o publicación
-- Fecha
-- Título real
-- Link (los del LinkedIn de Juan)
-
-Si no van a existir notas reales, hay que **sacar la sección** en vez de dejar los placeholders.
+Las notas viven en `press` dentro de `lib/content.ts` — para sumar una nueva alcanza con agregar un item ahí (con `image` en `/public/notas` o `excerpt` para portada tipográfica).
 
 ---
 
@@ -221,14 +220,17 @@ Si tu equipo tiene la meta y le falta el cómo, hablemos. Una llamada de diagnó
 
 ## Pendientes abiertos
 
-| # | Pendiente | Quién |
-|---|-----------|-------|
-| 1 | Número de WhatsApp real (formato internacional) | Juan |
-| 2 | Definir el email: `hola@` o `jcf@` | Juan |
-| 3 | Confirmar los testimonios definitivos (los 5 actuales o 3 propios) | Juan |
-| 4 | Notas de prensa reales, o decidir eliminar la sección | Juan |
-| 5 | SVG de la firma | Juan / diseño |
-| 6 | Fotos definitivas (hoy: retrato, de pie y traje) | Juan / diseño |
+| # | Pendiente | Quién | Estado |
+|---|-----------|-------|--------|
+| 1 | Número de WhatsApp real — hoy hay un placeholder (`wa.me/5491100000000`) en `lib/content.ts` | Juan | 🔴 |
+| 2 | Definir el email: el `.docx` dice `hola@`, la web usa `jcf@` (afecta al formulario, que envía vía FormSubmit a ese mail) | Juan | 🔴 |
+| 3 | Activar FormSubmit: hacer un primer envío del formulario y confirmar desde la casilla | Juan | 🔴 |
+| 4 | Logos reales (SVG/PNG) para el carrusel — hoy son wordmarks tipográficos | Juan / diseño | 🟡 |
+| 5 | ~~Testimonios definitivos~~ — 5 reales con foto | — | ✅ |
+| 6 | ~~Notas de prensa reales~~ — 3 publicadas | — | ✅ |
+| 7 | ~~SVG de la firma~~ — Firma Negro/Blanco en navbar y footer | — | ✅ |
+| 8 | ~~Fotos definitivas~~ — hero, standing, testimonios y thumbnail para compartir | — | ✅ |
+| 9 | Al deployar: confirmar dominio (`juancruzfalcon.com` está asumido en SEO/OG) y alta en Search Console | Lautaro | 🟡 |
 
 ---
 

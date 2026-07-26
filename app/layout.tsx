@@ -25,9 +25,70 @@ const signature = Great_Vibes({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://juancruzfalcon.com"),
   title: "Juan Cruz Falcón — Sales Coach",
   description:
     "Coach de ventas para equipos comerciales. La meta de ventas ya está definida. Cómo alcanzarla, no. Acompaño a tu equipo a cumplir sus objetivos y lograr su máxima performance.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "es_AR",
+    url: "/",
+    siteName: "Juan Cruz Falcón — Sales Coach",
+    title: "Juan Cruz Falcón — Sales Coach",
+    description:
+      "Coach de ventas para equipos comerciales. Acompaño a tu equipo a cumplir sus objetivos y lograr su máxima performance.",
+    images: [
+      {
+        url: "/thumbnail.jpg",
+        width: 1200,
+        height: 750,
+        alt: "Juan Cruz Falcón — Sales Coach",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Juan Cruz Falcón — Sales Coach",
+    description:
+      "Coach de ventas para equipos comerciales. Acompaño a tu equipo a cumplir sus objetivos y lograr su máxima performance.",
+    images: ["/thumbnail.jpg"],
+  },
+};
+
+/* Datos estructurados: Juan como persona + el sitio. Google los usa para
+   entender quién es y mostrar resultados enriquecidos. */
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://juancruzfalcon.com/#juan",
+      name: "Juan Cruz Falcón",
+      jobTitle: "Sales Coach",
+      description:
+        "Coach de ventas y desarrollo de equipos comerciales. Más de 15 años liderando equipos de ventas y marketing en Hewlett Packard, Renault y GA.MA Italy. Fundador de Wyder.",
+      url: "https://juancruzfalcon.com",
+      email: "jcf@juancruzfalcon.com",
+      sameAs: [
+        "https://www.instagram.com/juancruz.falcon_",
+        "https://www.linkedin.com/in/juan-cruz-falcon-1a12b668/",
+      ],
+      knowsAbout: [
+        "Venta consultiva",
+        "Coaching comercial",
+        "Desarrollo de equipos de ventas",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://juancruzfalcon.com/#web",
+      url: "https://juancruzfalcon.com",
+      name: "Juan Cruz Falcón — Sales Coach",
+      inLanguage: "es",
+      publisher: { "@id": "https://juancruzfalcon.com/#juan" },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -40,6 +101,10 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${newsreader.variable} ${signature.variable} font-sans antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <SmoothScroll />
         {children}
       </body>

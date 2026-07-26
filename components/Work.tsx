@@ -31,7 +31,7 @@ export function Work() {
                   <div className="aspect-video overflow-hidden">
                     <img
                       src={item.image}
-                      alt=""
+                      alt={`Portada de la nota: ${item.title}`}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                   </div>

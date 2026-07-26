@@ -12,7 +12,9 @@ type CountUpProps = {
 /** Número que cuenta desde 0 al entrar en viewport. */
 export function CountUp({ to, suffix = "", className }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
+  // Sin margen negativo: con él, en mobile el número podía quedar en una franja
+  // donde el observer nunca disparaba y el contador quedaba clavado en 0.
+  const inView = useInView(ref, { once: true });
   const reduce = useReducedMotion();
   const [value, setValue] = useState(0);
 

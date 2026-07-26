@@ -29,17 +29,14 @@ function Word({
   progress: MotionValue<number>;
   range: [number, number];
 }) {
-  const opacity = useTransform(progress, range, [0, 1]);
+  /* Una sola copia del texto (SEO: sin palabras duplicadas en el DOM).
+     El "ghost" atenuado es el mismo span arrancando en opacidad 0.2. */
+  const opacity = useTransform(progress, range, [0.2, 1]);
 
   return (
-    <span className="relative inline-block">
-      <span aria-hidden className="opacity-20">
-        {word}
-      </span>
-      <motion.span style={{ opacity }} className="absolute inset-0">
-        {word}
-      </motion.span>
-    </span>
+    <motion.span style={{ opacity }} className="inline-block">
+      {word}
+    </motion.span>
   );
 }
 

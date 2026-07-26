@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import {
   AnimatePresence,
@@ -33,20 +34,31 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="#inicio" className="flex items-baseline gap-3">
-          <span
-            className={`font-signature text-3xl leading-none transition-colors ${
-              scrolled ? "text-ivory" : "text-slate-blue"
-            }`}
-          >
-            jcf.
-          </span>
-          <span
-            className={`hidden text-[10px] font-medium uppercase tracking-[0.3em] transition-colors sm:block ${
-              scrolled ? "text-ivory/70" : "text-ink/60"
-            }`}
-          >
-            Juan Cruz Falcón
+        <a href="#inicio" className="flex items-center gap-2 sm:gap-2.5">
+          {/* La firma cambia de color según el estado del navbar */}
+          <Image
+            src={scrolled ? "/Firma Blanco.png" : "/Firma Negro.png"}
+            alt="Firma de Juan Cruz Falcón"
+            width={1254}
+            height={1254}
+            priority
+            className="h-10 w-10 shrink-0 object-contain sm:h-14 sm:w-14"
+          />
+          <span className="flex flex-col gap-0.5 sm:gap-1">
+            <span
+              className={`text-[11px] font-semibold uppercase leading-none tracking-[0.18em] transition-colors sm:text-[13px] ${
+                scrolled ? "text-ivory" : "text-ink"
+              }`}
+            >
+              Juan Cruz Falcon
+            </span>
+            <span
+              className={`text-center text-[9px] font-medium uppercase leading-none tracking-[0.19em] transition-colors sm:text-[11px] ${
+                scrolled ? "text-sand" : "text-sand"
+              }`}
+            >
+              Sales Coach
+            </span>
           </span>
         </a>
 

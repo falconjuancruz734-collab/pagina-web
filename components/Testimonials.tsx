@@ -224,8 +224,8 @@ export function Testimonials() {
         <div className="mx-auto max-w-5xl px-6 text-center">
           <SectionLabel align="center">Testimonios</SectionLabel>
           <h2 className="text-4xl font-semibold leading-[1.02] tracking-[-0.06em] text-ink md:text-5xl">
-            Lo que dicen los{" "}
-            <em className="font-serif italic tracking-[-0.01em] text-slate-blue">equipos</em>
+            Lo que dicen{" "}
+            <em className="font-serif italic tracking-[-0.01em] text-slate-blue">mis clientes</em>
           </h2>
         </div>
       </FadeIn>
