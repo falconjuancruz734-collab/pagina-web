@@ -89,9 +89,6 @@ function Row({
   reverse?: boolean;
   onReadMore: (t: Testimonial) => void;
 }) {
-  // Duplicamos la lista para que el loop sea continuo
-  const loop = [...items, ...items];
-
   const ref = useRef<HTMLDivElement>(null);
   const raf = useRef(0);
 
@@ -121,12 +118,23 @@ function Row({
       ref={ref}
       onMouseEnter={() => setSpeed(0.15)}
       onMouseLeave={() => setSpeed(1)}
-      className={`marquee-row flex gap-5 ${
+      className={`marquee-row flex ${
         reverse ? "animate-marquee-reverse" : "animate-marquee"
       }`}
     >
-      {loop.map((t, i) => (
-        <TestimonialCard key={`${t.name}-${i}`} t={t} onReadMore={onReadMore} />
+      {/* Dos filas idénticas: la segunda es la copia que cierra el loop.
+          `pr-5` replica el gap al final para que cada fila mida exactamente
+          la mitad del total y el translateX(-50%) caiga justo (sin salto). */}
+      {[0, 1].map((copia) => (
+        <div
+          key={copia}
+          className="flex shrink-0 gap-5 pr-5"
+          aria-hidden={copia === 1 || undefined}
+        >
+          {items.map((t) => (
+            <TestimonialCard key={t.name} t={t} onReadMore={onReadMore} />
+          ))}
+        </div>
       ))}
     </div>
   );

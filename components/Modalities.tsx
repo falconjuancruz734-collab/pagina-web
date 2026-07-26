@@ -2,7 +2,7 @@
 
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { modalities, site } from "@/lib/content";
+import { modalities } from "@/lib/content";
 
 export function Modalities() {
   return (
@@ -35,19 +35,6 @@ export function Modalities() {
             </FadeIn>
           ))}
         </div>
-
-        <FadeIn delay={0.2}>
-          <div className="mt-12 text-center">
-            <a
-              href={site.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block rounded-full bg-slate-blue px-8 py-3.5 font-semibold text-ivory transition-all hover:scale-105 hover:shadow-xl hover:shadow-slate-blue/20"
-            >
-              Quiero saber más
-            </a>
-          </div>
-        </FadeIn>
       </div>
     </section>
   );

@@ -79,11 +79,7 @@ export function Navbar() {
           ))}
           <a
             href="#contacto"
-            className={`rounded-full px-5 py-2 text-sm font-semibold transition-all hover:scale-105 ${
-              scrolled
-                ? "bg-slate-deep text-ivory ring-1 ring-ivory/25"
-                : "border border-slate-blue/40 bg-transparent text-slate-blue hover:border-slate-blue"
-            }`}
+            className="rounded-full bg-sand px-5 py-2 text-sm font-semibold text-ink transition-all hover:scale-105 hover:shadow-lg hover:shadow-sand/30"
           >
             Hablemos
           </a>

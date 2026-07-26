@@ -1,22 +1,44 @@
 import Image from "next/image";
 import { site } from "@/lib/content";
 
-const nav = [
+const secciones = [
   { href: "#quien-soy", label: "Quién soy" },
   { href: "#metodo", label: "Cómo trabajo" },
   { href: "#lente-ai", label: "Lente AI" },
   { href: "#modalidades", label: "Modalidades" },
   { href: "#testimonios", label: "Testimonios" },
   { href: "#notas", label: "Notas" },
-  { href: "#contacto", label: "Contacto" },
 ];
+
+const contacto = [
+  { href: `mailto:${site.email}`, label: site.email, external: false },
+  { href: site.whatsapp, label: "WhatsApp", external: true },
+  { href: site.calendly, label: "Agendar una llamada", external: true },
+];
+
+const redes = [
+  { href: site.instagram, label: "Instagram" },
+  { href: site.linkedin, label: "LinkedIn" },
+];
+
+const linkClasses =
+  "text-sm text-ivory/60 transition-colors hover:text-sand";
+
+function ColumnTitle({ children }: { children: string }) {
+  return (
+    <p className="mb-5 text-[11px] font-semibold uppercase tracking-[0.22em] text-sand">
+      {children}
+    </p>
+  );
+}
 
 export function Footer() {
   return (
-    <footer className="bg-slate-deep py-14">
+    <footer className="bg-slate-deep pb-8 pt-16">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="flex flex-col items-center justify-between gap-10 md:flex-row md:items-start">
-          <div className="flex flex-col items-center md:items-start">
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1.2fr_1fr] lg:gap-8">
+          {/* Marca */}
+          <div>
             <Image
               src="/Firma Blanco.png"
               alt="Firma de Juan Cruz Falcón"
@@ -30,42 +52,70 @@ export function Footer() {
             <p className="mt-1.5 text-[11px] font-medium uppercase leading-none tracking-[0.19em] text-sand">
               Sales Coach
             </p>
+            <p className="mt-5 max-w-xs text-sm leading-relaxed text-ivory/50">
+              Acompaño a equipos comerciales a cumplir sus objetivos y lograr
+              su máxima performance.
+            </p>
           </div>
 
-          <nav className="flex flex-wrap justify-center gap-x-8 gap-y-3">
-            {nav.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm text-ivory/60 transition-colors hover:text-sand"
-              >
-                {link.label}
-              </a>
-            ))}
+          {/* Secciones */}
+          <nav aria-label="Secciones del sitio">
+            <ColumnTitle>Secciones</ColumnTitle>
+            <ul className="space-y-3">
+              {secciones.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} className={linkClasses}>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </nav>
 
-          <div className="flex gap-6">
-            <a
-              href={site.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-ivory/60 transition-colors hover:text-sand"
-            >
-              Instagram
-            </a>
-            <a
-              href={site.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-ivory/60 transition-colors hover:text-sand"
-            >
-              LinkedIn
-            </a>
+          {/* Contacto */}
+          <div>
+            <ColumnTitle>Contacto</ColumnTitle>
+            <ul className="space-y-3">
+              {contacto.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noopener noreferrer" : undefined}
+                    className={`${linkClasses} break-words`}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-5 text-[11px] uppercase tracking-[0.2em] text-ivory/35">
+              Buenos Aires · Argentina
+            </p>
+          </div>
+
+          {/* Redes */}
+          <div>
+            <ColumnTitle>Seguime</ColumnTitle>
+            <ul className="space-y-3">
+              {redes.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={linkClasses}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        <div className="mt-12 border-t border-ivory/10 pt-6 text-center">
-          <p className="text-xs text-ivory/40">
+        <div className="mt-14 border-t border-ivory/10 pt-6">
+          <p className="text-center text-xs text-ivory/40">
             © {new Date().getFullYear()} Juan Cruz Falcón · Sales Coach ·
             Todos los derechos reservados
           </p>
