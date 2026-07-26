@@ -14,19 +14,22 @@ export function LogosMarquee() {
         Empresas que confiaron en mí
       </p>
       <div className="marquee-fade overflow-hidden">
-        <div className="animate-marquee flex items-center gap-16 pl-16">
+        <div className="animate-marquee flex items-center gap-10 pl-10">
           {doubled.map((company, i) => (
             <span
               key={`${company.name}-${i}`}
               className="shrink-0 opacity-80 grayscale transition hover:opacity-100 hover:grayscale-0"
             >
               {company.logo ? (
+                /* Los PNG están normalizados por área óptica sobre un lienzo
+                   común de 400×180: los anchos (GA.MA, Urquiza) compensan su
+                   poca altura, así todos pesan visualmente parecido. */
                 <Image
                   src={company.logo}
                   alt={company.name}
-                  width={360}
-                  height={240}
-                  className="h-12 w-auto object-contain"
+                  width={400}
+                  height={180}
+                  className="h-14 w-auto sm:h-16"
                 />
               ) : (
                 <span className="whitespace-nowrap text-lg font-semibold uppercase tracking-[0.18em] text-ink/60">
