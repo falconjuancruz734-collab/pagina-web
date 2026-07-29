@@ -13,7 +13,7 @@ export function Work() {
             <SectionLabel align="center">Blog</SectionLabel>
             <h2 className="text-4xl font-normal leading-[1.02] tracking-[-0.06em] text-ink md:text-5xl">
               Lo que escribo,{" "}
-              <em className="font-medium italic text-slate-blue">
+              <em className="font-semibold italic text-slate-blue">
                 lo que pienso
               </em>
             </h2>
