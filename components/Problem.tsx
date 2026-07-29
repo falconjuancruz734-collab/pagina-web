@@ -36,9 +36,14 @@ export function Problem() {
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.3}>
-            <blockquote className="flex h-full items-center rounded-3xl border-l-4 border-sand bg-white/70 p-8 text-xl leading-relaxed text-slate-blue md:p-10">
-              <p>
+          {/* self-center: la tarjeta queda a media altura de la columna de
+              párrafos en vez de pegada arriba. */}
+          <FadeIn delay={0.3} className="self-center">
+            {/* Sin h-full: la tarjeta se ajusta al texto en vez de estirarse
+                a la altura de la columna de párrafos. */}
+            {/* w-fit: el ancho lo define el texto, no la columna. */}
+            <blockquote className="mx-auto w-fit max-w-full rounded-3xl border-l-4 border-sand bg-white/70 p-6 text-lg leading-relaxed text-slate-blue md:p-7">
+              <p className="text-center">
                 {problem.highlight.before}
                 <strong className="font-bold">{problem.highlight.emphasis}</strong>
                 {problem.highlight.after}
