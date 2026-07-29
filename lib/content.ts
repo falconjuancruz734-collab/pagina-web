@@ -49,11 +49,12 @@ export const problem = {
     "Los directores miran el P&L. Los gerentes, el número que lo componen. Es lo que exige el negocio.",
     "Pero en ese foco en el resultado, algo queda afuera: el día a día del equipo. El proceso. El método. El acompañamiento humano que determina si los objetivos se cumplen o no.",
     "No porque no quieran. Sino porque el negocio no les deja espacio para hacerlo.",
+    "El resultado es predecible: cada vendedor intenta llegar a la meta a su manera, sin un camino claro. Algunos llegan. La mayoría no. Y la empresa termina dependiendo de uno o dos para sostenerse.",
   ],
   highlight: {
-    before: "Soy el socio estratégico que trabaja lo que ellos no pueden — ",
-    emphasis: "el cómo, el proceso y las personas",
-    after: " — para que ellos puedan enfocarse en lo que les corresponde.",
+    before: "Eso no es una estrategia. ",
+    emphasis: "Es un riesgo.",
+    after: "",
   },
 };
 
@@ -63,15 +64,27 @@ export const whyCoach = {
   headlineStart: "Un equipo con método vende",
   headlineAccent: "distinto",
   paragraphs: [
-    "Un coach no reemplaza al líder comercial: le devuelve el tiempo que el negocio le saca. Mientras el gerente gestiona el número, yo trabajo el cómo con cada vendedor.",
-    "No es una capacitación suelta ni una charla motivacional. Es acompañamiento sostenido sobre las conversaciones reales de tu equipo, con método y seguimiento.",
+    "Cuando los números no cierran, la respuesta habitual es más presión, más reuniones, una meta más alta. El problema sigue igual.",
+    "Un coach de venta consultiva no es una capacitación puntual ni un curso online. Es acompañamiento real, sostenido en el tiempo, enfocado en que cada vendedor incorpore un método y lo aplique en situaciones reales.",
   ],
-  bullets: [
-    "Una mirada externa que ve lo que adentro se naturalizó",
-    "Método aplicable desde la primera semana, no teoría",
-    "Foco en las personas: el número es la consecuencia",
-    "Continuidad real, no un evento aislado",
+  faq: [
+    {
+      question: "¿Por qué no alcanza con el gerente?",
+      answer:
+        "Porque el negocio no le da el tiempo ni el espacio para hacerlo de forma consistente. El gerente gestiona resultados — el coach trabaja las habilidades que los generan.",
+    },
+    {
+      question: "¿Por qué externo?",
+      answer:
+        "Porque tiene distancia y objetividad. No está atrapado en la dinámica interna del equipo. Ve lo que desde adentro es difícil ver.",
+    },
+    {
+      question: "¿Por qué venta consultiva específicamente?",
+      answer:
+        "Porque es el enfoque que más impacto tiene en ventas de servicios, procesos largos y tickets altos. No es técnica de cierre — es una forma distinta de relacionarse con el cliente.",
+    },
   ],
+  closing: "Un coach no reemplaza al liderazgo interno. Lo complementa.",
 };
 
 /** Texto de los CTA repartidos en la página — todos apuntan al formulario. */

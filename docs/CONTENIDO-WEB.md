@@ -15,6 +15,7 @@
 | 1 | [Hook + Hero](#1-hook--hero) | `Hero.tsx` | ✅ Listo |
 | 2 | [Logos de empresas / Carrusel](#2-logos-de-empresas--carrusel) | `LogosMarquee.tsx` | ⚠️ Faltan logos reales |
 | 3 | [El problema](#3-el-problema) | `Problem.tsx` | ✅ Listo |
+| 3b | [¿Por qué un coach?](#3b-por-qué-un-coach) | `WhyCoach.tsx` | ⚠️ Falta el titular |
 | 4 | [Quién soy](#4-quién-soy) | `About.tsx` | ✅ Listo |
 | 5 | [Cómo trabajo](#5-cómo-trabajo) | `Method.tsx` | ✅ Listo |
 | 6 | [Lente — agente comercial con IA](#6-lente--tu-agente-comercial-con-ia) | `LenteAI.tsx` | ✅ Listo |
@@ -63,15 +64,47 @@ Hewlett Packard · Renault · GA.MA Italy · Wyder · Urquiza Motos · Jobly · 
 
 **Desarrollo**
 
-Los directores miran el forecast. Los gerentes gestionan el número. Es su rol y es lo que exige el negocio.
+Los directores miran el P&L. Los gerentes, el número que lo componen. Es lo que exige el negocio.
 
 Pero en ese foco en el resultado, algo queda afuera: el día a día del equipo. El proceso. El método. El acompañamiento humano que determina si los objetivos se cumplen o no.
 
 No porque no quieran. Sino porque el negocio no les deja espacio para hacerlo.
 
+El resultado es predecible: cada vendedor intenta llegar a la meta a su manera, sin un camino claro. Algunos llegan. La mayoría no. Y la empresa termina dependiendo de uno o dos para sostenerse.
+
 **Cierre destacado**
 
-> Soy el socio estratégico que trabaja lo que ellos no pueden — el cómo, el proceso y las personas — para que ellos puedan enfocarse en lo que les corresponde.
+> Eso no es una estrategia. **Es un riesgo.**
+
+---
+
+## 3b. ¿Por qué un coach?
+
+Sección agregada en jul 2026 (no estaba en el `.docx`). Componente: `WhyCoach.tsx`.
+
+**Titular**
+
+> Un equipo con método vende *distinto*
+
+⚠️ Este titular es el único texto de la sección que sigue siendo borrador — Juan no lo pasó.
+
+**Desarrollo**
+
+Cuando los números no cierran, la respuesta habitual es más presión, más reuniones, una meta más alta. El problema sigue igual.
+
+Un coach de venta consultiva no es una capacitación puntual ni un curso online. Es acompañamiento real, sostenido en el tiempo, enfocado en que cada vendedor incorpore un método y lo aplique en situaciones reales.
+
+**Objeciones respondidas** (tarjetas a la derecha)
+
+| Pregunta | Respuesta |
+|----------|-----------|
+| ¿Por qué no alcanza con el gerente? | Porque el negocio no le da el tiempo ni el espacio para hacerlo de forma consistente. El gerente gestiona resultados — el coach trabaja las habilidades que los generan. |
+| ¿Por qué externo? | Porque tiene distancia y objetividad. No está atrapado en la dinámica interna del equipo. Ve lo que desde adentro es difícil ver. |
+| ¿Por qué venta consultiva específicamente? | Porque es el enfoque que más impacto tiene en ventas de servicios, procesos largos y tickets altos. No es técnica de cierre — es una forma distinta de relacionarse con el cliente. |
+
+**Cierre**
+
+> Un coach no reemplaza al liderazgo interno. Lo complementa.
 
 ---
 

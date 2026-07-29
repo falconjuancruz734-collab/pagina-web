@@ -4,8 +4,7 @@ import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { whyCoach } from "@/lib/content";
 
-/* [PENDIENTE] Los textos son un borrador: Juan va a pasar el copy definitivo.
-   Se editan en `whyCoach` dentro de lib/content.ts. */
+/* Textos en `whyCoach` dentro de lib/content.ts. */
 export function WhyCoach() {
   return (
     <section id="por-que-coach" className="bg-white py-28">
@@ -31,25 +30,30 @@ export function WhyCoach() {
             </FadeIn>
           </div>
 
+          {/* Las objeciones típicas, respondidas: cada tarjeta es una pregunta
+              que el decisor ya se hizo antes de llegar acá. */}
           <FadeIn delay={0.25}>
             <ul className="space-y-4">
-              {whyCoach.bullets.map((bullet) => (
+              {whyCoach.faq.map((item) => (
                 <li
-                  key={bullet}
-                  className="flex items-start gap-4 rounded-[20px] bg-ivory p-5"
+                  key={item.question}
+                  className="rounded-[20px] bg-ivory p-6"
                 >
-                  <span
-                    aria-hidden
-                    className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sand text-xs font-bold text-ink"
-                  >
-                    ✓
-                  </span>
-                  <span className="leading-relaxed text-ink/80">{bullet}</span>
+                  <p className="font-semibold text-ink">{item.question}</p>
+                  <p className="mt-2 leading-relaxed text-ink/70">
+                    {item.answer}
+                  </p>
                 </li>
               ))}
             </ul>
           </FadeIn>
         </div>
+
+        <FadeIn delay={0.35}>
+          <p className="mt-12 border-t border-ink/10 pt-8 text-center text-xl leading-relaxed text-slate-blue">
+            {whyCoach.closing}
+          </p>
+        </FadeIn>
       </div>
     </section>
   );
