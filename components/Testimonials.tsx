@@ -5,7 +5,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { testimonials, type Testimonial } from "@/lib/content";
+import { countryNames, testimonials, type Testimonial } from "@/lib/content";
 
 function Avatar({ t, size = "sm" }: { t: Testimonial; size?: "sm" | "lg" }) {
   const dimension = size === "lg" ? "h-14 w-14" : "h-11 w-11";
@@ -36,6 +36,24 @@ function Avatar({ t, size = "sm" }: { t: Testimonial; size?: "sm" | "lg" }) {
   );
 }
 
+/* Banderita del país. Los emoji de bandera se arman con los "regional
+   indicators": cada letra del código ISO se corre al bloque Unicode 1F1E6+. */
+function Flag({ code }: { code: string }) {
+  const emoji = code
+    .toUpperCase()
+    .replace(/./g, (c) => String.fromCodePoint(127397 + c.charCodeAt(0)));
+
+  return (
+    <span
+      role="img"
+      aria-label={countryNames[code.toUpperCase()] ?? code}
+      className="text-base leading-none"
+    >
+      {emoji}
+    </span>
+  );
+}
+
 function TestimonialCard({
   t,
   onReadMore,
@@ -45,9 +63,10 @@ function TestimonialCard({
 }) {
   return (
     <figure className="flex w-[22rem] shrink-0 flex-col rounded-[20px] bg-white p-6 ring-1 ring-ink/5 sm:w-[26rem]">
-      {/* Marca del cliente */}
-      <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-blue">
+      {/* Marca del cliente + país */}
+      <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-blue">
         {t.company}
+        <Flag code={t.country} />
       </p>
 
       <blockquote className="mt-4 flex-1 leading-relaxed text-ink/75">
@@ -233,7 +252,7 @@ export function Testimonials() {
           <SectionLabel align="center">Testimonios</SectionLabel>
           <h2 className="text-4xl font-semibold leading-[1.02] tracking-[-0.06em] text-ink md:text-5xl">
             Lo que dicen{" "}
-            <em className="font-serif italic tracking-[-0.01em] text-slate-blue">mis clientes</em>
+            <em className="not-italic text-slate-blue">mis clientes</em>
           </h2>
         </div>
       </FadeIn>

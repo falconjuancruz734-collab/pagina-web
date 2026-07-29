@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { hero, site } from "@/lib/content";
+import { hero, inlineCta } from "@/lib/content";
 
 export function Hero() {
   return (
@@ -33,33 +33,34 @@ export function Hero() {
           sizes="(max-width: 1023px) 1px, 100vw"
           className="object-contain object-right-bottom"
         />
-        {/* Scrims suaves: funden los bordes izquierdo y superior de la foto con el fondo */}
+        {/* Scrims suaves: funden los bordes izquierdo y superior de la foto con el fondo.
+            El de arriba es finito (16px) para morir antes de la cabeza de Juan. */}
         <div
           aria-hidden
           className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#f7f5f4] to-transparent"
         />
         <div
           aria-hidden
-          className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-[#f7f5f4] to-transparent"
+          className="absolute inset-x-0 top-0 h-4 bg-gradient-to-b from-[#f7f5f4] to-transparent"
         />
       </motion.div>
 
       <div className="relative mx-auto w-full max-w-6xl px-6 pb-4 pt-24 sm:pt-28 lg:pb-24 lg:pt-36">
         <div className="max-w-xl lg:max-w-2xl xl:max-w-3xl">
           <FadeIn immediate delay={0.1}>
-            <p className="mb-4 text-[13px] sm:mb-6 font-medium uppercase tracking-[0.32em] text-slate-blue/60">
+            <p className="mb-4 text-[13px] font-medium uppercase tracking-[0.32em] text-slate-blue/60 sm:mb-6">
               {hero.title}
             </p>
           </FadeIn>
 
           <FadeIn immediate delay={0.25}>
-            <h1 className="text-4xl leading-[0.98] text-ink sm:text-6xl lg:text-7xl">
-              <span className="block font-normal tracking-[-0.06em]">{hero.hookLine1}</span>
-              <span className="block font-medium tracking-[-0.06em]">{hero.hookLine2}</span>
-              <em className="block font-serif font-semibold italic leading-[1.02] tracking-[-0.01em] text-slate-blue">
+            <h1 className="text-4xl leading-[0.98] tracking-[-0.06em] text-ink sm:text-6xl lg:text-7xl">
+              <span className="block font-normal">{hero.hookLine1}</span>
+              <span className="block font-normal">{hero.hookLine2}</span>
+              <span className="block font-semibold text-slate-blue">
                 {hero.hookAccent}
                 {hero.hookEnd}
-              </em>
+              </span>
             </h1>
           </FadeIn>
 
@@ -70,22 +71,12 @@ export function Hero() {
           </FadeIn>
 
           <FadeIn immediate delay={0.55}>
-            {/* Mobile: los dos CTA entran en una sola fila con tipografía y
-                padding más chicos; desde sm vuelven a su tamaño normal. */}
             <div className="mt-6 flex items-stretch gap-3 sm:mt-10 sm:flex-wrap sm:items-center sm:gap-4">
               <a
-                href={site.calendly}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#contacto"
                 className="flex shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-slate-blue px-5 py-3.5 text-center text-sm font-semibold leading-tight text-ivory sm:leading-normal transition-all hover:scale-105 hover:shadow-xl hover:shadow-slate-blue/25 sm:px-8 sm:py-4 sm:text-base"
               >
-                Agendar llamada
-              </a>
-              <a
-                href="#lente-ai"
-                className="flex shrink-0 items-center justify-center whitespace-nowrap rounded-full border border-slate-blue/30 px-5 py-3.5 text-center font-serif text-[15px] font-bold italic leading-tight text-slate-blue sm:leading-normal transition-colors hover:border-sand sm:px-8 sm:py-4 sm:text-lg"
-              >
-                Conocé Lente AI
+                {inlineCta.label}
               </a>
             </div>
           </FadeIn>
@@ -109,10 +100,10 @@ export function Hero() {
           sizes="(min-width: 1024px) 1px, 100vw"
           className="object-cover object-[86%_bottom]"
         />
-        {/* Scrim muy leve: suaviza el corte del borde superior sin velar la foto */}
+        {/* Scrim muy leve: suaviza el corte del borde superior sin llegar a la cabeza */}
         <div
           aria-hidden
-          className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-[#f7f5f4]/70 to-transparent"
+          className="absolute inset-x-0 top-0 h-6 bg-gradient-to-b from-[#f7f5f4]/50 to-transparent"
         />
       </motion.div>
 

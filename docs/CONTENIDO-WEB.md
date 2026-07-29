@@ -150,17 +150,17 @@ Un asistente personalizado con el conocimiento de tu industria, tus clientes y t
 
 Tres formas de trabajar juntos.
 
-### Sesiones de coaching · *Individual o grupal*
-
-Para trabajar situaciones concretas, desarrollar habilidades específicas o acompañar al equipo en el día a día comercial.
-
 ### Capacitaciones · *De 3 horas a 4 semanas*
 
 Programas intensivos o progresivos sobre venta consultiva, adaptados a tu industria, tu equipo y tus objetivos.
 
-### Acompañamiento mensual · *Desarrollo continuo*
+### Sesiones de coaching · *Individual o grupal*
 
-Sesiones individuales y grupales sostenidas en el tiempo, con seguimiento real de la evolución de cada vendedor.
+Para trabajar situaciones concretas, desarrollar habilidades específicas o acompañar al equipo en el día a día comercial.
+
+### Acompañamiento de coaching mensual · *Desarrollo continuo*
+
+Un proceso sostenido en el tiempo: el método se afianza mes a mes y la evolución del equipo se consolida en vez de diluirse.
 
 ---
 
@@ -173,7 +173,7 @@ En la web hay **5 testimonios reales tomados de lenteconsulting.com**:
 | Cliente | Empresa | Sector | Frase |
 |---------|---------|--------|-------|
 | Jorge Naser Urquiza | Urquiza Motos | Movilidad y transporte | La capacitación y acompañamiento a nuestro equipo de ventas nos lleva a mejores resultados en nuestros locales. |
-| Luciano Alfonso | Jobly | Staff on Demand | Nos ayudó a detectar la problemática real de nuestros potenciales clientes. |
+| Luciano Alfonso | Bravilo | Staff on Demand | Nos ayudó a detectar la problemática real de nuestros potenciales clientes. |
 | Victoria Alfieri y Estefanía Tinto | Anthea | Branding Studio | Lente nos complementó con técnicas de venta consultiva para transmitir de la mejor manera. |
 | Gastón Tenorio | GA.MA Italy | Cuidado personal | Capacitándolos y asesorándolos en Venta Consultiva para lograr un diferencial de la competencia. |
 | Francisco Laplume | Grosomono | Agencia de publicidad | Lente nos acompañó para verdaderamente entender los puntos de dolor que necesitamos resolver. |

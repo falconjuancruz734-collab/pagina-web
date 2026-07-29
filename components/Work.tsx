@@ -6,14 +6,14 @@ import { press } from "@/lib/content";
 
 export function Work() {
   return (
-    <section id="notas" className="bg-ivory py-28">
+    <section id="blog" className="bg-ivory py-28">
       <div className="mx-auto max-w-6xl px-6">
         <FadeIn>
           <div className="text-center">
-            <SectionLabel align="center">Notas y trabajos</SectionLabel>
+            <SectionLabel align="center">Blog</SectionLabel>
             <h2 className="text-4xl font-semibold leading-[1.02] tracking-[-0.06em] text-ink md:text-5xl">
               Lo que escribo, lo que{" "}
-              <em className="font-serif italic tracking-[-0.01em] text-slate-blue">pienso</em>
+              <em className="not-italic text-slate-blue">pienso</em>
             </h2>
           </div>
         </FadeIn>
@@ -39,11 +39,11 @@ export function Work() {
                   <div className="relative flex aspect-video items-center overflow-hidden bg-slate-blue px-7">
                     <span
                       aria-hidden
-                      className="absolute -top-3 left-4 font-serif text-[90px] italic leading-none text-sand/30"
+                      className="absolute -top-3 left-4 text-[90px] leading-none text-sand/30"
                     >
                       “
                     </span>
-                    <p className="relative font-serif text-[17px] italic leading-snug text-ivory">
+                    <p className="relative text-[17px] leading-snug text-ivory">
                       {item.excerpt}
                     </p>
                   </div>

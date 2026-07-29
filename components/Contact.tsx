@@ -49,7 +49,7 @@ export function Contact() {
         {/* Texto + formulario */}
         <div className="text-center">
           <FadeIn delay={0.1}>
-            <p className="mb-5 flex items-center justify-center gap-3 text-[11px] font-medium uppercase tracking-[0.35em] text-sand">
+            <p className="mb-5 flex items-center justify-center gap-3 text-[13px] font-medium uppercase tracking-[0.35em] text-sand">
               <span className="h-px w-8 bg-sand" aria-hidden />
               Contacto
               <span className="h-px w-8 bg-sand" aria-hidden />

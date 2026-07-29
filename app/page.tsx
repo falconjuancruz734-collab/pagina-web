@@ -1,9 +1,8 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { LogosMarquee } from "@/components/LogosMarquee";
 import { Problem } from "@/components/Problem";
+import { WhyCoach } from "@/components/WhyCoach";
 import { About } from "@/components/About";
-import { Method } from "@/components/Method";
 import { LenteAI } from "@/components/LenteAI";
 import { Modalities } from "@/components/Modalities";
 import { Work } from "@/components/Work";
@@ -16,12 +15,14 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
-      <LogosMarquee />
+      {/* Carrusel de logos oculto por pedido del cliente (jul 2026).
+          El componente sigue en components/LogosMarquee.tsx para reactivarlo. */}
       <Problem />
+      <WhyCoach />
       <About />
-      <Method />
-      <LenteAI />
+      {/* Sección "Cómo trabajo" (Method) dada de baja por pedido del cliente. */}
       <Modalities />
+      <LenteAI />
       <Testimonials />
       <Work />
       <Contact />

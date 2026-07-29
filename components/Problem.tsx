@@ -3,7 +3,8 @@
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { TextReveal } from "@/components/ui/TextReveal";
-import { problem } from "@/lib/content";
+import { InlineCta } from "@/components/ui/InlineCta";
+import { inlineCta, problem } from "@/lib/content";
 
 export function Problem() {
   return (
@@ -12,18 +13,16 @@ export function Problem() {
         <FadeIn>
           <SectionLabel>El problema</SectionLabel>
         </FadeIn>
-        <h2 className="max-w-3xl text-4xl font-semibold leading-[1.02] tracking-[-0.06em] text-ink md:text-5xl">
+        <h2 className="max-w-3xl text-4xl font-normal leading-[1.02] tracking-[-0.06em] text-ink md:text-5xl">
           <TextReveal
             segments={[
               { text: "El negocio exige resultados." },
               { br: true },
               { text: "Nadie trabaja" },
               {
-                text: "cómo",
-                className:
-                  "font-serif italic tracking-[-0.01em] text-slate-blue",
+                text: "cómo lograrlos.",
+                className: "font-bold text-slate-blue",
               },
-              { text: "lograrlos." },
             ]}
           />
         </h2>
@@ -38,7 +37,7 @@ export function Problem() {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <blockquote className="flex h-full items-center rounded-3xl border-l-4 border-sand bg-white/70 p-8 font-serif text-xl italic leading-relaxed tracking-[-0.01em] text-slate-blue md:p-10">
+            <blockquote className="flex h-full items-center rounded-3xl border-l-4 border-sand bg-white/70 p-8 text-xl leading-relaxed text-slate-blue md:p-10">
               <p>
                 {problem.highlight.before}
                 <strong className="font-bold">{problem.highlight.emphasis}</strong>
@@ -47,6 +46,10 @@ export function Problem() {
             </blockquote>
           </FadeIn>
         </div>
+
+        <FadeIn delay={0.2}>
+          <InlineCta text={inlineCta.problem} className="mt-14" />
+        </FadeIn>
       </div>
     </section>
   );

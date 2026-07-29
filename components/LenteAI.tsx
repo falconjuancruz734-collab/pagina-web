@@ -350,22 +350,57 @@ function ChatDemo() {
                 message.from === "user" ? "justify-end" : "justify-start"
               }`}
             >
-              <p
+              <div
                 className={
                   message.from === "user"
-                    ? "max-w-[85%] rounded-2xl rounded-br-md bg-slate-blue px-4 py-3 text-sm leading-relaxed tracking-[-0.06em] text-ivory"
-                    : // Lente responde sin globo: texto plano sobre el card, como un agente real
-                      "w-full px-1 text-sm leading-relaxed tracking-[-0.04em] text-ink"
+                    ? "max-w-[85%] rounded-xl bg-[#EA580C] px-4 py-3 text-ivory"
+                    : "max-w-[85%] rounded-xl bg-ink/[0.05] px-4 py-3 text-ink"
                 }
               >
-                {message.streaming
-                  ? message.text.split(" ").map((word, w) => (
-                      <Fragment key={w}>
-                        <span className="animate-word-in">{word}</span>{" "}
-                      </Fragment>
-                    ))
-                  : message.text}
-              </p>
+                {/* Meta del mensaje: ícono + tiempo, como en el producto real */}
+                <p
+                  className={`mb-1 flex items-center gap-1.5 text-[11px] ${
+                    message.from === "user" ? "text-ivory/75" : "text-ink/45"
+                  }`}
+                >
+                  <svg
+                    aria-hidden
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-3.5 w-3.5"
+                  >
+                    {message.from === "user" ? (
+                      <>
+                        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                      </>
+                    ) : (
+                      <>
+                        <path d="M12 8V4H8" />
+                        <rect width="16" height="12" x="4" y="8" rx="2" />
+                        <path d="M2 14h2" />
+                        <path d="M20 14h2" />
+                        <path d="M15 13v2" />
+                        <path d="M9 13v2" />
+                      </>
+                    )}
+                  </svg>
+                  ahora
+                </p>
+                <p className="text-sm leading-relaxed">
+                  {message.streaming
+                    ? message.text.split(" ").map((word, w) => (
+                        <Fragment key={w}>
+                          <span className="animate-word-in">{word}</span>{" "}
+                        </Fragment>
+                      ))
+                    : message.text}
+                </p>
+              </div>
             </motion.div>
           ))}
 
@@ -432,7 +467,7 @@ function ChatDemo() {
               opacity: inputValue ? 1 : 0.5,
             }}
             transition={{ duration: 0.15 }}
-            className="ml-auto flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-slate-blue text-ivory shadow-lg shadow-slate-blue/25"
+            className="ml-auto flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#EA580C] text-white shadow-lg shadow-[#EA580C]/25"
           >
             <svg
               viewBox="0 0 24 24"
@@ -468,13 +503,13 @@ export function LenteAI() {
       <div className="relative mx-auto grid max-w-6xl items-center gap-16 px-6 lg:grid-cols-2">
         <div>
           <FadeIn>
-            <p className="mb-5 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.35em] text-sand">
+            <p className="mb-5 flex items-center gap-3 text-[13px] font-medium uppercase tracking-[0.35em] text-sand">
               <span className="h-px w-8 bg-sand" aria-hidden />
               Lente · Tu agente comercial con IA
             </p>
             <h2 className="text-4xl font-semibold leading-[1.02] tracking-[-0.06em] text-ivory md:text-5xl">
               El primer acompañamiento de coaching comercial con{" "}
-              <em className="font-serif italic tracking-[-0.01em] text-sand">IA</em>.
+              <em className="not-italic text-sand">IA</em>.
             </h2>
           </FadeIn>
 
@@ -498,47 +533,36 @@ export function LenteAI() {
             </ul>
           </FadeIn>
 
-          <FadeIn delay={0.35}>
-            <div className="mt-10 flex flex-wrap gap-4">
-              <a
-                href="#contacto"
-                className="rounded-full bg-sand px-8 py-3.5 font-semibold text-ink transition-transform hover:scale-105"
-              >
-                Quiero implementarlo →
-              </a>
-            </div>
-          </FadeIn>
         </div>
 
         {/* Mockup de chat con estética glass.
             min-w-0 evita que el texto del input (nowrap) estire la columna. */}
         <FadeIn delay={0.2} y={40} className="min-w-0">
-          <div className="relative overflow-hidden rounded-[28px] border border-white/60 bg-gradient-to-b from-white/95 via-white/90 to-white/85 p-6 shadow-2xl shadow-ink/40 backdrop-blur-2xl">
-            {/* Brillo superior sutil del vidrio */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white to-transparent"
-            />
-
-            <div className="mb-6 flex items-center gap-2 border-b border-ink/10 pb-4">
-              {/* El isologo es blanco, así que va sobre un badge oscuro */}
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-blue">
+          <div className="relative overflow-hidden rounded-2xl border border-ink/10 bg-white p-6 shadow-2xl shadow-ink/40">
+            {/* Header estilo producto: badge oscuro con el isologo + nombre y subtítulo */}
+            <div className="mb-5 flex items-center gap-3 border-b border-ink/10 pb-4">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#1c1c1e]">
                 <Image
                   src="/lente-ai.png"
                   alt=""
                   aria-hidden
-                  width={26}
-                  height={26}
-                  className="h-[26px] w-[26px] object-contain"
+                  width={32}
+                  height={32}
+                  className="h-8 w-8 object-contain"
                 />
               </span>
-              <p className="text-sm font-medium text-ink">Lente AI</p>
-              <span className="relative ml-1 flex h-2.5 w-2.5">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-400" />
-              </span>
+              <div className="min-w-0">
+                <p className="text-[15px] font-bold leading-tight tracking-[-0.01em] text-ink">
+                  Lente AI
+                </p>
+                <p className="text-xs text-ink/55">Inteligencia Artificial</p>
+              </div>
 
-              <div className="ml-auto flex items-center gap-2">
+              <div className="ml-auto flex items-center gap-3">
+                <span className="flex items-center gap-1.5 text-xs text-ink/50">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                  Activo
+                </span>
                 <svg
                   aria-hidden
                   viewBox="0 0 24 24"
@@ -546,7 +570,7 @@ export function LenteAI() {
                   stroke="currentColor"
                   strokeWidth="2"
                   strokeLinecap="round"
-                  className="ml-1 h-4 w-4 text-ink/30"
+                  className="h-4 w-4 text-ink/30"
                 >
                   <path d="M18 6 6 18" />
                   <path d="m6 6 12 12" />

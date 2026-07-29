@@ -11,11 +11,13 @@ import {
 import { site } from "@/lib/content";
 
 const links = [
+  { href: "#el-problema", label: "El problema" },
+  { href: "#por-que-coach", label: "Por qué un coach" },
   { href: "#quien-soy", label: "Quién soy" },
-  { href: "#metodo", label: "Cómo trabajo" },
-  { href: "#lente-ai", label: "Lente AI" },
   { href: "#modalidades", label: "Modalidades" },
-  { href: "#notas", label: "Notas" },
+  { href: "#lente-ai", label: "Lente" },
+  { href: "#testimonios", label: "Testimonios" },
+  { href: "#blog", label: "Blog" },
 ];
 
 export function Navbar() {
@@ -33,7 +35,10 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      {/* max-w-7xl (y no 6xl como el resto del sitio): con la firma + el nombre
+          + 7 secciones + el CTA, a 1152px el menú quedaba pegado al logo.
+          El gap-8 garantiza aire entre ambos bloques aunque falte espacio. */}
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-8 px-6 py-4 lg:px-8">
         <a href="#inicio" className="flex items-center gap-2 sm:gap-2.5">
           {/* La firma cambia de color según el estado del navbar */}
           <Image
@@ -42,18 +47,18 @@ export function Navbar() {
             width={1254}
             height={1254}
             priority
-            className="h-10 w-10 shrink-0 object-contain sm:h-14 sm:w-14"
+            className="h-11 w-11 shrink-0 object-contain sm:h-16 sm:w-16"
           />
           <span className="flex flex-col gap-0.5 sm:gap-1">
             <span
-              className={`text-[11px] font-semibold uppercase leading-none tracking-[0.18em] transition-colors sm:text-[13px] ${
+              className={`text-xs font-semibold uppercase leading-none tracking-[0.18em] transition-colors sm:text-sm ${
                 scrolled ? "text-ivory" : "text-ink"
               }`}
             >
               Juan Cruz Falcon
             </span>
             <span
-              className={`text-center text-[9px] font-medium uppercase leading-none tracking-[0.19em] transition-colors sm:text-[11px] ${
+              className={`text-center text-[10px] font-medium uppercase leading-none tracking-[0.19em] transition-colors sm:text-xs ${
                 scrolled ? "text-sand" : "text-sand"
               }`}
             >
@@ -63,12 +68,14 @@ export function Navbar() {
         </a>
 
         {/* Desktop */}
-        <div className="hidden items-center gap-8 md:flex">
+        {/* Con 7 secciones el menú necesita ancho: recién desde lg entra en
+            una línea; abajo de eso va la hamburguesa. */}
+        <div className="hidden items-center gap-6 lg:flex xl:gap-8">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={`text-sm transition-colors ${
+              className={`whitespace-nowrap text-[13px] transition-colors xl:text-sm ${
                 scrolled
                   ? "text-ivory/80 hover:text-sand"
                   : "text-ink/70 hover:text-slate-blue"
@@ -90,7 +97,7 @@ export function Navbar() {
           type="button"
           onClick={() => setOpen(!open)}
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
         >
           <span
             className={`h-0.5 w-6 transition-transform ${
@@ -113,7 +120,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden bg-slate-deep/95 backdrop-blur-md md:hidden"
+            className="overflow-hidden bg-slate-deep/95 backdrop-blur-md lg:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-4">
               {links.map((link) => (

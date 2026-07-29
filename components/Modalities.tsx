@@ -13,7 +13,7 @@ export function Modalities() {
             <SectionLabel align="center">Modalidades</SectionLabel>
             <h2 className="text-4xl font-semibold leading-[1.02] tracking-[-0.06em] text-ink md:text-5xl">
               Formatos que se adaptan a tu{" "}
-              <em className="font-serif italic tracking-[-0.01em] text-slate-blue">equipo</em>
+              <em className="not-italic text-slate-blue">equipo</em>
             </h2>
           </div>
         </FadeIn>

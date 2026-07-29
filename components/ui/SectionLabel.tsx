@@ -17,7 +17,7 @@ export function SectionLabel({
 
   return (
     <p
-      className={`mb-5 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.35em] ${
+      className={`mb-5 flex items-center gap-3 text-[13px] font-medium uppercase tracking-[0.35em] ${
         centered ? "justify-center" : ""
       } ${tone === "light" ? "text-ivory/70" : "text-slate-blue"}`}
     >

@@ -24,7 +24,7 @@ export const hero = {
   hookLine2: "ya está definida.",
   hookAccent: "Cómo alcanzarla",
   hookEnd: ", no.",
-  title: "Coach de ventas para equipos comerciales",
+  title: "Coach de venta consultiva para equipos comerciales",
   subtitle:
     "Acompaño a tu equipo a cumplir sus objetivos y lo potencio para lograr su máxima performance.",
 };
@@ -46,7 +46,7 @@ export const companies: { name: string; logo?: string }[] = [
 export const problem = {
   headline: "El negocio exige resultados. Nadie trabaja cómo lograrlos.",
   paragraphs: [
-    "Los directores miran el forecast. Los gerentes gestionan el número. Es su rol y es lo que exige el negocio.",
+    "Los directores miran el P&L. Los gerentes, el número que lo componen. Es lo que exige el negocio.",
     "Pero en ese foco en el resultado, algo queda afuera: el día a día del equipo. El proceso. El método. El acompañamiento humano que determina si los objetivos se cumplen o no.",
     "No porque no quieran. Sino porque el negocio no les deja espacio para hacerlo.",
   ],
@@ -57,13 +57,37 @@ export const problem = {
   },
 };
 
+/* [PENDIENTE] — Juan va a pasar el texto definitivo de esta sección.
+   Lo de abajo es un borrador para tener la estructura armada. */
+export const whyCoach = {
+  headlineStart: "Un equipo con método vende",
+  headlineAccent: "distinto",
+  paragraphs: [
+    "Un coach no reemplaza al líder comercial: le devuelve el tiempo que el negocio le saca. Mientras el gerente gestiona el número, yo trabajo el cómo con cada vendedor.",
+    "No es una capacitación suelta ni una charla motivacional. Es acompañamiento sostenido sobre las conversaciones reales de tu equipo, con método y seguimiento.",
+  ],
+  bullets: [
+    "Una mirada externa que ve lo que adentro se naturalizó",
+    "Método aplicable desde la primera semana, no teoría",
+    "Foco en las personas: el número es la consecuencia",
+    "Continuidad real, no un evento aislado",
+  ],
+};
+
+/** Texto de los CTA repartidos en la página — todos apuntan al formulario. */
+export const inlineCta = {
+  label: "Agendar llamada",
+  problem: "¿Tu equipo tiene la meta y le falta el cómo?",
+  about: "¿Querés que trabajemos juntos?",
+};
+
 export const about = {
   intro:
-    "Soy Juan Cruz Falcón. Coach de ventas y desarrollo de equipos comerciales.",
+    "Soy Juan Cruz Falcón. Coach de ventas y desarrollo de equipos comerciales. Especialista en venta consultiva.",
   paragraphs: [
     "Pasé más de 15 años liderando equipos de ventas y marketing en empresas como Hewlett Packard, Renault y GA.MA Italy. Lancé productos, abrí mercados, regionalicé compañías y levanté capital. Viví de cerca lo que significa llevar un equipo a resultados — con todo lo que eso implica.",
-    "Esa experiencia me llevó a fundar Wyder, empresa de trade marketing hoy operando en México, Argentina, Uruguay y Centroamérica, con más de 100 empresas clientes en Latinoamérica.",
-    "Lo que aprendí en ese camino es lo que hoy llevo al coaching: que los números los mueven las personas. Y que las personas rinden mejor cuando tienen método, acompañamiento y alguien que crea en su potencial.",
+    "Esa experiencia me llevó a fundar Wyder, empresa tecnológica de trade marketing hoy operando en México, Argentina, Uruguay y Centroamérica, con más de 100 empresas clientes en Latinoamérica.",
+    "Los desafíos de crear, desarrollar, escalar y regionalizar una empresa me llevaron a entender algo importante: nada se logra sin un equipo de personas con un objetivo en común, fidelizadas con el proceso, capacitadas y acompañadas en cada parte para lograr superar esos desafíos.",
   ],
   closing: "Por eso hago lo que hago.",
   brands: ["Hewlett Packard", "Renault", "GA.MA Italy", "Wyder"],
@@ -111,22 +135,22 @@ export const lente = {
 
 export const modalities = [
   {
-    title: "Sesiones de coaching",
-    tag: "Individual o grupal",
-    description:
-      "Para trabajar situaciones concretas, desarrollar habilidades específicas o acompañar al equipo en el día a día comercial.",
-  },
-  {
     title: "Capacitaciones",
     tag: "De 3 horas a 4 semanas",
     description:
       "Programas intensivos o progresivos sobre venta consultiva, adaptados a tu industria, tu equipo y tus objetivos.",
   },
   {
-    title: "Acompañamiento mensual",
+    title: "Sesiones de coaching",
+    tag: "Individual o grupal",
+    description:
+      "Para trabajar situaciones concretas, desarrollar habilidades específicas o acompañar al equipo en el día a día comercial.",
+  },
+  {
+    title: "Acompañamiento de coaching mensual",
     tag: "Desarrollo continuo",
     description:
-      "Sesiones individuales y grupales sostenidas en el tiempo, con seguimiento real de la evolución de cada vendedor.",
+      "Un proceso sostenido en el tiempo: el método se afianza mes a mes y la evolución del equipo se consolida en vez de diluirse.",
   },
 ];
 
@@ -174,10 +198,23 @@ export type Testimonial = {
   company: string;
   sector: string;
   initials: string;
+  /** Código ISO de 2 letras del país — se muestra como banderita en la tarjeta */
+  country: string;
   /** Foto en /public/testimonios; si falta, se muestran las iniciales */
   photo?: string;
   /** Texto completo para el modal "Leer testimonio completo" (párrafos separados por \n\n) */
   fullQuote?: string;
+};
+
+/** Nombres de país para el `aria-label` de la banderita. */
+export const countryNames: Record<string, string> = {
+  AR: "Argentina",
+  MX: "México",
+  UY: "Uruguay",
+  CL: "Chile",
+  CO: "Colombia",
+  PE: "Perú",
+  ES: "España",
 };
 
 export const testimonials: Testimonial[] = [
@@ -188,24 +225,27 @@ export const testimonials: Testimonial[] = [
     company: "Urquiza Motos",
     sector: "Movilidad y transporte",
     initials: "UM",
+    country: "AR",
     photo: "/testimonios/jorge-naser.jpeg",
   },
   {
     quote:
       "Nos ayudó a detectar la problemática real de nuestros potenciales clientes.",
     name: "Luciano Alfonso",
-    company: "Jobly",
+    company: "Bravilo",
     sector: "Staff on Demand",
     initials: "J",
+    country: "AR",
     photo: "/testimonios/luciano-alfonso.jpeg",
   },
   {
     quote:
-      "Lente nos complementó con técnicas de venta consultiva para transmitir de la mejor manera.",
+      "Juan Cruz nos complementó con técnicas de venta consultiva para transmitir de la mejor manera.",
     name: "Victoria Alfieri y Estefanía Tinto",
     company: "Anthea",
     sector: "Branding Studio",
     initials: "A",
+    country: "AR",
     photo: "/testimonios/victoria-alfieri.jpg",
   },
   {
@@ -215,15 +255,17 @@ export const testimonials: Testimonial[] = [
     company: "GA.MA Italy",
     sector: "Cuidado personal",
     initials: "GI",
+    country: "AR",
     photo: "/testimonios/gaston-tenorio.jpeg",
   },
   {
     quote:
-      "Lente nos acompañó para verdaderamente entender los puntos de dolor que necesitamos resolver.",
+      "Juan Cruz nos acompañó para verdaderamente entender los puntos de dolor que necesitamos resolver.",
     name: "Francisco Laplume",
     company: "Grosomono",
     sector: "Agencia de publicidad",
     initials: "G",
+    country: "AR",
     photo: "/testimonios/francisco-laplume.png",
   },
   {
@@ -233,6 +275,7 @@ export const testimonials: Testimonial[] = [
     company: "Edutec",
     sector: "Director General · Educación Tecnológica SA",
     initials: "MB",
+    country: "AR",
     photo: "/testimonios/martin-bergada.jpeg",
     fullQuote:
       "Conocí a Juan Cruz Falcón en 2024, en un momento en que Educación Tecnológica SA atravesaba una situación crítica: si no cumplíamos objetivos de venta en diciembre, enero y febrero, nos quedábamos sin caja a fines de febrero de 2025. Lo convoqué para repensar nuestra propuesta de valor, y junto a él rediseñamos el enfoque comercial de Edutec hacia acompañamientos integrales de 3, 6 y 12 meses para colegios, anclados en STEAM, Robótica y Ciencias.\n\nSu experiencia en venta consultiva B2B transformó el pipeline de leads y conversiones, y en marzo de 2025 ya habíamos superado el período crítico, lo que nos permitió cumplir también los objetivos de 2026.\n\nMás allá de los resultados, destaco a la persona: Juan Cruz combina calidad humana genuina con un conocimiento profundo de la venta consultiva, una combinación poco frecuente. Como coach de ventas, lo recomiendo sin dudarlo a cualquier empresa que necesite repensar su estrategia comercial.",
@@ -244,6 +287,7 @@ export const testimonials: Testimonial[] = [
     company: "Braini",
     sector: "Founder",
     initials: "PC",
+    country: "PE",
     photo: "/testimonios/paola-chavez.jpeg",
     fullQuote:
       "Tuve la oportunidad de contar con el coaching de Juan Cruz y fue una experiencia muy valiosa. Tiene un estilo asertivo y directo, siempre con la intención de ayudarte a avanzar. Es una persona que te empuja a la acción, a moverte, y no quedarte solo en ideas.\n\nPor su propia experiencia, entiende muy bien los desafíos que se presentan, lo que genera una conexión genuina y que te veas reflejado en muchas de sus recomendaciones.\n\nAdemás, tiene una capacidad muy natural para movilizar, retar y acompañar, haciendo que cada conversación no solo motive, sino que deje aprendizajes claros y aplicables. Domina la metodología y sabe cómo llevarte, paso a paso, a aterrizar lo que necesitas para avanzar.\n\nSin duda, es un coach que aporta muchísimo valor en el proceso emprendedor y estoy muy agradecida por eso.",

@@ -2,18 +2,19 @@ import Image from "next/image";
 import { site } from "@/lib/content";
 
 const secciones = [
+  { href: "#el-problema", label: "El problema" },
+  { href: "#por-que-coach", label: "Por qué un coach" },
   { href: "#quien-soy", label: "Quién soy" },
-  { href: "#metodo", label: "Cómo trabajo" },
-  { href: "#lente-ai", label: "Lente AI" },
   { href: "#modalidades", label: "Modalidades" },
+  { href: "#lente-ai", label: "Lente" },
   { href: "#testimonios", label: "Testimonios" },
-  { href: "#notas", label: "Notas" },
+  { href: "#blog", label: "Blog" },
 ];
 
 const contacto = [
   { href: `mailto:${site.email}`, label: site.email, external: false },
   { href: site.whatsapp, label: "WhatsApp", external: true },
-  { href: site.calendly, label: "Agendar una llamada", external: true },
+  { href: "#contacto", label: "Agendar una llamada", external: false },
 ];
 
 const redes = [

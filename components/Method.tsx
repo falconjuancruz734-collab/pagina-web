@@ -14,7 +14,7 @@ export function Method() {
             <h2 className="text-4xl font-semibold leading-[1.02] tracking-[-0.06em] text-ink md:text-5xl">
               Un método simple.
               <br />
-              <em className="font-serif italic tracking-[-0.01em] text-slate-blue">
+              <em className="not-italic text-slate-blue">
                 Resultados que se sostienen
               </em>
             </h2>

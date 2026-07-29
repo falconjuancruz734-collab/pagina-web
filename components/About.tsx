@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { CountUp } from "@/components/ui/CountUp";
-import { about, stats } from "@/lib/content";
+import { InlineCta } from "@/components/ui/InlineCta";
+import { about, inlineCta } from "@/lib/content";
 
 export function About() {
   return (
@@ -24,13 +24,13 @@ export function About() {
 
           <div>
             <FadeIn>
-              <p className="mb-5 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.35em] text-sand">
+              <p className="mb-5 flex items-center gap-3 text-[13px] font-medium uppercase tracking-[0.35em] text-sand">
                 <span className="h-px w-8 bg-sand" aria-hidden />
                 Quién soy
               </p>
-              <h2 className="text-4xl font-semibold leading-[1.02] tracking-[-0.06em] text-ivory md:text-5xl">
+              <h2 className="text-4xl font-normal leading-[1.02] tracking-[-0.06em] text-ivory md:text-5xl">
                 Los números los mueven las{" "}
-                <em className="font-serif italic tracking-[-0.01em] text-sand">personas</em>.
+                <em className="font-semibold not-italic text-sand">personas</em>.
               </h2>
             </FadeIn>
 
@@ -43,32 +43,16 @@ export function About() {
                   <p key={p.slice(0, 24)}>{p}</p>
                 ))}
               </div>
-              <p className="mt-5 font-serif text-lg italic text-sand">
+              <p className="mt-5 text-lg font-medium text-sand">
                 {about.closing}
               </p>
             </FadeIn>
 
-            <FadeIn delay={0.25}>
-              <p className="mt-8 border-t border-ivory/10 pt-6 text-[11px] font-medium uppercase tracking-[0.3em] text-ivory/50">
-                {about.brands.join("  ·  ")}
-              </p>
-            </FadeIn>
           </div>
         </div>
 
         <FadeIn delay={0.2}>
-          <div className="mt-16 grid gap-10 border-t border-ivory/10 pt-12 sm:grid-cols-3">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <p className="text-5xl font-semibold text-sand md:text-6xl">
-                  <CountUp to={stat.value} suffix={stat.suffix} />
-                </p>
-                <p className="mt-3 max-w-[16rem] text-sm leading-snug text-ivory/60">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
-          </div>
+          <InlineCta text={inlineCta.about} tone="light" className="mt-16" />
         </FadeIn>
       </div>
     </section>
