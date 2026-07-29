@@ -30,7 +30,7 @@ export function About() {
               </p>
               <h2 className="text-4xl font-normal leading-[1.02] tracking-[-0.06em] text-ivory md:text-5xl">
                 Los números los mueven las{" "}
-                <em className="font-semibold not-italic text-sand">personas</em>.
+                <em className="font-semibold italic text-sand">personas</em>.
               </h2>
             </FadeIn>
 

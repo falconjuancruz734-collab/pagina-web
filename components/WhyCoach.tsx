@@ -16,7 +16,7 @@ export function WhyCoach() {
               <SectionLabel>Por qué un coach</SectionLabel>
               <h2 className="max-w-lg text-4xl font-normal leading-[1.02] tracking-[-0.06em] text-ink md:text-5xl">
                 {whyCoach.headlineStart}{" "}
-                <span className="font-bold text-slate-blue">
+                <span className="font-semibold italic text-slate-blue">
                   {whyCoach.headlineAccent}
                 </span>
               </h2>

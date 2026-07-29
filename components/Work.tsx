@@ -11,9 +11,11 @@ export function Work() {
         <FadeIn>
           <div className="text-center">
             <SectionLabel align="center">Blog</SectionLabel>
-            <h2 className="text-4xl font-semibold leading-[1.02] tracking-[-0.06em] text-ink md:text-5xl">
-              Lo que escribo, lo que{" "}
-              <em className="not-italic text-slate-blue">pienso</em>
+            <h2 className="text-4xl font-normal leading-[1.02] tracking-[-0.06em] text-ink md:text-5xl">
+              Lo que escribo,{" "}
+              <em className="font-medium italic text-slate-blue">
+                lo que pienso
+              </em>
             </h2>
           </div>
         </FadeIn>

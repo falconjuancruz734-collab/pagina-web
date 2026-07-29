@@ -11,10 +11,10 @@ export function Method() {
         <FadeIn>
           <div className="text-center">
             <SectionLabel align="center">Cómo trabajo</SectionLabel>
-            <h2 className="text-4xl font-semibold leading-[1.02] tracking-[-0.06em] text-ink md:text-5xl">
+            <h2 className="text-4xl font-normal leading-[1.02] tracking-[-0.06em] text-ink md:text-5xl">
               Un método simple.
               <br />
-              <em className="not-italic text-slate-blue">
+              <em className="font-semibold italic text-slate-blue">
                 Resultados que se sostienen
               </em>
             </h2>

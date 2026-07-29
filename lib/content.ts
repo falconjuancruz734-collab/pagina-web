@@ -296,7 +296,7 @@ export const testimonials: Testimonial[] = [
 
 export const cta = {
   headline: "¿Empezamos?",
-  text: "Si tu equipo tiene la meta y le falta el cómo, hablemos. Una llamada de diagnóstico para entender tu situación y ver si podemos trabajar juntos. Sin compromiso.",
+  text: "Si tu equipo tiene la meta y le falta el cómo, hablemos.",
 };
 
 /* Formulario de contacto — los envíos llegan a la casilla de `site.email`

@@ -21,7 +21,7 @@ export function Problem() {
               { text: "Nadie trabaja" },
               {
                 text: "cómo lograrlos.",
-                className: "font-bold text-slate-blue",
+                className: "font-semibold italic text-slate-blue",
               },
             ]}
           />

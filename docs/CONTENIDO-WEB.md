@@ -204,7 +204,9 @@ Las notas viven en `press` dentro de `lib/content.ts` — para sumar una nueva a
 
 **Texto**
 
-Si tu equipo tiene la meta y le falta el cómo, hablemos. Una llamada de diagnóstico para entender tu situación y ver si podemos trabajar juntos. Sin compromiso.
+Si tu equipo tiene la meta y le falta el cómo, hablemos.
+
+> **Nota (jul 2026):** el texto original del doc era «Si tu equipo tiene la meta y le falta el cómo, hablemos. Una llamada de diagnóstico para entender tu situación y ver si podemos trabajar juntos. Sin compromiso.». Se recortó a la primera frase por pedido de Juan: sacar «Sin compromiso» y que la bajada entre en una sola línea debajo del titular.
 
 ### Datos de contacto
 

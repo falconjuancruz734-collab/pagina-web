@@ -62,7 +62,7 @@ export function Navbar() {
                 scrolled ? "text-sand" : "text-sand"
               }`}
             >
-              Sales Coach
+              Venta consultiva
             </span>
           </span>
         </a>

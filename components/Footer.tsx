@@ -51,7 +51,7 @@ export function Footer() {
               Juan Cruz Falcon
             </p>
             <p className="mt-1.5 text-[11px] font-medium uppercase leading-none tracking-[0.19em] text-sand">
-              Sales Coach
+              Venta consultiva
             </p>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-ivory/50">
               Acompaño a equipos comerciales a cumplir sus objetivos y lograr

@@ -57,7 +57,7 @@ export function Contact() {
             <h2 className="text-5xl font-semibold leading-[1.02] tracking-[-0.06em] text-ivory md:text-6xl">
               {cta.headline}
             </h2>
-            <p className="mx-auto mt-6 max-w-md text-lg leading-relaxed text-ivory/70">
+            <p className="mt-6 text-lg leading-relaxed text-ivory/70 [text-wrap:balance]">
               {cta.text}
             </p>
           </FadeIn>

@@ -6,6 +6,9 @@ import "./globals.css";
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  // La itálica real se usa en los acentos de los títulos; sin cargarla el
+  // navegador falsearía la redonda inclinándola.
+  style: ["normal", "italic"],
   variable: "--font-montserrat",
 });
 
