@@ -13,7 +13,7 @@ export function About() {
           <FadeIn>
             <div className="relative aspect-square w-full overflow-hidden rounded-3xl bg-ivory shadow-2xl shadow-ink/30 ring-1 ring-ivory/10 md:aspect-[4/5]">
               <Image
-                src="/juan-standing.png"
+                src="/juan-about.png"
                 alt="Juan Cruz Falcón"
                 fill
                 sizes="(max-width: 768px) 100vw, 40vw"
