@@ -49,7 +49,7 @@ export const problem = {
     "Los directores miran el P&L. Los gerentes, el número que lo componen. Es lo que exige el negocio.",
     "Pero en ese foco en el resultado, algo queda afuera: el día a día del equipo. El proceso. El método. El acompañamiento humano que determina si los objetivos se cumplen o no.",
     "No porque no quieran. Sino porque el negocio no les deja espacio para hacerlo.",
-    "El resultado es predecible: cada vendedor intenta llegar a la meta a su manera, sin un camino claro. Algunos llegan. La mayoría no. Y la empresa termina dependiendo de uno o dos para sostenerse.",
+    "El resultado es predecible: cada vendedor intenta llegar a la meta a su manera, sin un camino claro. Algunos llegan. La mayoría no. La empresa termina en el 20/80. El 20% del equipo logra el 80% de las ventas.",
   ],
   highlight: {
     before: "Eso no es una estrategia. ",
@@ -58,14 +58,12 @@ export const problem = {
   },
 };
 
-/* [PENDIENTE] — Juan va a pasar el texto definitivo de esta sección.
-   Lo de abajo es un borrador para tener la estructura armada. */
 export const whyCoach = {
   headlineStart: "Un equipo con método vende",
   headlineAccent: "distinto",
   paragraphs: [
-    "Cuando los números no cierran, la respuesta habitual es más presión, más reuniones, una meta más alta. El problema sigue igual.",
-    "Un coach de venta consultiva no es una capacitación puntual ni un curso online. Es acompañamiento real, sostenido en el tiempo, enfocado en que cada vendedor incorpore un método y lo aplique en situaciones reales.",
+    "Un coach de venta consultiva acompaña al equipo comercial, su día a día, sus procesos, sus dificultades.",
+    "Y lo más importante, sostenido en el tiempo, no eventual. Esto hace que el conocimiento se asimile y se implemente en casos reales.",
   ],
   faq: [
     {
@@ -81,7 +79,7 @@ export const whyCoach = {
     {
       question: "¿Por qué venta consultiva específicamente?",
       answer:
-        "Porque es el enfoque que más impacto tiene en ventas de servicios, procesos largos y tickets altos. No es técnica de cierre — es una forma distinta de relacionarse con el cliente.",
+        "Porque es el enfoque que más impacta en venta de productos y servicios de tickets altos, con ciclos largos, múltiples decisores, y de alto impacto para el negocio del cliente. El cliente no compra un producto. Compra la solución a un problema que a veces ni sabe articular bien.",
     },
   ],
   closing: "Un coach no reemplaza al liderazgo interno. Lo complementa.",
@@ -96,11 +94,11 @@ export const inlineCta = {
 
 export const about = {
   intro:
-    "Soy Juan Cruz Falcón. Coach de ventas y desarrollo de equipos comerciales. Especialista en venta consultiva.",
+    "Soy Juan Cruz Falcón. Coach de venta consultiva y desarrollo de equipos comerciales.",
   paragraphs: [
-    "Pasé más de 15 años liderando equipos de ventas y marketing en empresas como Hewlett Packard, Renault y GA.MA Italy. Lancé productos, abrí mercados, regionalicé compañías y levanté capital. Viví de cerca lo que significa llevar un equipo a resultados — con todo lo que eso implica.",
-    "Esa experiencia me llevó a fundar Wyder, empresa tecnológica de trade marketing hoy operando en México, Argentina, Uruguay y Centroamérica, con más de 100 empresas clientes en Latinoamérica.",
-    "Los desafíos de crear, desarrollar, escalar y regionalizar una empresa me llevaron a entender algo importante: nada se logra sin un equipo de personas con un objetivo en común, fidelizadas con el proceso, capacitadas y acompañadas en cada parte para lograr superar esos desafíos.",
+    "Pasé más de 15 años liderando equipos de ventas y marketing en empresas como Hewlett Packard, Renault y GA.MA Italy. Desarrollé y lancé productos y servicios en diferentes mercados, escalé y regionalicé compañías. Viví de cerca lo que significa llevar un equipo a resultados — con todo lo que eso implica.",
+    "Esa experiencia me llevó a fundar Wyder, empresa tecnológica de trade marketing hoy operando en México, Argentina, Uruguay y Centroamérica, con más de 200 empresas clientes en Latinoamérica.",
+    "Crear, escalar y regionalizar una empresa te enseña algo fundamental: los resultados los logran las personas. Y las personas rinden cuando tienen método, acompañamiento y alguien que crea en su potencial.",
   ],
   closing: "Por eso hago lo que hago.",
   brands: ["Hewlett Packard", "Renault", "GA.MA Italy", "Wyder"],
@@ -108,7 +106,7 @@ export const about = {
 
 export const stats = [
   { value: 15, suffix: "+", label: "años liderando equipos de ventas y marketing" },
-  { value: 100, suffix: "+", label: "empresas clientes en Latinoamérica" },
+  { value: 200, suffix: "+", label: "empresas clientes en Latinoamérica" },
   { value: 4, suffix: "", label: "mercados: México, Argentina, Uruguay y Centroamérica" },
 ];
 
@@ -204,12 +202,14 @@ export const press: PressItem[] = [
   },
 ];
 
-/* Testimonios reales de clientes — tomados de lenteconsulting.com */
+/* Testimonios reales de clientes.
+   Formato de la tarjeta: nombre → cargo → empresa con bandera. */
 export type Testimonial = {
   quote: string;
   name: string;
   company: string;
-  sector: string;
+  /** Cargo de la persona — si falta, la tarjeta muestra solo la empresa */
+  role?: string;
   initials: string;
   /** Código ISO de 2 letras del país — se muestra como banderita en la tarjeta */
   country: string;
@@ -236,7 +236,7 @@ export const testimonials: Testimonial[] = [
       "La capacitación y acompañamiento a nuestro equipo de ventas nos lleva a mejores resultados en nuestros locales.",
     name: "Jorge Naser Urquiza",
     company: "Urquiza Motos",
-    sector: "Movilidad y transporte",
+    role: "Asesor Dirección | Planificación Estratégica",
     initials: "UM",
     country: "AR",
     photo: "/testimonios/jorge-naser.jpeg",
@@ -246,7 +246,7 @@ export const testimonials: Testimonial[] = [
       "Nos ayudó a detectar la problemática real de nuestros potenciales clientes.",
     name: "Luciano Alfonso",
     company: "Bravilo",
-    sector: "Staff on Demand",
+    role: "Founder",
     initials: "J",
     country: "AR",
     photo: "/testimonios/luciano-alfonso.jpeg",
@@ -254,9 +254,9 @@ export const testimonials: Testimonial[] = [
   {
     quote:
       "Juan Cruz nos complementó con técnicas de venta consultiva para transmitir de la mejor manera.",
-    name: "Victoria Alfieri y Estefanía Tinto",
+    name: "Victoria Alfieri",
     company: "Anthea",
-    sector: "Branding Studio",
+    role: "Co-founder",
     initials: "A",
     country: "AR",
     photo: "/testimonios/victoria-alfieri.jpg",
@@ -266,7 +266,7 @@ export const testimonials: Testimonial[] = [
       "Capacitándolos y asesorándolos en Venta Consultiva para lograr un diferencial de la competencia.",
     name: "Gastón Tenorio",
     company: "GA.MA Italy",
-    sector: "Cuidado personal",
+    role: "Director Comercial",
     initials: "GI",
     country: "AR",
     photo: "/testimonios/gaston-tenorio.jpeg",
@@ -276,7 +276,7 @@ export const testimonials: Testimonial[] = [
       "Juan Cruz nos acompañó para verdaderamente entender los puntos de dolor que necesitamos resolver.",
     name: "Francisco Laplume",
     company: "Grosomono",
-    sector: "Agencia de publicidad",
+    role: "Co-founder & CEO",
     initials: "G",
     country: "AR",
     photo: "/testimonios/francisco-laplume.png",
@@ -286,7 +286,7 @@ export const testimonials: Testimonial[] = [
       "Su experiencia en venta consultiva B2B transformó el pipeline de leads y conversiones.",
     name: "Martín Bergada",
     company: "Edutec",
-    sector: "Director General · Educación Tecnológica SA",
+    role: "Director General",
     initials: "MB",
     country: "AR",
     photo: "/testimonios/martin-bergada.jpeg",
@@ -298,7 +298,7 @@ export const testimonials: Testimonial[] = [
       "Cada conversación no solo motiva: deja aprendizajes claros y aplicables.",
     name: "Paola Chávez",
     company: "Braini",
-    sector: "Founder",
+    role: "Founder",
     initials: "PC",
     country: "PE",
     photo: "/testimonios/paola-chavez.jpeg",

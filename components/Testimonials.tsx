@@ -63,13 +63,7 @@ function TestimonialCard({
 }) {
   return (
     <figure className="flex w-[22rem] shrink-0 flex-col rounded-[20px] bg-white p-6 ring-1 ring-ink/5 sm:w-[26rem]">
-      {/* Marca del cliente + país */}
-      <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-blue">
-        {t.company}
-        <Flag code={t.country} />
-      </p>
-
-      <blockquote className="mt-4 flex-1 leading-relaxed text-ink/75">
+      <blockquote className="flex-1 leading-relaxed text-ink/75">
         “{t.quote}”
       </blockquote>
 
@@ -83,15 +77,25 @@ function TestimonialCard({
         </button>
       )}
 
-      {/* Persona */}
+      {/* Persona — formato unificado: nombre → cargo → empresa con bandera */}
       <figcaption className="mt-6 flex items-center gap-3">
         <Avatar t={t} />
         <span className="min-w-0">
-          <span className="block truncate font-semibold text-ink">
+          {/* Sin truncate: hay testimonios firmados por dos personas y el
+              nombre no entra en una línea. */}
+          <span className="block font-semibold leading-snug text-ink">
             {t.name}
           </span>
-          <span className="block truncate text-sm text-ink/50">
-            {t.sector}
+          {/* El cargo puede ser largo ("Asesor Dirección | Planificación
+              Estratégica"): envuelve en vez de cortarse. */}
+          {t.role && (
+            <span className="block text-sm leading-snug text-ink/50">
+              {t.role}
+            </span>
+          )}
+          <span className="flex items-center gap-1.5 text-sm text-ink/50">
+            <span className="truncate">{t.company}</span>
+            <Flag code={t.country} />
           </span>
         </span>
       </figcaption>
@@ -101,11 +105,9 @@ function TestimonialCard({
 
 function Row({
   items,
-  reverse = false,
   onReadMore,
 }: {
   items: Testimonial[];
-  reverse?: boolean;
   onReadMore: (t: Testimonial) => void;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -132,14 +134,25 @@ function Row({
 
   useEffect(() => () => cancelAnimationFrame(raf.current), []);
 
+  // La animación solo corre cuando la fila está en pantalla: fuera de vista
+  // se pausa y deja de consumir GPU/CPU (evita que el resto del sistema se
+  // resienta con la página abierta).
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([entry]) => {
+      el.style.animationPlayState = entry.isIntersecting ? "running" : "paused";
+    });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
     <div
       ref={ref}
       onMouseEnter={() => setSpeed(0.15)}
       onMouseLeave={() => setSpeed(1)}
-      className={`marquee-row flex ${
-        reverse ? "animate-marquee-reverse" : "animate-marquee"
-      }`}
+      className="marquee-row flex animate-marquee"
     >
       {/* Dos filas idénticas: la segunda es la copia que cierra el loop.
           `pr-5` replica el gap al final para que cada fila mida exactamente
@@ -210,15 +223,15 @@ function TestimonialModal({
               ✕
             </button>
 
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-blue">
-              {t.company}
-            </p>
-
-            <div className="mt-6 flex items-center gap-4">
+            <div className="mt-2 flex items-center gap-4">
               <Avatar t={t} size="lg" />
               <div className="min-w-0">
                 <p className="font-semibold text-ink">{t.name}</p>
-                <p className="text-sm text-ink/50">{t.sector}</p>
+                {t.role && <p className="text-sm text-ink/50">{t.role}</p>}
+                <p className="flex items-center gap-1.5 text-sm text-ink/50">
+                  {t.company}
+                  <Flag code={t.country} />
+                </p>
               </div>
             </div>
 
@@ -241,10 +254,6 @@ function TestimonialModal({
 export function Testimonials() {
   const [open, setOpen] = useState<Testimonial | null>(null);
 
-  // Segunda fila arrancando desde otro punto, para que no espejen
-  const rowA = testimonials;
-  const rowB = [...testimonials.slice(3), ...testimonials.slice(0, 3)];
-
   return (
     <section id="testimonios" className="bg-ivory py-28">
       <FadeIn>
@@ -258,9 +267,19 @@ export function Testimonials() {
       </FadeIn>
 
       <FadeIn delay={0.15}>
-        <div className="marquee-fade mt-14 flex flex-col gap-5 overflow-hidden">
-          <Row items={rowA} onReadMore={setOpen} />
-          <Row items={rowB} reverse onReadMore={setOpen} />
+        {/* Overlays de degradé en vez de mask-image: la máscara obligaba a
+            recomponer toda la franja en cada frame de la animación y hacía
+            que la página consumiera GPU de más. */}
+        <div className="relative mt-14 overflow-hidden">
+          <Row items={testimonials} onReadMore={setOpen} />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-ivory to-transparent sm:w-28"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-ivory to-transparent sm:w-28"
+          />
         </div>
       </FadeIn>
 

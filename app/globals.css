@@ -64,30 +64,17 @@ body {
    desplazar 50% + medio gap (gap-5 = 1.25rem → 0.625rem). */
 @keyframes marquee {
   from {
-    transform: translateX(0);
+    /* translate3d: fuerza a que la animación corra en el compositor (GPU)
+       y no repinte la página en cada frame. */
+    transform: translate3d(0, 0, 0);
   }
   to {
-    transform: translateX(calc(-50% - 0.625rem));
-  }
-}
-
-@keyframes marquee-reverse {
-  from {
-    transform: translateX(calc(-50% - 0.625rem));
-  }
-  to {
-    transform: translateX(0);
+    transform: translate3d(calc(-50% - 0.625rem), 0, 0);
   }
 }
 
 .animate-marquee {
   animation: marquee 55s linear infinite;
-  width: max-content;
-  will-change: transform;
-}
-
-.animate-marquee-reverse {
-  animation: marquee-reverse 55s linear infinite;
   width: max-content;
   will-change: transform;
 }
@@ -156,8 +143,7 @@ body {
   html:not(.lenis) {
     scroll-behavior: auto;
   }
-  .animate-marquee,
-  .animate-marquee-reverse {
+  .animate-marquee {
     animation: none;
   }
 }
