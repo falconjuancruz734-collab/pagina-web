@@ -25,7 +25,7 @@ export function Hero() {
         className="absolute bottom-0 -right-[10vw] hidden aspect-[1672/941] h-[90svh] lg:block"
       >
         <Image
-          src="/juan-hero.png"
+          src="/juan-hero.jpg"
           alt="Juan Cruz Falcón, coach de ventas"
           fill
           priority
@@ -93,7 +93,7 @@ export function Hero() {
         className="relative mt-auto h-[48svh] min-h-[320px] w-full lg:hidden"
       >
         <Image
-          src="/juan-hero.png"
+          src="/juan-hero.jpg"
           alt="Juan Cruz Falcón, coach de ventas"
           fill
           priority

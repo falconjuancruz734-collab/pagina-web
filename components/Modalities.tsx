@@ -22,7 +22,8 @@ export function Modalities() {
           {modalities.map((modality, i) => (
             <FadeIn key={modality.title} delay={i * 0.1}>
               <article className="flex h-full flex-col rounded-[20px] bg-white p-7 ring-1 ring-ink/5 transition-transform duration-300 hover:-translate-y-1">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-sand">
+                {/* text-sand sobre blanco no llega a 4.5:1; el tono oscuro sí. */}
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-ink/55">
                   {modality.tag}
                 </p>
                 <h3 className="mt-10 text-xl font-semibold text-ink">

@@ -104,33 +104,6 @@ export const about = {
   brands: ["Hewlett Packard", "Renault", "GA.MA Italy", "Wyder"],
 };
 
-export const stats = [
-  { value: 15, suffix: "+", label: "años liderando equipos de ventas y marketing" },
-  { value: 200, suffix: "+", label: "empresas clientes en Latinoamérica" },
-  { value: 4, suffix: "", label: "mercados: México, Argentina, Uruguay y Centroamérica" },
-];
-
-export const methodSteps = [
-  {
-    number: "01",
-    title: "Diagnóstico",
-    description:
-      "Antes de trabajar, entiendo. Analizo el equipo, sus perfiles, sus fortalezas y los gaps que están frenando los resultados. Defino un plan de trabajo individual y grupal.",
-  },
-  {
-    number: "02",
-    title: "Coaching comercial",
-    description:
-      "Trabajo con el equipo en método, técnicas y mentalidad de venta. Sesiones individuales y grupales orientadas a resultados concretos. No teoría — ejecución.",
-  },
-  {
-    number: "03",
-    title: "Lente — Tu agente comercial con IA",
-    description:
-      "El primer acompañamiento de coaching comercial con IA. Un asistente personalizado, disponible 24/7 para preparar reuniones, gestionar objeciones y consultar el contexto de cada cliente.",
-    anchor: "#lente-ai",
-  },
-];
 
 export const lente = {
   headline: "El primer acompañamiento de coaching comercial con IA.",
@@ -233,13 +206,15 @@ export const countryNames: Record<string, string> = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "La capacitación y acompañamiento a nuestro equipo de ventas nos lleva a mejores resultados en nuestros locales.",
+      "La capacitación y acompañamiento de Juan Cruz a nuestro equipo de ventas nos lleva a mejores resultados en nuestros locales.",
     name: "Jorge Naser Urquiza",
     company: "Urquiza Motos",
     role: "Asesor Dirección | Planificación Estratégica",
     initials: "UM",
     country: "AR",
     photo: "/testimonios/jorge-naser.jpeg",
+    fullQuote:
+      "La capacitación y acompañamiento de Juan Cruz a nuestro equipo de ventas nos lleva a mejores resultados en nuestros locales. Nuestros vendedores están en constante aprendizaje sobre cómo vender en base a la necesidad y el contexto del cliente que viene en busca de nuestros productos. De esa manera, generando confianza, las ventas en nuestras tiendas aumentaron considerablemente.",
   },
   {
     quote:
@@ -247,45 +222,53 @@ export const testimonials: Testimonial[] = [
     name: "Luciano Alfonso",
     company: "Bravilo",
     role: "Founder",
-    initials: "J",
+    initials: "LA",
     country: "AR",
     photo: "/testimonios/luciano-alfonso.jpeg",
+    fullQuote:
+      "Cuando me contacté con Juan Cruz, Bravilo recién salía al mercado, sin ventas aún. Hoy, pocos meses después, ya contamos con más de 15 clientes trabajando y creciendo con nosotros. Nos ayudó a detectar la problemática real de nuestros potenciales clientes, y cómo diseñar la solución de tal manera que no solo resuelva el problema, sino que logre crecimiento en nuestros clientes.",
   },
   {
     quote:
       "Juan Cruz nos complementó con técnicas de venta consultiva para transmitir de la mejor manera.",
     name: "Victoria Alfieri",
-    company: "Anthea",
+    company: "Anthea Studio",
     role: "Co-founder",
     initials: "A",
     country: "AR",
     photo: "/testimonios/victoria-alfieri.jpg",
+    fullQuote:
+      "Estar cerca de nuestros clientes, conocerlos a nivel personal y entenderlos fue y es uno de nuestros pilares. Juan Cruz nos complementó con técnicas de venta consultiva para transmitir de la mejor manera cómo nuestro estudio ayuda a nuestros clientes a conseguir sus objetivos, a lograr lo que buscan, y a transmitir la identidad de su marca.",
   },
   {
     quote:
-      "Capacitándolos y asesorándolos en Venta Consultiva para lograr un diferencial de la competencia.",
+      "Los resultados tanto a nivel ventas como a nivel performance de nuestros vendedores son superadores.",
     name: "Gastón Tenorio",
     company: "GA.MA Italy",
     role: "Director Comercial",
     initials: "GI",
     country: "AR",
     photo: "/testimonios/gaston-tenorio.jpeg",
+    fullQuote:
+      "Juan Cruz acompaña a nuestro equipo de promotores y vendedores. Capacitándolos y asesorándolos en Venta Consultiva. Cómo abordar a los clientes en puntos de venta, logrando comprender lo que buscan y sus necesidades, y así lograr un diferencial de la competencia a la hora de vender en las tiendas. Los resultados tanto a nivel ventas como a nivel performance de nuestros vendedores son superadores.",
   },
   {
     quote:
-      "Juan Cruz nos acompañó para verdaderamente entender los puntos de dolor que necesitamos resolver.",
+      "Juan Cruz nos acompañó en los últimos 2 años para verdaderamente entender los puntos de dolor que necesitamos resolver de nuestros clientes.",
     name: "Francisco Laplume",
     company: "Grosomono",
     role: "Co-founder & CEO",
     initials: "G",
     country: "AR",
     photo: "/testimonios/francisco-laplume.png",
+    fullQuote:
+      "Juan Cruz nos acompañó en los últimos 2 años para verdaderamente entender los puntos de dolor que necesitamos resolver de nuestros clientes. Hoy la relación con ellos es mucho más cercana y personal, y esto genera resultados positivos en el negocio.",
   },
   {
     quote:
-      "Su experiencia en venta consultiva B2B transformó el pipeline de leads y conversiones.",
+      "Su experiencia en venta consultiva B2B transformó el pipeline de leads y conversiones. Lo recomiendo sin dudarlo a cualquier empresa que necesite repensar su estrategia comercial.",
     name: "Martín Bergada",
-    company: "Edutec",
+    company: "Educación Tecnológica SA",
     role: "Director General",
     initials: "MB",
     country: "AR",
@@ -295,7 +278,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Cada conversación no solo motiva: deja aprendizajes claros y aplicables.",
+      "Tiene una capacidad muy natural para movilizar, retar y acompañar: cada conversación no solo motiva, deja aprendizajes claros y aplicables.",
     name: "Paola Chávez",
     company: "Braini",
     role: "Founder",

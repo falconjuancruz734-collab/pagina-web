@@ -201,17 +201,34 @@ Un proceso sostenido en el tiempo: el método se afianza mes a mes y la evoluci�
 
 El `.docx` pide **3 testimonios** y los marca como *pendientes*.
 
-En la web hay **5 testimonios reales tomados de lenteconsulting.com**:
+En la web hay **7 testimonios reales**. La frase de la tarjeta es siempre un
+**extracto textual contiguo** del testimonio original — nunca una reescritura ni
+un empalme de partes distantes. El texto completo va en `fullQuote` y se lee con
+"Leer testimonio completo".
 
-| Cliente | Empresa | Sector | Frase |
-|---------|---------|--------|-------|
-| Jorge Naser Urquiza | Urquiza Motos | Movilidad y transporte | La capacitación y acompañamiento a nuestro equipo de ventas nos lleva a mejores resultados en nuestros locales. |
-| Luciano Alfonso | Bravilo | Staff on Demand | Nos ayudó a detectar la problemática real de nuestros potenciales clientes. |
-| Victoria Alfieri y Estefanía Tinto | Anthea | Branding Studio | Lente nos complementó con técnicas de venta consultiva para transmitir de la mejor manera. |
-| Gastón Tenorio | GA.MA Italy | Cuidado personal | Capacitándolos y asesorándolos en Venta Consultiva para lograr un diferencial de la competencia. |
-| Francisco Laplume | Grosomono | Agencia de publicidad | Lente nos acompañó para verdaderamente entender los puntos de dolor que necesitamos resolver. |
+| Cliente | Cargo | Empresa | País | Frase en la tarjeta | Texto completo |
+|---------|-------|---------|------|---------------------|----------------|
+| Jorge Naser Urquiza | Asesor Dirección \| Planificación Estratégica | Urquiza Motos | 🇦🇷 | La capacitación y acompañamiento de Juan Cruz a nuestro equipo de ventas nos lleva a mejores resultados en nuestros locales. | ✅ |
+| Luciano Alfonso | Founder | Bravilo | 🇦🇷 | Nos ayudó a detectar la problemática real de nuestros potenciales clientes. | ✅ |
+| Victoria Alfieri | Co-founder | Anthea Studio | 🇦🇷 | Juan Cruz nos complementó con técnicas de venta consultiva para transmitir de la mejor manera. | ✅ |
+| Gastón Tenorio | Director Comercial | GA.MA Italy | 🇦🇷 | Los resultados tanto a nivel ventas como a nivel performance de nuestros vendedores son superadores. | ✅ |
+| Francisco Laplume | Co-founder & CEO | Grosomono | 🇦🇷 | Juan Cruz nos acompañó en los últimos 2 años para verdaderamente entender los puntos de dolor que necesitamos resolver de nuestros clientes. | ✅ |
+| Martín Bergada | Director General | Educación Tecnológica SA | 🇦🇷 | Su experiencia en venta consultiva B2B transformó el pipeline de leads y conversiones. Lo recomiendo sin dudarlo… | ✅ |
+| Paola Chávez | Founder | Braini | 🇵🇪 | Tiene una capacidad muy natural para movilizar, retar y acompañar: cada conversación no solo motiva… | ✅ |
 
-✅ Los 5 están en la web con foto y versión extendida ("Leer testimonio completo"). El `.docx` pedía 3 propios que nunca llegaron — si Juan los manda, se suman o reemplazan en `testimonials` de `lib/content.ts`.
+Los `fullQuote` se transcriben **textuales** de los originales que mandó Juan,
+con dos ajustes permitidos y ninguno más:
+
+1. Normalizar acentos y tildes faltantes (ej. "contacte" → "contacté",
+   "asi" → "así", "estan" → "están").
+2. **Donde el original dice "Lente", va "Juan Cruz".** Los testimonios se
+   escribieron para Lente Consulting, pero este sitio es personal de Juan.
+   Ojo: "Lente" sí corresponde en la sección del producto Lente AI — el
+   reemplazo aplica **solo** dentro de `testimonials`.
+
+Nada de reescribir ni resumir el contenido.
+
+✅ Los 7 tienen foto, país y versión extendida ("Leer testimonio completo").
 
 ---
 

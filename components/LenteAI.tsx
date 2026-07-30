@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Fragment, useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { ShiningText } from "@/components/ui/ShiningText";
@@ -18,70 +18,52 @@ type ChatMessage = {
 };
 
 const conversations: readonly (readonly ChatMessage[])[] = [
-  // Guion 1: objeción de precio
+  // Guion oficial: retomar el proceso con Grupo Nexo
   [
     {
       from: "user",
-      text: "Mañana tengo reunión con Acme. La última vez dijeron que somos caros.",
+      text: "Tengo reunión mañana con Grupo Nexo. Quieren retomar el proceso. Ayudame a prepararla.",
     },
     {
       from: "lente",
-      text: "Contexto: compraron en marzo y valoran mucho el soporte postventa. La objeción de precio apareció recién cuando cambió el interlocutor de compras.",
+      text: "Bien. Tengo todo el historial de Grupo Nexo.\n\nEl proceso anterior duró 6 semanas. Llegaron a propuesta en marzo. El contacto principal fue Rodrigo Méndez, Gerente Comercial. El Director General, Carlos Vega, nunca participó de ninguna reunión.\n\nLa propuesta fue por $42,000 USD anuales. El feedback que registraste fue “no es el momento” y objeción de precio.\n\n¿Rodrigo convocó esta reunión o fuiste vos?",
       thinking: [
-        "Consultando el historial de Acme…",
-        "Repasando la última reunión…",
+        "Consultando el historial de Grupo Nexo…",
+        "Repasando el proceso anterior…",
       ],
     },
-    { from: "user", text: "¿Cómo la encaro?" },
+    { from: "user", text: "Él me escribió." },
     {
       from: "lente",
-      text: "Arrancá reafirmando el valor del soporte que ya reconocen, antes de hablar de precio. Te dejo 3 preguntas, con el método de Juan, para guiar la charla y despejar la objeción.",
+      text: "Importante. Algo cambió de su lado.\n\nCuando el cliente que dijo “no es el momento” vuelve a llamar, casi siempre es porque el problema se agravó o porque hay presión interna nueva.\n\nLa primera pregunta de mañana tiene que ser: “Rodrigo, ¿qué cambió desde marzo?”\n\nNo entres a vender hasta tener esa respuesta.",
+      thinking: ["Analizando el cambio de contexto…"],
+    },
+    { from: "user", text: "¿Qué más sabés de su situación actual?" },
+    {
+      from: "lente",
+      text: "En el proceso anterior identificaste que 2 vendedores de 6 generaban el 70% del revenue. La tasa de cierre del equipo era del 34% contra un objetivo del 45%.\n\nEn el último trimestre facturaron $980,000 USD — por debajo de los $1.1M que proyectaban.\n\nEl problema de dispersión que tenían en marzo no se resolvió solo. Los números lo confirman.",
       thinking: [
-        "Analizando la objeción de precio…",
-        "Armando preguntas con el método de Juan…",
+        "Buscando los datos del diagnóstico…",
+        "Comparando contra objetivos…",
       ],
     },
-  ],
-  // Guion 2: preparar una primera reunión
-  [
     {
       from: "user",
-      text: "El jueves tengo la primera reunión con Grupo Vega y no los conozco bien.",
+      text: "¿Y cómo manejo la objeción de precio si vuelve a aparecer?",
     },
     {
       from: "lente",
-      text: "Distribuidora regional, unos 40 vendedores. Llegaron referidos. En empresas así el dolor típico es cotizar rápido sin indagar el problema de fondo.",
+      text: "La objeción de precio del proceso anterior no era real — era falta de claridad en el valor.\n\nSi 2 vendedores sostienen el 70% del revenue y uno de ellos se va o falla, Grupo Nexo tiene $2.1M USD en riesgo directo.\n\nCuando aparezca la objeción de precio, la pregunta es: “¿Cuánto les está costando hoy no tener esto resuelto?”\n\nTu propuesta no es un costo. Es lo que evita ese riesgo.",
       thinking: [
-        "Buscando el contexto de Grupo Vega…",
-        "Cruzando con casos similares…",
+        "Revisando la objeción de marzo…",
+        "Calculando el riesgo en revenue…",
       ],
     },
-    { from: "user", text: "¿Cómo arranco la reunión?" },
+    { from: "user", text: "¿Qué objetivo me recomendás para mañana?" },
     {
       from: "lente",
-      text: "Primera reunión: diagnóstico, no pitch. Llevá 4 preguntas de descubrimiento y cerrá acordando un próximo paso concreto, con fecha.",
-      thinking: ["Preparando la agenda de descubrimiento…"],
-    },
-  ],
-  // Guion 3: seguimiento de una propuesta
-  [
-    {
-      from: "user",
-      text: "Le mandé la propuesta a Distrimax hace 2 semanas y no contestan. ¿Insisto?",
-    },
-    {
-      from: "lente",
-      text: "Sí, pero sin el clásico “¿pudiste verla?”. En la última reunión dijeron que definen presupuesto a fin de mes: usá ese disparador.",
-      thinking: [
-        "Revisando la propuesta enviada…",
-        "Buscando señales en la última reunión…",
-      ],
-    },
-    { from: "user", text: "Dame un mensaje corto para mandarles." },
-    {
-      from: "lente",
-      text: "“Hola, pensando en el cierre de presupuesto de fin de mes: ¿les sirve un resumen de una página con el retorno esperado? Lo tengo listo el jueves.”",
-      thinking: ["Redactando el seguimiento…"],
+      text: "No es cerrar. Es dos cosas concretas:\n\nPrimero — entender qué cambió desde marzo. Sin eso no sabés si hay una oportunidad real o si es solo una conversación.\n\nSegundo — conseguir una reunión con Carlos Vega presente. El proceso anterior se cayó porque el decisor real nunca estuvo. Eso no puede repetirse.\n\nSi salís de mañana con esas dos cosas, la reunión fue un éxito.",
+      thinking: ["Definiendo el objetivo de la reunión…"],
     },
   ],
 ];
@@ -391,13 +373,21 @@ function ChatDemo() {
                   </svg>
                   ahora
                 </p>
-                <p className="text-sm leading-relaxed">
+                <p className="whitespace-pre-line text-sm leading-relaxed">
                   {message.streaming
-                    ? message.text.split(" ").map((word, w) => (
-                        <Fragment key={w}>
-                          <span className="animate-word-in">{word}</span>{" "}
-                        </Fragment>
-                      ))
+                    ? // Los espacios y saltos de párrafo van como texto plano;
+                      // solo las palabras llevan el fade de entrada
+                      message.text
+                        .split(/(\s+)/)
+                        .map((part, w) =>
+                          /^\s+$/.test(part) ? (
+                            part
+                          ) : (
+                            <span key={w} className="animate-word-in">
+                              {part}
+                            </span>
+                          ),
+                        )
                     : message.text}
                 </p>
               </div>

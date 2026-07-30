@@ -9,8 +9,11 @@ export function WhyCoach() {
   return (
     <section id="por-que-coach" className="bg-white py-28">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-12 md:grid-cols-2 md:gap-16">
-          <div>
+        {/* items-start + sticky: la columna izquierda es mucho más corta que
+            la de tarjetas y quedaba con un hueco enorme debajo. Ahora
+            acompaña el scroll en lugar de estirarse. */}
+        <div className="grid items-start gap-12 md:grid-cols-2 md:gap-16">
+          <div className="md:sticky md:top-28">
             <FadeIn>
               <SectionLabel>Por qué un coach</SectionLabel>
               <h2 className="max-w-lg text-4xl font-normal leading-[1.02] tracking-[-0.06em] text-ink md:text-5xl">

@@ -63,7 +63,10 @@ function TestimonialCard({
 }) {
   return (
     <figure className="flex w-[22rem] shrink-0 flex-col rounded-[20px] bg-white p-6 ring-1 ring-ink/5 sm:w-[26rem]">
-      <blockquote className="flex-1 leading-relaxed text-ink/75">
+      {/* La cita va completa en el dato: el recorte es solo visual (4 líneas)
+          para que todas las tarjetas midan igual. El texto entero se lee en
+          "Leer testimonio completo". */}
+      <blockquote className="line-clamp-4 flex-1 leading-relaxed text-ink/75">
         “{t.quote}”
       </blockquote>
 

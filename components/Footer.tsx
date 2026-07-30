@@ -22,8 +22,10 @@ const redes = [
   { href: site.linkedin, label: "LinkedIn" },
 ];
 
+/* `block py-1`: sin eso los links medían 17px de alto y quedaban por debajo
+   del área táctil mínima recomendada en mobile. */
 const linkClasses =
-  "text-sm text-ivory/60 transition-colors hover:text-sand";
+  "block py-1 text-sm text-ivory/70 transition-colors hover:text-sand";
 
 function ColumnTitle({ children }: { children: string }) {
   return (

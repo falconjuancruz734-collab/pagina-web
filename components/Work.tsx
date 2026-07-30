@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { press } from "@/lib/content";
@@ -30,11 +31,13 @@ export function Work() {
                 className="group flex h-full flex-col overflow-hidden rounded-[20px] bg-white ring-1 ring-ink/5 transition-transform duration-300 hover:-translate-y-1"
               >
                 {item.image ? (
-                  <div className="aspect-video overflow-hidden">
-                    <img
+                  <div className="relative aspect-video overflow-hidden">
+                    <Image
                       src={item.image}
                       alt={`Portada de la nota: ${item.title}`}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                     />
                   </div>
                 ) : item.excerpt ? (

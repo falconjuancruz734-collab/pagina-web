@@ -70,7 +70,15 @@ export function TextReveal({ segments, className }: TextRevealProps) {
     (sum, s) => sum + (s.text ? words(s.text).length : 0),
     0,
   );
-  let wordIndex = 0;
+  /* El índice de cada palabra se calcula antes de renderizar: mutar un
+     contador durante el render da resultados inconsistentes si React
+     reanuda o descarta el trabajo (renderizado concurrente). */
+  let cursor = 0;
+  const indexed = segments.map((s) =>
+    s.br
+      ? null
+      : words(s.text ?? "").map((word) => ({ word, index: cursor++ })),
+  );
 
   return (
     <span ref={ref} className={className}>
@@ -78,20 +86,15 @@ export function TextReveal({ segments, className }: TextRevealProps) {
         if (s.br) return <br key={i} />;
         return (
           <span key={i} className={s.className}>
-            {words(s.text ?? "").map((word, j) => {
-              const start = wordIndex / totalWords;
-              wordIndex += 1;
-              const end = wordIndex / totalWords;
-              return (
-                <span key={`${word}-${j}`}>
-                  <Word
-                    word={word}
-                    progress={scrollYProgress}
-                    range={[start, end]}
-                  />{" "}
-                </span>
-              );
-            })}
+            {indexed[i]?.map(({ word, index }, j) => (
+              <span key={`${word}-${j}`}>
+                <Word
+                  word={word}
+                  progress={scrollYProgress}
+                  range={[index / totalWords, (index + 1) / totalWords]}
+                />{" "}
+              </span>
+            ))}
           </span>
         );
       })}
