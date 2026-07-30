@@ -29,7 +29,7 @@ const signature = Great_Vibes({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://juancruzfalcon.com"),
-  title: "Juan Cruz Falcón — Sales Coach",
+  title: "Juan Cruz Falcón — Coach de venta consultiva",
   description:
     "Coach de ventas para equipos comerciales. La meta de ventas ya está definida. Cómo alcanzarla, no. Acompaño a tu equipo a cumplir sus objetivos y lograr su máxima performance.",
   alternates: { canonical: "/" },
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_AR",
     url: "/",
-    siteName: "Juan Cruz Falcón — Sales Coach",
-    title: "Juan Cruz Falcón — Sales Coach",
+    siteName: "Juan Cruz Falcón — Coach de venta consultiva",
+    title: "Juan Cruz Falcón — Coach de venta consultiva",
     description:
       "Coach de ventas para equipos comerciales. Acompaño a tu equipo a cumplir sus objetivos y lograr su máxima performance.",
     images: [
@@ -46,13 +46,13 @@ export const metadata: Metadata = {
         url: "/thumbnail.jpg",
         width: 1200,
         height: 750,
-        alt: "Juan Cruz Falcón — Sales Coach",
+        alt: "Juan Cruz Falcón — Coach de venta consultiva",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Juan Cruz Falcón — Sales Coach",
+    title: "Juan Cruz Falcón — Coach de venta consultiva",
     description:
       "Coach de ventas para equipos comerciales. Acompaño a tu equipo a cumplir sus objetivos y lograr su máxima performance.",
     images: ["/thumbnail.jpg"],
@@ -68,7 +68,7 @@ const jsonLd = {
       "@type": "Person",
       "@id": "https://juancruzfalcon.com/#juan",
       name: "Juan Cruz Falcón",
-      jobTitle: "Sales Coach",
+      jobTitle: "Coach de venta consultiva",
       description:
         "Coach de ventas y desarrollo de equipos comerciales. Más de 15 años liderando equipos de ventas y marketing en Hewlett Packard, Renault y GA.MA Italy. Fundador de Wyder.",
       url: "https://juancruzfalcon.com",
@@ -87,7 +87,7 @@ const jsonLd = {
       "@type": "WebSite",
       "@id": "https://juancruzfalcon.com/#web",
       url: "https://juancruzfalcon.com",
-      name: "Juan Cruz Falcón — Sales Coach",
+      name: "Juan Cruz Falcón — Coach de venta consultiva",
       inLanguage: "es",
       publisher: { "@id": "https://juancruzfalcon.com/#juan" },
     },

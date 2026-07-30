@@ -9,7 +9,7 @@
 
 export const site = {
   name: "Juan Cruz Falcón",
-  role: "Sales Coach",
+  role: "Coach de venta consultiva",
   // +54 9 11 5846-3322 — formato wa.me: internacional, sin + ni separadores
   whatsapp: "https://wa.me/5491158463322",
   // Agenda de Juan — sin los UTM de Instagram (esta es la web, no el link-in-bio)

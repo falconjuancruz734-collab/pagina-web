@@ -119,7 +119,7 @@ export function Footer() {
 
         <div className="mt-14 border-t border-ivory/10 pt-6">
           <p className="text-center text-xs text-ivory/40">
-            © {new Date().getFullYear()} Juan Cruz Falcón · Sales Coach ·
+            © {new Date().getFullYear()} Juan Cruz Falcón · Coach de venta consultiva ·
             Todos los derechos reservados
           </p>
         </div>
