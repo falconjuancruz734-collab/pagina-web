@@ -15,7 +15,7 @@ const links = [
   { href: "#por-que-coach", label: "Por qué un coach" },
   { href: "#quien-soy", label: "Quién soy" },
   { href: "#modalidades", label: "Modalidades" },
-  { href: "#lente-ai", label: "Lente" },
+  { href: "#lente-ai", label: "Lente AI" },
   { href: "#testimonios", label: "Testimonios" },
   { href: "#blog", label: "Blog" },
 ];
