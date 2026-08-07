@@ -7,11 +7,28 @@
  * ─────────────────────────────────────────────────────────────
  */
 
+/* Líneas directas. La primera es la principal: alimenta el CTA del navbar,
+   así el número no queda escrito en dos lugares distintos.
+   `wa` va en formato wa.me: internacional, sin + ni separadores. */
+export const phones = [
+  {
+    code: "ARG",
+    country: "Argentina",
+    display: "+54 9 11 5846-3322",
+    wa: "https://wa.me/5491158463322",
+  },
+  {
+    code: "MEX",
+    country: "México",
+    display: "+52 56 3118 6857",
+    wa: "https://wa.me/525631186857",
+  },
+];
+
 export const site = {
   name: "Juan Cruz Falcón",
   role: "Coach de venta consultiva",
-  // +54 9 11 5846-3322 — formato wa.me: internacional, sin + ni separadores
-  whatsapp: "https://wa.me/5491158463322",
+  whatsapp: phones[0].wa,
   // Agenda de Juan — sin los UTM de Instagram (esta es la web, no el link-in-bio)
   calendly: "https://calendly.com/jc-falcon-/meet-con-juan-cruz-falcon",
   email: "jcf@juancruzfalcon.com",

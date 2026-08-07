@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { contactForm, cta, site } from "@/lib/content";
+import { contactForm, cta, phones, site } from "@/lib/content";
 
 /* Los envíos van directo a la casilla del cliente (site.email) vía FormSubmit.
    El primer envío dispara un mail de activación que Juan confirma una sola vez. */
@@ -198,24 +198,46 @@ export function Contact() {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <p className="mt-8 text-sm text-ivory/50">
-              ¿Preferís hablar directo?{" "}
-              <a
-                href={site.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-ivory/80 underline underline-offset-2 transition-colors hover:text-sand"
-              >
-                WhatsApp
-              </a>
-              {" · "}
-              <a
-                href={`mailto:${site.email}`}
-                className="text-ivory/80 underline underline-offset-2 transition-colors hover:text-sand"
-              >
-                {site.email}
-              </a>
-            </p>
+            <div className="mt-8 text-sm text-ivory/50">
+              <p>¿Preferís hablar directo?</p>
+
+              {/* Dos líneas de WhatsApp, con la etiqueta del país en arena
+                  igual que en la tarjeta y la firma de correo. Cada fila se
+                  centra por su cuenta: los números no miden lo mismo, y
+                  alinearlos dejaba la etiqueta despegada del número. */}
+              <ul className="mt-2">
+                {phones.map((phone) => (
+                  <li
+                    key={phone.code}
+                    className="flex items-baseline justify-center gap-2.5"
+                  >
+                    <a
+                      href={phone.wa}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`WhatsApp ${phone.country}: ${phone.display}`}
+                      /* `block py-1.5`: sin eso el link medía 20px de alto y
+                         quedaba por debajo del área táctil mínima en mobile. */
+                      className="block py-1.5 text-ivory/80 underline underline-offset-2 transition-colors hover:text-sand"
+                    >
+                      {phone.display}
+                    </a>
+                    <span className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.18em] text-sand">
+                      {phone.code}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <p className="mt-3">
+                <a
+                  href={`mailto:${site.email}`}
+                  className="text-ivory/80 underline underline-offset-2 transition-colors hover:text-sand"
+                >
+                  {site.email}
+                </a>
+              </p>
+            </div>
             <p className="mt-6 text-[11px] uppercase tracking-[0.35em] text-ivory/40">
               Buenos Aires · Argentina
             </p>
