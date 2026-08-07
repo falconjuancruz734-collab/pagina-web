@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { site } from "@/lib/content";
+import { phones, site } from "@/lib/content";
 
 const secciones = [
   { href: "#el-problema", label: "El problema" },
@@ -11,9 +11,25 @@ const secciones = [
   { href: "#blog", label: "Blog" },
 ];
 
-const contacto = [
+type LinkContacto = {
+  href: string;
+  label: string;
+  external: boolean;
+  /** Código de país — solo en los links que son un número de teléfono */
+  tag?: string;
+  /** Texto para lectores de pantalla, cuando el label solo no alcanza */
+  aria?: string;
+};
+
+const contacto: LinkContacto[] = [
   { href: `mailto:${site.email}`, label: site.email, external: false },
-  { href: site.whatsapp, label: "WhatsApp", external: true },
+  ...phones.map((phone) => ({
+    href: phone.wa,
+    label: phone.display,
+    tag: phone.code,
+    aria: `WhatsApp ${phone.country}: ${phone.display}`,
+    external: true,
+  })),
   { href: "#contacto", label: "Agendar una llamada", external: false },
 ];
 
@@ -85,9 +101,15 @@ export function Footer() {
                     href={link.href}
                     target={link.external ? "_blank" : undefined}
                     rel={link.external ? "noopener noreferrer" : undefined}
+                    aria-label={link.aria}
                     className={`${linkClasses} break-words`}
                   >
                     {link.label}
+                    {link.tag && (
+                      <span className="ml-2.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-sand">
+                        {link.tag}
+                      </span>
+                    )}
                   </a>
                 </li>
               ))}
