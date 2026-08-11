@@ -218,7 +218,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Nos ayudó a detectar la problemática real de nuestros potenciales clientes.",
+      "Cuando me contacté con Juan Cruz, Bravilo recién salía al mercado, sin ventas aún. Hoy, pocos meses después, ya contamos con más de 15 clientes trabajando y creciendo con nosotros.",
     name: "Luciano Alfonso",
     company: "Bravilo",
     role: "Founder",
@@ -230,7 +230,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Juan Cruz nos complementó con técnicas de venta consultiva para transmitir de la mejor manera.",
+      "Juan Cruz nos complementó con técnicas de venta consultiva para transmitir de la mejor manera cómo nuestro estudio ayuda a nuestros clientes a conseguir sus objetivos, a lograr lo que buscan, y a transmitir la identidad de su marca.",
     name: "Victoria Alfieri",
     company: "Anthea Studio",
     role: "Co-founder",
@@ -266,7 +266,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Su experiencia en venta consultiva B2B transformó el pipeline de leads y conversiones. Lo recomiendo sin dudarlo a cualquier empresa que necesite repensar su estrategia comercial.",
+      "Su experiencia en venta consultiva B2B transformó el pipeline de leads y conversiones, y en marzo de 2025 ya habíamos superado el período crítico, lo que nos permitió cumplir también los objetivos de 2026.",
     name: "Martín Bergada",
     company: "Educación Tecnológica SA",
     role: "Director General",
@@ -278,7 +278,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Tiene una capacidad muy natural para movilizar, retar y acompañar: cada conversación no solo motiva, deja aprendizajes claros y aplicables.",
+      "Tiene un estilo asertivo y directo, siempre con la intención de ayudarte a avanzar. Es una persona que te empuja a la acción, a moverte, y no quedarte solo en ideas.",
     name: "Paola Chávez",
     company: "Braini",
     role: "Founder",
