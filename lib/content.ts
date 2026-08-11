@@ -217,6 +217,7 @@ export const countryNames: Record<string, string> = {
   CL: "Chile",
   CO: "Colombia",
   PE: "Perú",
+  DO: "República Dominicana",
   ES: "España",
 };
 
@@ -304,6 +305,30 @@ export const testimonials: Testimonial[] = [
     photo: "/testimonios/paola-chavez.jpeg",
     fullQuote:
       "Tuve la oportunidad de contar con el coaching de Juan Cruz y fue una experiencia muy valiosa. Tiene un estilo asertivo y directo, siempre con la intención de ayudarte a avanzar. Es una persona que te empuja a la acción, a moverte, y no quedarte solo en ideas.\n\nPor su propia experiencia, entiende muy bien los desafíos que se presentan, lo que genera una conexión genuina y que te veas reflejado en muchas de sus recomendaciones.\n\nAdemás, tiene una capacidad muy natural para movilizar, retar y acompañar, haciendo que cada conversación no solo motive, sino que deje aprendizajes claros y aplicables. Domina la metodología y sabe cómo llevarte, paso a paso, a aterrizar lo que necesitas para avanzar.\n\nSin duda, es un coach que aporta muchísimo valor en el proceso emprendedor y estoy muy agradecida por eso.",
+  },
+  {
+    quote:
+      "Desde que trabajamos con él sentimos un impacto grande en ventas, que es lo que todos necesitamos.",
+    name: "Nahuel Turano",
+    company: "Goodly Fit",
+    role: "Fundador & CEO",
+    initials: "NT",
+    country: "AR",
+    photo: "/testimonios/nahuel-turano.png",
+    fullQuote:
+      "Tuvimos el placer de trabajar con Juan Cruz, quien nos ayudó a ordenar todo nuestro proceso comercial en cada etapa. Es una persona muy responsable que se involucra de lleno en el negocio. Nos aportó valor no solo en el proceso comercial y en las ventas, sino también en otras áreas. Desde que trabajamos con él sentimos un impacto grande en ventas, que es lo que todos necesitamos. Fue un trabajo de mucho valor. Si tienen algo que resolver en su proceso comercial, no lo duden y contáctenlo. No se van a arrepentir.",
+  },
+  {
+    quote:
+      "En Varvaros, sus orientaciones han sido una guía muy clara para mejorar nuestro modelo de negocio.",
+    name: "Amaury Castillo",
+    company: "Varvaros Branding SRL",
+    role: "Director General",
+    initials: "AC",
+    country: "DO",
+    photo: "/testimonios/amaury-castillo.jpeg",
+    fullQuote:
+      "Cuando se trata de proyectos regularmente tengo muchas ideas, cada una se posa encima de otra hasta que se vuelve un tumulto. Cuando hablo con Juan y me topo con la lucidez y su coherencia en negocios, todo se vuelve más claro. En Varvaros, sus orientaciones han sido una guía muy clara para mejorar nuestro modelo de negocio. No solo por su asesoría sino por su manejo profesional y empatía.",
   },
 ];
 
