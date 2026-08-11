@@ -297,6 +297,7 @@ export const testimonials: Testimonial[] = [
     role: "Fundador & CEO",
     initials: "NT",
     country: "AR",
+    photo: "/testimonios/nahuel-turano.png",
     fullQuote:
       "Tuvimos el placer de trabajar con Juan Cruz, quien nos ayudó a ordenar todo nuestro proceso comercial en cada etapa. Es una persona muy responsable que se involucra de lleno en el negocio. Nos aportó valor no solo en el proceso comercial y en las ventas, sino también en otras áreas. Desde que trabajamos con él sentimos un impacto grande en ventas, que es lo que todos necesitamos. Fue un trabajo de mucho valor. Si tienen algo que resolver en su proceso comercial, no lo duden y contáctenlo. No se van a arrepentir.",
   },
@@ -308,6 +309,7 @@ export const testimonials: Testimonial[] = [
     role: "Director General",
     initials: "AC",
     country: "DO",
+    photo: "/testimonios/amaury-castillo.jpeg",
     fullQuote:
       "Cuando se trata de proyectos regularmente tengo muchas ideas, cada una se posa encima de otra hasta que se vuelve un tumulto. Cuando hablo con Juan y me topo con la lucidez y su coherencia en negocios, todo se vuelve más claro. En Varvaros, sus orientaciones han sido una guía muy clara para mejorar nuestro modelo de negocio. No solo por su asesoría sino por su manejo profesional y empatía.",
   },
