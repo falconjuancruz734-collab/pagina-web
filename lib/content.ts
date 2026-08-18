@@ -218,6 +218,7 @@ export const countryNames: Record<string, string> = {
   CO: "Colombia",
   PE: "Perú",
   DO: "República Dominicana",
+  EC: "Ecuador",
   ES: "España",
 };
 
@@ -329,6 +330,30 @@ export const testimonials: Testimonial[] = [
     photo: "/testimonios/amaury-castillo.jpeg",
     fullQuote:
       "Cuando se trata de proyectos regularmente tengo muchas ideas, cada una se posa encima de otra hasta que se vuelve un tumulto. Cuando hablo con Juan y me topo con la lucidez y su coherencia en negocios, todo se vuelve más claro. En Varvaros, sus orientaciones han sido una guía muy clara para mejorar nuestro modelo de negocio. No solo por su asesoría sino por su manejo profesional y empatía.",
+  },
+  {
+    quote:
+      "El acompañamiento de Juan Cruz para Retolia fue muy asertivo. Su asesoría y recomendaciones fueron muy prácticas, y su orientación basada 100% en experiencia.",
+    name: "Juan Carlos Piñuela",
+    company: "Retolia",
+    role: "Founder",
+    initials: "JP",
+    country: "EC",
+    photo: "/testimonios/juan-carlos-pinuela.jpg",
+    fullQuote:
+      "El acompañamiento de Juan Cruz para Retolia fue muy asertivo. Su asesoría y recomendaciones fueron muy prácticas, y su orientación basada 100% en experiencia. Nuestras sesiones, tanto a nivel individual como grupal fueron el apoyo fundamental para encontrar foco a la hora de entender el mercado, a nuestros clientes y escalar.",
+  },
+  {
+    quote:
+      "Tiene esa capacidad excepcional de ver el panorama completo. No solo te ayuda a redefinir la trayectoria de tu negocio, sino que despierta una visión clara e innovadora para llevarlo a un nivel que jamás habías imaginado.",
+    name: "César Koizumi",
+    company: "Modello",
+    role: "Director General",
+    initials: "CK",
+    country: "MX",
+    photo: "/testimonios/cesar-koizumi.jpg",
+    fullQuote:
+      "Juan Cruz (Cacu, como lo llamamos quienes lo conocemos de tiempo) tiene esa capacidad excepcional de ver el panorama completo. No solo te ayuda a redefinir la trayectoria de tu negocio, sino que despierta una visión clara e innovadora para llevarlo a un nivel que jamás habías imaginado.\n\nLo que verdaderamente diferencia a Cacu es su comprensión integral de una organización: entiende que las ventas no ocurren de forma aislada, sino que son la sinergia perfecta de cada área de la empresa trabajando con un mismo propósito.\n\nSu liderazgo y acompañamiento combinan una empatía profunda con un pragmatismo enfocado siempre en la eficiencia y en generar un impacto real desde las primeras sesiones.",
   },
 ];
 
