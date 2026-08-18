@@ -201,7 +201,7 @@ Un proceso sostenido en el tiempo: el método se afianza mes a mes y la evoluci�
 
 El `.docx` pide **3 testimonios** y los marca como *pendientes*.
 
-En la web hay **7 testimonios reales**. La frase de la tarjeta es siempre un
+En la web hay **11 testimonios reales**. La frase de la tarjeta es siempre un
 **extracto textual contiguo** del testimonio original — nunca una reescritura ni
 un empalme de partes distantes. El texto completo va en `fullQuote` y se lee con
 "Leer testimonio completo".
@@ -215,6 +215,10 @@ un empalme de partes distantes. El texto completo va en `fullQuote` y se lee con
 | Francisco Laplume | Co-founder & CEO | Grosomono | 🇦🇷 | Juan Cruz nos acompañó en los últimos 2 años para verdaderamente entender los puntos de dolor que necesitamos resolver de nuestros clientes. | ✅ |
 | Martín Bergada | Director General | Educación Tecnológica SA | 🇦🇷 | Su experiencia en venta consultiva B2B transformó el pipeline de leads y conversiones. Lo recomiendo sin dudarlo… | ✅ |
 | Paola Chávez | Founder | Braini | 🇵🇪 | Tiene una capacidad muy natural para movilizar, retar y acompañar: cada conversación no solo motiva… | ✅ |
+| Nahuel Turano | Fundador & CEO | Goodly Fit | 🇦🇷 | Desde que trabajamos con él sentimos un impacto grande en ventas, que es lo que todos necesitamos. | ✅ |
+| Amaury Castillo | Director General | Varvaros Branding SRL | 🇩🇴 | En Varvaros, sus orientaciones han sido una guía muy clara para mejorar nuestro modelo de negocio. | ✅ |
+| Juan Carlos Piñuela | Founder | Retolia | 🇪🇨 | El acompañamiento de Juan Cruz para Retolia fue muy asertivo. Su asesoría y recomendaciones fueron muy prácticas… | ✅ |
+| César Koizumi | Director General | Modello | 🇲🇽 | Tiene esa capacidad excepcional de ver el panorama completo. No solo te ayuda a redefinir la trayectoria de tu negocio… | ✅ |
 
 Los `fullQuote` se transcriben **textuales** de los originales que mandó Juan,
 con dos ajustes permitidos y ninguno más:
@@ -228,7 +232,11 @@ con dos ajustes permitidos y ninguno más:
 
 Nada de reescribir ni resumir el contenido.
 
-✅ Los 7 tienen foto, país y versión extendida ("Leer testimonio completo").
+✅ Los 11 tienen foto, país y versión extendida ("Leer testimonio completo").
+
+Las fotos de Piñuela (Retolia) y Koizumi (Modello) se recortaron del círculo
+de las placas que mandó Juan, no son archivos originales: si aparecen los
+retratos sueltos conviene reemplazarlas por versiones de más resolución.
 
 ---
 
