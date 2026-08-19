@@ -17,7 +17,7 @@ const links = [
   { href: "#modalidades", label: "Modalidades" },
   { href: "#lente-ai", label: "Lente AI" },
   { href: "#testimonios", label: "Testimonios" },
-  { href: "#blog", label: "Blog" },
+  { href: "#newsletter", label: "Newsletter" },
 ];
 
 export function Navbar() {

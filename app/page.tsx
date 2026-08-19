@@ -5,7 +5,7 @@ import { WhyCoach } from "@/components/WhyCoach";
 import { About } from "@/components/About";
 import { LenteAI } from "@/components/LenteAI";
 import { Modalities } from "@/components/Modalities";
-import { Work } from "@/components/Work";
+import { Newsletter } from "@/components/Newsletter";
 import { Testimonials } from "@/components/Testimonials";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -24,7 +24,9 @@ export default function Home() {
       <Modalities />
       <LenteAI />
       <Testimonials />
-      <Work />
+      {/* Las tarjetas de notas y prensa (components/Work.tsx) se
+          reemplazaron por el alta al newsletter (ago 2026). */}
+      <Newsletter />
       <Contact />
       <Footer />
     </main>
