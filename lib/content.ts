@@ -155,7 +155,10 @@ export const modalities = [
   },
 ];
 
-/* Notas y prensa reales de Juan */
+/* Notas y prensa reales de Juan.
+   Desde ago 2026 la sección del sitio muestra el newsletter en vez de estas
+   tarjetas (ver `newsletter` arriba). Los datos y `components/Work.tsx`
+   quedan para poder reactivarlas. */
 export type PressItem = {
   outlet: string;
   date: string;
@@ -191,6 +194,26 @@ export const press: PressItem[] = [
     image: "/notas/palabras-venden.jpg",
   },
 ];
+
+/* Newsletter — el alta va a Kit (ex ConvertKit), al mismo formulario que
+   juan-cruz-falcon.kit.com/fac92f94df. Kit tiene doble opt-in: primero manda
+   un correo de confirmación y recién ahí da de alta al suscriptor.
+   La sección reemplaza a las tarjetas de notas y prensa (`press`), que
+   quedan más abajo por si se reactivan. */
+export const newsletter = {
+  /** ID del formulario en Kit — sale del embed de la landing */
+  formId: "9817644",
+  text: "Semana a semana, una idea corta y aplicable sobre venta consultiva: lo que veo adentro de las empresas que acompaño.",
+  placeholder: "tu@correo.com",
+  submit: "Suscribirme",
+  sending: "Suscribiendo…",
+  legal: "Sin spam. Te podés desuscribir cuando quieras.",
+  success: {
+    title: "¡Casi listo!",
+    text: "Te mandamos un correo para confirmar la suscripción. Confirmalo y te llega la próxima edición.",
+  },
+  error: "No se pudo completar la suscripción. Probá de nuevo en un momento.",
+};
 
 /* Testimonios reales de clientes.
    Formato de la tarjeta: nombre → cargo → empresa con bandera. */

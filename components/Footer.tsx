@@ -8,7 +8,7 @@ const secciones = [
   { href: "#modalidades", label: "Modalidades" },
   { href: "#lente-ai", label: "Lente" },
   { href: "#testimonios", label: "Testimonios" },
-  { href: "#blog", label: "Blog" },
+  { href: "#newsletter", label: "Newsletter" },
 ];
 
 type LinkContacto = {

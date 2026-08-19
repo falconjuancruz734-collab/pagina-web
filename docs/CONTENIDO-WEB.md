@@ -240,17 +240,28 @@ retratos sueltos conviene reemplazarlas por versiones de más resolución.
 
 ---
 
-## 9. Notas y prensa
+## 9. Newsletter (ex Notas y prensa)
 
-✅ **Resuelta** (no estaba en el `.docx`; se completó con notas reales):
+Desde ago 2026 la sección **"Lo que escribo, lo que pienso"** (`#newsletter`,
+`components/Newsletter.tsx`) no muestra tarjetas de notas: es el alta al
+newsletter, con el CTA de suscribirse semana a semana.
+
+El alta va directo a **Kit** (ex ConvertKit), al formulario `9817644` — el
+mismo de `juan-cruz-falcon.kit.com/fac92f94df`. Kit usa doble opt-in: manda un
+correo de confirmación y recién ahí da de alta al suscriptor. Los textos del
+formulario están en `newsletter`, dentro de `lib/content.ts`.
+
+Las notas quedan guardadas por si se reactivan: los datos siguen en `press`
+(`lib/content.ts`) y la grilla de tarjetas en `components/Work.tsx`, sin
+renderizarse en ningún lado.
+
+Notas guardadas (no se muestran hoy):
 
 | Medio | Fecha | Título |
 |-------|-------|--------|
 | LinkedIn | Jul 2026 | La tendencia que está frenando el crecimiento comercial de empresas de Latam |
 | LinkedIn | Jul 2026 | Primera reunión con un posible cliente |
 | El Economista | Mar 2025 | ¿Las palabras venden? Utiliza el discurso para enamorar al cliente |
-
-Las notas viven en `press` dentro de `lib/content.ts` — para sumar una nueva alcanza con agregar un item ahí (con `image` en `/public/notas` o `excerpt` para portada tipográfica).
 
 ---
 
