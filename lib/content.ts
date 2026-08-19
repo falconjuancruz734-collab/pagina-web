@@ -203,7 +203,7 @@ export const press: PressItem[] = [
 export const newsletter = {
   /** ID del formulario en Kit — sale del embed de la landing */
   formId: "9817644",
-  text: "Semana a semana, una idea corta y aplicable sobre venta consultiva: lo que veo adentro de las empresas que acompaño.",
+  text: "Cada quince días, una idea corta y aplicable sobre venta consultiva: lo que veo adentro de las empresas que acompaño.",
   placeholder: "tu@correo.com",
   submit: "Suscribirme",
   sending: "Suscribiendo…",
