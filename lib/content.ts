@@ -410,6 +410,7 @@ export const testimonials: Testimonial[] = [
     role: "Founder",
     initials: "CG",
     country: "MX",
+    photo: "/testimonios/cindy-goco.jpeg",
     fullQuote:
       "Más que un testimonio, es un agradecimiento a Juan Cruz por las sesiones de coaching, fueron muy significativas para mí. Normalmente llegaba con muchas dudas, me sentía perdida y sobre todo no le encontraba ni pies ni cabeza a la propuesta de valor por ser un problema a resolver tan grande.\n\nGracias a las sesiones, me hacía ver el problema con otro enfoque. Un enfoque realista y al mismo tiempo lleno de posibilidades para resolverlo.\n\nMe encantó que pude ser yo misma a la hora de preguntar y cuestionar, y poco a poco toda la maleza con la que empezaba la reunión se iba haciendo un pequeño camino por donde caminar y continuar otra vez.\n\nSin dudarlo, recomendaría ampliamente el acompañamiento de Juan Cruz. Tiene el don de quitar malezas mentales para aquellos que nos sentimos sumamente perdidos en darle estructura a la propuesta de valor para el cliente. Para mí su acompañamiento fue un proceso sumamente valioso.",
   },
