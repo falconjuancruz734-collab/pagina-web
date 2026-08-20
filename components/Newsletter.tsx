@@ -21,29 +21,42 @@ type KitResponse = {
 
 export function Newsletter() {
   const [status, setStatus] = useState<Status>("idle");
+  const [completo, setCompleto] = useState(false);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
+
+    // Sin mail no se manda nada, y el trim evita que un espacio pegado de más
+    // lo haga rebotar del lado de Kit.
+    const data = new FormData(form);
+    const email = String(data.get("email_address") ?? "").trim();
+    if (!email) {
+      setCompleto(false);
+      return;
+    }
+    data.set("email_address", email);
+
     setStatus("sending");
     try {
       const res = await fetch(FORM_ENDPOINT, {
         method: "POST",
         headers: { Accept: "application/json" },
-        body: new FormData(form),
+        body: data,
       });
       if (!res.ok) throw new Error(`Kit respondió ${res.status}`);
 
-      const data: KitResponse = await res.json();
+      const alta: KitResponse = await res.json();
       // El desafío anti-bot se resuelve en una página de Kit: es el mismo
       // recorrido que hace su propio embed cuando marca `quarantined`.
-      if (data.status === "quarantined" && data.url) {
-        window.location.href = data.url;
+      if (alta.status === "quarantined" && alta.url) {
+        window.location.href = alta.url;
         return;
       }
-      if (data.status !== "success") throw new Error("Kit rechazó el alta");
+      if (alta.status !== "success") throw new Error("Kit rechazó el alta");
 
       form.reset();
+      setCompleto(false);
       setStatus("success");
     } catch {
       setStatus("error");
@@ -80,7 +93,16 @@ export function Newsletter() {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} noValidate={false}>
+              <form
+                onSubmit={handleSubmit}
+                onInput={(e) =>
+                  setCompleto(
+                    String(
+                      new FormData(e.currentTarget).get("email_address") ?? "",
+                    ).trim() !== "",
+                  )
+                }
+              >
                 {/* En una sola fila desde sm: el campo se estira y el botón
                     conserva su ancho natural. */}
                 <div className="flex flex-col gap-3 sm:flex-row">
@@ -98,7 +120,7 @@ export function Newsletter() {
                   />
                   <button
                     type="submit"
-                    disabled={status === "sending"}
+                    disabled={!completo || status === "sending"}
                     className="shrink-0 rounded-full bg-slate-blue px-8 py-3.5 font-semibold text-ivory transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-slate-blue/20 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
                   >
                     {status === "sending"

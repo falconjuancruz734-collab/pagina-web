@@ -11,23 +11,50 @@ const FORM_ENDPOINT = `https://formsubmit.co/ajax/${site.email}`;
 const inputClasses =
   "w-full rounded-xl bg-ivory/[0.07] px-4 py-3 text-ivory placeholder:text-ivory/35 ring-1 ring-ivory/15 transition focus:bg-ivory/10 focus:outline-none focus:ring-2 focus:ring-sand";
 
+/* Los `name` de los campos que sí o sí tienen que venir con contenido.
+   El `required` de HTML no alcanza: da por válido un campo con espacios,
+   y así llegaban consultas vacías. El corte real lo hace el trim. */
+const REQUERIDOS = ["Nombre", "Apellido", "Correo", "Empresa", "Descripción"];
+
+/** Devuelve los valores sin espacios de más, o null si falta alguno. */
+function datosCompletos(form: HTMLFormElement) {
+  const data = new FormData(form);
+  for (const campo of REQUERIDOS) {
+    const valor = String(data.get(campo) ?? "").trim();
+    if (!valor) return null;
+    data.set(campo, valor);
+  }
+  return data;
+}
+
 type Status = "idle" | "sending" | "success" | "error";
 
 export function Contact() {
   const [status, setStatus] = useState<Status>("idle");
+  const [completo, setCompleto] = useState(false);
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
+
+    // Segunda barrera, por si el botón se habilitó y el contenido cambió
+    // después (autocompletar, pegar espacios, teclado de mobile).
+    const data = datosCompletos(form);
+    if (!data) {
+      setCompleto(false);
+      return;
+    }
+
     setStatus("sending");
     try {
       const res = await fetch(FORM_ENDPOINT, {
         method: "POST",
         headers: { Accept: "application/json" },
-        body: new FormData(form),
+        body: data,
       });
       if (!res.ok) throw new Error(`FormSubmit respondió ${res.status}`);
       form.reset();
+      setCompleto(false);
       setStatus("success");
     } catch {
       setStatus("error");
@@ -78,6 +105,9 @@ export function Contact() {
             ) : (
               <form
                 onSubmit={handleSubmit}
+                onInput={(e) =>
+                  setCompleto(datosCompletos(e.currentTarget) !== null)
+                }
                 className="mt-10 grid gap-4 text-left sm:grid-cols-2"
               >
                 {/* Config de FormSubmit */}
@@ -186,13 +216,21 @@ export function Contact() {
 
                 <button
                   type="submit"
-                  disabled={status === "sending"}
+                  disabled={!completo || status === "sending"}
                   className="sm:col-span-2 rounded-full bg-sand px-8 py-3.5 font-semibold text-ink transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-sand/20 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
                 >
                   {status === "sending"
                     ? contactForm.sending
                     : contactForm.submit}
                 </button>
+
+                {/* Dice por qué el botón está apagado: un botón deshabilitado
+                    sin explicación deja al visitante sin saber qué falta. */}
+                {!completo && (
+                  <p className="sm:col-span-2 text-center text-sm text-ivory/40">
+                    {contactForm.incomplete}
+                  </p>
+                )}
               </form>
             )}
           </FadeIn>

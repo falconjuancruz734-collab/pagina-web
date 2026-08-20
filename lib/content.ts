@@ -401,6 +401,8 @@ export const contactForm = {
   },
   submit: "Enviar consulta",
   sending: "Enviando…",
+  /** Se muestra mientras falte algún campo: el botón está deshabilitado */
+  incomplete: "Completá todos los campos para enviar la consulta.",
   success: {
     title: "¡Mensaje enviado!",
     text: "Gracias por escribir. Juan te va a responder a la brevedad.",
