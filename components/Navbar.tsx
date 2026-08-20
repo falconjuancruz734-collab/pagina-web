@@ -49,16 +49,20 @@ export function Navbar() {
             priority
             className="h-11 w-11 shrink-0 object-contain sm:h-16 sm:w-16"
           />
-          <span className="flex flex-col gap-0.5 sm:gap-1">
+          {/* `items-start` + `whitespace-nowrap`: el nombre va siempre en una
+              línea y "Venta consultiva" arranca pegado a la izquierda, alineado
+              con él. Sin el nowrap, en pantallas angostas el nombre se partía en
+              dos líneas y el lockup quedaba apretado. */}
+          <span className="flex flex-col items-start gap-0.5 sm:gap-1">
             <span
-              className={`text-xs font-semibold uppercase leading-none tracking-[0.18em] transition-colors sm:text-sm ${
+              className={`whitespace-nowrap text-xs font-semibold uppercase leading-none tracking-[0.18em] transition-colors sm:text-sm ${
                 scrolled ? "text-ivory" : "text-ink"
               }`}
             >
               Juan Cruz Falcon
             </span>
             <span
-              className={`text-center text-[10px] font-medium uppercase leading-none tracking-[0.19em] transition-colors sm:text-xs ${
+              className={`whitespace-nowrap text-[10px] font-medium uppercase leading-none tracking-[0.19em] transition-colors sm:text-xs ${
                 scrolled ? "text-sand" : "text-sand"
               }`}
             >
