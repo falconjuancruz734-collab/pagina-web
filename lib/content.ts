@@ -121,7 +121,6 @@ export const about = {
   brands: ["Hewlett Packard", "Renault", "GA.MA Italy", "Wyder"],
 };
 
-
 export const lente = {
   headline: "El primer acompañamiento de coaching comercial con IA.",
   intro:
@@ -174,7 +173,8 @@ export const press: PressItem[] = [
   {
     outlet: "LinkedIn",
     date: "Jul 2026",
-    title: "La tendencia que está frenando el crecimiento comercial de empresas de Latam",
+    title:
+      "La tendencia que está frenando el crecimiento comercial de empresas de Latam",
     href: "https://www.linkedin.com/pulse/la-tendencia-que-est%C3%A1-frenando-el-crecimiento-comercial-falcon-io9if/",
     image: "/notas/tendencia-crecimiento-comercial.jpg",
   },
@@ -377,6 +377,39 @@ export const testimonials: Testimonial[] = [
     photo: "/testimonios/cesar-koizumi.jpg",
     fullQuote:
       "Juan Cruz (Cacu, como lo llamamos quienes lo conocemos de tiempo) tiene esa capacidad excepcional de ver el panorama completo. No solo te ayuda a redefinir la trayectoria de tu negocio, sino que despierta una visión clara e innovadora para llevarlo a un nivel que jamás habías imaginado.\n\nLo que verdaderamente diferencia a Cacu es su comprensión integral de una organización: entiende que las ventas no ocurren de forma aislada, sino que son la sinergia perfecta de cada área de la empresa trabajando con un mismo propósito.\n\nSu liderazgo y acompañamiento combinan una empatía profunda con un pragmatismo enfocado siempre en la eficiencia y en generar un impacto real desde las primeras sesiones.",
+  },
+  {
+    quote:
+      "Acompañó a más de 100 emprendedores y es el mentor con mayor calificación en cuanto a NPS, o sea, satisfacción por parte de nuestros alumnos.",
+    name: "Tomás Volonte",
+    company: "Novolabs Startup School",
+    role: "Co-founder",
+    initials: "TV",
+    country: "AR",
+    fullQuote:
+      "Buenas, buenas. Por acá Tomás Volonte, uno de los fundadores de Novolabs. Novolabs es una startup school que básicamente ayuda a emprendedores a validar sus ideas de negocio, conseguir sus primeros clientes y lanzar su producto al mercado desde cero en cuatro meses.\n\nY te quiero contar un poco cómo fue trabajar con Juan Cruz, que fue uno de nuestros primeros mentores. De hecho, es el mentor más experimentado con el que contamos, además, obviamente, de mi socio y yo, que también estamos ahí como mentores.\n\nLa realidad es que Juan Cruz, o Cacu, como le decimos nosotros, trabajó con nosotros durante más de dos años. Si no me fallan los cálculos, acompañó a más de 100 emprendedores y es el mentor con mayor calificación en cuanto a NPS, o sea, satisfacción por parte de nuestros alumnos.\n\nEs muy bueno con la parte de ventas, sobre todo, y también con aterrizar la propuesta de valor. Realmente tiene la capacidad de detectar de qué forma decir lo que hay que decir para que al cliente final le interese y, obviamente, eso termine convirtiéndose, en el caso de Novolabs, en que nuestros alumnos, que eran mentorizados por Juan Cruz, aumentaran sus probabilidades de cerrar sus primeras ventas en sus proyectos.\n\nAsí que, en cuanto a la parte técnica, Juan Cruz es un crack. Sobre ventas sabe un montón. De hecho, nosotros también le consultamos muchas cosas para que nos ayude con Novolabs.\n\nY además de eso, es una excelente persona, con unos valores increíbles. Es de esas personas que nunca te van a dejar a pie. Realmente, con cada cosa que le proponés, se recontra involucra hasta el final, te responde lo que te tenga que responder, tiene mucha paciencia y, sobre todo, tiene ganas genuinas de aportar.\n\nAsí que, en ese sentido, para mí es —y ojalá siga siendo— un honor compartir con Juan Cruz, porque creo que, de los últimos dos o tres años, es una de las personas que más contento estoy de haber sumado y de haber conocido.",
+  },
+  {
+    quote:
+      "Destaco su gran capacidad para entender qué es lo que necesita el emprendedor y cuál es la verdadera traba.",
+    name: "Damián Sánchez",
+    company: "Novolabs Startup School",
+    role: "Co-founder",
+    initials: "DS",
+    country: "AR",
+    fullQuote:
+      "Buenas, soy Damián, cofundador de Novolabs, una startup school que acompaña a emprendedores a validar sus ideas de negocio y conseguir sus primeros clientes. Y estoy acá para contarte mi experiencia después de haber trabajado más de dos años con Juan Cruz.\n\nJuan fue el primer mentor que tuvimos en Novolabs y estuvo presente en cinco ediciones. Por los distintos batches que fuimos abriendo ya pasaron aproximadamente 100 emprendedores.\n\nLo que destaco de Juan Cruz es, más allá del nivel de compromiso que tiene con el proyecto de Novolabs, también el compromiso que tiene con cada uno de los proyectos, su entrega, su presencia y el hecho de estar siempre ahí para lo que se necesitara.\n\nPero, más allá de eso, destaco su gran capacidad para entender qué es lo que necesita el emprendedor y cuál es la verdadera traba. Porque hay veces en las que esa traba es técnica: tiene que ver con un saber hacer, un framework, una herramienta o lo que fuera. Y en eso Juan Cruz es buenísimo, especialmente en todo lo que tiene que ver con ventas.\n\nPero también hay veces en las que la traba tiene que ver con cuestiones más emocionales, con bloqueos más mentales. Y en eso Juan Cruz tiene un don: sabe detectarlo y decir la palabra justa en el momento justo para lograr esos cambios de chip.\n\nAsí que, nada, me parece un profesional increíble. Y, más allá de ser un profesional increíble, es un gran ser humano, una gran persona: súper comprometida, súper presente en lo que hace. Sin dudas, lo recomendaría para cualquier proyecto que tenga que ver con sus dones, que tienen que ver con las ventas, pero también con un acompañamiento mucho más humano.",
+  },
+  {
+    quote:
+      "Tiene el don de quitar malezas mentales para aquellos que nos sentimos sumamente perdidos en darle estructura a la propuesta de valor para el cliente.",
+    name: "Cindy Goco",
+    company: "SeBusca.ADN",
+    role: "Founder",
+    initials: "CG",
+    country: "MX",
+    fullQuote:
+      "Más que un testimonio, es un agradecimiento a Juan Cruz por las sesiones de coaching, fueron muy significativas para mí. Normalmente llegaba con muchas dudas, me sentía perdida y sobre todo no le encontraba ni pies ni cabeza a la propuesta de valor por ser un problema a resolver tan grande.\n\nGracias a las sesiones, me hacía ver el problema con otro enfoque. Un enfoque realista y al mismo tiempo lleno de posibilidades para resolverlo.\n\nMe encantó que pude ser yo misma a la hora de preguntar y cuestionar, y poco a poco toda la maleza con la que empezaba la reunión se iba haciendo un pequeño camino por donde caminar y continuar otra vez.\n\nSin dudarlo, recomendaría ampliamente el acompañamiento de Juan Cruz. Tiene el don de quitar malezas mentales para aquellos que nos sentimos sumamente perdidos en darle estructura a la propuesta de valor para el cliente. Para mí su acompañamiento fue un proceso sumamente valioso.",
   },
 ];
 

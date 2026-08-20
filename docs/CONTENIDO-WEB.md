@@ -201,7 +201,7 @@ Un proceso sostenido en el tiempo: el método se afianza mes a mes y la evoluci�
 
 El `.docx` pide **3 testimonios** y los marca como *pendientes*.
 
-En la web hay **11 testimonios reales**. La frase de la tarjeta es siempre un
+En la web hay **14 testimonios reales**. La frase de la tarjeta es siempre un
 **extracto textual contiguo** del testimonio original — nunca una reescritura ni
 un empalme de partes distantes. El texto completo va en `fullQuote` y se lee con
 "Leer testimonio completo".
@@ -219,6 +219,9 @@ un empalme de partes distantes. El texto completo va en `fullQuote` y se lee con
 | Amaury Castillo | Director General | Varvaros Branding SRL | 🇩🇴 | En Varvaros, sus orientaciones han sido una guía muy clara para mejorar nuestro modelo de negocio. | ✅ |
 | Juan Carlos Piñuela | Founder | Retolia | 🇪🇨 | El acompañamiento de Juan Cruz para Retolia fue muy asertivo. Su asesoría y recomendaciones fueron muy prácticas… | ✅ |
 | César Koizumi | Director General | Modello | 🇲🇽 | Tiene esa capacidad excepcional de ver el panorama completo. No solo te ayuda a redefinir la trayectoria de tu negocio… | ✅ |
+| Tomás Volonte | Co-founder | Novolabs Startup School | 🇦🇷 | Acompañó a más de 100 emprendedores y es el mentor con mayor calificación en cuanto a NPS… | ✅ |
+| Damián Sánchez | Co-founder | Novolabs Startup School | 🇦🇷 | Destaco su gran capacidad para entender qué es lo que necesita el emprendedor y cuál es la verdadera traba. | ✅ |
+| Cindy Goco | Founder | SeBusca.ADN | 🇲🇽 | Tiene el don de quitar malezas mentales para aquellos que nos sentimos sumamente perdidos… | ✅ |
 
 Los `fullQuote` se transcriben **textuales** de los originales que mandó Juan,
 con dos ajustes permitidos y ninguno más:
@@ -232,11 +235,21 @@ con dos ajustes permitidos y ninguno más:
 
 Nada de reescribir ni resumir el contenido.
 
-✅ Los 11 tienen foto, país y versión extendida ("Leer testimonio completo").
+✅ Los 14 tienen país y versión extendida ("Leer testimonio completo").
 
-Las fotos de Piñuela (Retolia) y Koizumi (Modello) se recortaron del círculo
-de las placas que mandó Juan, no son archivos originales: si aparecen los
-retratos sueltos conviene reemplazarlas por versiones de más resolución.
+Sobre las fotos:
+
+- Volonte y Sánchez (Novolabs) y Goco (SeBusca.ADN) todavía no tienen: la
+  tarjeta muestra las iniciales. Para sumarlas, dejar el archivo en
+  `public/testimonios/` y agregar `photo` en `lib/content.ts`.
+- Las de Piñuela (Retolia) y Koizumi (Modello) se recortaron del círculo de las
+  placas que mandó Juan, no son archivos originales: si aparecen los retratos
+  sueltos conviene reemplazarlas por versiones de más resolución.
+
+Los tres últimos vienen de material hablado (Volonte y Sánchez, de video), así
+que el `fullQuote` es la transcripción: se corrigieron erratas de transcripción
+("couching" → "coaching", "pedidos" → "perdidos") y se separó en párrafos, sin
+tocar el contenido.
 
 ---
 
