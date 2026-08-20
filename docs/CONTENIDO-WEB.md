@@ -235,13 +235,13 @@ con dos ajustes permitidos y ninguno más:
 
 Nada de reescribir ni resumir el contenido.
 
-✅ Los 14 tienen país y versión extendida ("Leer testimonio completo").
+✅ Los 14 tienen foto, país y versión extendida ("Leer testimonio completo").
 
 Sobre las fotos:
 
-- Goco (SeBusca.ADN) todavía no tiene: la tarjeta muestra las iniciales. Para
-  sumarla, dejar el archivo en `public/testimonios/` y agregar `photo` en
-  `lib/content.ts`.
+- Van cuadradas: la tarjeta las recorta en círculo con `object-cover`, así que
+  un retrato vertical entra con la cara pegada al borde de arriba. El de Goco
+  (SeBusca.ADN) se recortó a cuadrado centrado en la cara por eso.
 - Las de Piñuela (Retolia) y Koizumi (Modello) se recortaron del círculo de las
   placas que mandó Juan, no son archivos originales: si aparecen los retratos
   sueltos conviene reemplazarlas por versiones de más resolución.
