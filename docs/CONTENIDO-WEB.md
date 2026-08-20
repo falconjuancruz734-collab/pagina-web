@@ -239,9 +239,9 @@ Nada de reescribir ni resumir el contenido.
 
 Sobre las fotos:
 
-- Volonte y Sánchez (Novolabs) y Goco (SeBusca.ADN) todavía no tienen: la
-  tarjeta muestra las iniciales. Para sumarlas, dejar el archivo en
-  `public/testimonios/` y agregar `photo` en `lib/content.ts`.
+- Goco (SeBusca.ADN) todavía no tiene: la tarjeta muestra las iniciales. Para
+  sumarla, dejar el archivo en `public/testimonios/` y agregar `photo` en
+  `lib/content.ts`.
 - Las de Piñuela (Retolia) y Koizumi (Modello) se recortaron del círculo de las
   placas que mandó Juan, no son archivos originales: si aparecen los retratos
   sueltos conviene reemplazarlas por versiones de más resolución.
