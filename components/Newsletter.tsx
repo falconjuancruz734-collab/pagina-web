@@ -138,7 +138,7 @@ export function Newsletter() {
                   </p>
                 )}
 
-                <p className="mt-4 text-center text-sm text-ink/40">
+                <p className="mt-4 text-center text-sm text-ink/60">
                   {newsletter.legal}
                 </p>
               </form>

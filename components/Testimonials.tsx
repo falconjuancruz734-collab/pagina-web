@@ -182,6 +182,8 @@ function TestimonialModal({
   t: Testimonial | null;
   onClose: () => void;
 }) {
+  const panel = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (!t) return;
     const onKey = (e: KeyboardEvent) => {
@@ -189,6 +191,9 @@ function TestimonialModal({
     };
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
+    // El foco entra al panel: sin esto queda en el <body> y las flechas o el
+    // espacio mueven la página de atrás en vez del testimonio.
+    panel.current?.focus();
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
@@ -203,6 +208,12 @@ function TestimonialModal({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25 }}
+          /* `data-lenis-prevent`: el scroll suave de Lenis escucha la rueda en
+             todo el documento y le hace preventDefault, así que sin esto el
+             testimonio largo no se podía scrollear — el gesto se lo comía la
+             página de atrás. Con el atributo, adentro del modal manda el
+             scroll nativo. */
+          data-lenis-prevent
           className="fixed inset-0 z-50 flex items-center justify-center bg-ink/60 p-4 backdrop-blur-sm"
           onClick={onClose}
           role="dialog"
@@ -214,7 +225,9 @@ function TestimonialModal({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 16, scale: 0.98 }}
             transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="relative max-h-[85vh] w-full max-w-xl overflow-y-auto rounded-[24px] bg-white p-8 shadow-2xl shadow-ink/30 sm:p-10"
+            ref={panel}
+            tabIndex={-1}
+            className="relative max-h-[85vh] w-full max-w-xl overflow-y-auto rounded-[24px] bg-white p-8 shadow-2xl shadow-ink/30 focus:outline-none sm:p-10"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -239,13 +252,15 @@ function TestimonialModal({
             </div>
 
             <blockquote className="mt-7 space-y-4 leading-relaxed text-ink/75">
-              {(t.fullQuote ?? t.quote).split("\n\n").map((paragraph, i, all) => (
-                <p key={i}>
-                  {i === 0 && "“"}
-                  {paragraph}
-                  {i === all.length - 1 && "”"}
-                </p>
-              ))}
+              {(t.fullQuote ?? t.quote)
+                .split("\n\n")
+                .map((paragraph, i, all) => (
+                  <p key={i}>
+                    {i === 0 && "“"}
+                    {paragraph}
+                    {i === all.length - 1 && "”"}
+                  </p>
+                ))}
             </blockquote>
           </motion.div>
         </motion.div>
@@ -264,7 +279,9 @@ export function Testimonials() {
           <SectionLabel align="center">Testimonios</SectionLabel>
           <h2 className="text-4xl font-normal leading-[1.02] tracking-[-0.06em] text-ink md:text-5xl">
             Lo que dicen{" "}
-            <em className="font-semibold italic text-slate-blue">mis clientes</em>
+            <em className="font-semibold italic text-slate-blue">
+              mis clientes
+            </em>
           </h2>
         </div>
       </FadeIn>
@@ -273,7 +290,7 @@ export function Testimonials() {
         {/* Overlays de degradé en vez de mask-image: la máscara obligaba a
             recomponer toda la franja en cada frame de la animación y hacía
             que la página consumiera GPU de más. */}
-        <div className="relative mt-14 overflow-hidden">
+        <div className="marquee-viewport relative mt-14 overflow-hidden">
           <Row items={testimonials} onReadMore={setOpen} />
           <div
             aria-hidden

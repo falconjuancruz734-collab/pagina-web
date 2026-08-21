@@ -227,7 +227,7 @@ export function Contact() {
                 {/* Dice por qué el botón está apagado: un botón deshabilitado
                     sin explicación deja al visitante sin saber qué falta. */}
                 {!completo && (
-                  <p className="sm:col-span-2 text-center text-sm text-ivory/40">
+                  <p className="sm:col-span-2 text-center text-sm text-ivory/60">
                     {contactForm.incomplete}
                   </p>
                 )}
