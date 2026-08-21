@@ -47,6 +47,8 @@ export function Navbar() {
             width={1254}
             height={1254}
             priority
+            /* Sin `sizes` Next sirve la variante de 1920px para un logo de 64 */
+            sizes="64px"
             className="h-11 w-11 shrink-0 object-contain sm:h-16 sm:w-16"
           />
           {/* `items-start` + `whitespace-nowrap`: el nombre va siempre en una
@@ -101,6 +103,8 @@ export function Navbar() {
           type="button"
           onClick={() => setOpen(!open)}
           aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          aria-expanded={open}
+          aria-controls="menu-mobile"
           className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 lg:hidden"
         >
           <span
@@ -124,6 +128,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
+            id="menu-mobile"
             className="overflow-hidden bg-slate-deep/95 backdrop-blur-md lg:hidden"
           >
             <div className="flex flex-col gap-1 px-6 py-4">

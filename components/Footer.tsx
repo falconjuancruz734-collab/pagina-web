@@ -63,6 +63,7 @@ export function Footer() {
               alt="Firma de Juan Cruz Falcón"
               width={1254}
               height={1254}
+              sizes="80px"
               className="h-20 w-20 object-contain"
             />
             <p className="mt-2 text-[13px] font-semibold uppercase leading-none tracking-[0.18em] text-ivory">

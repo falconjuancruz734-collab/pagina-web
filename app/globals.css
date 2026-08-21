@@ -146,4 +146,9 @@ body {
   .animate-marquee {
     animation: none;
   }
+  /* Sin animación las tarjetas quedan clavadas en la primera pantalla: la
+     franja pasa a scrollearse a mano para no esconder los testimonios. */
+  .marquee-viewport {
+    overflow-x: auto;
+  }
 }
