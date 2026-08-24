@@ -76,11 +76,12 @@ export const problem = {
 };
 
 export const whyCoach = {
-  headlineStart: "Un equipo con método vende",
-  headlineAccent: "distinto",
+  headlineStart: "Un equipo con método y acompañamiento",
+  headlineAccent: "rinde más.",
   paragraphs: [
-    "Un coach de venta consultiva acompaña al equipo comercial, su día a día, sus procesos, sus dificultades.",
-    "Y lo más importante, sostenido en el tiempo, no eventual. Esto hace que el conocimiento se asimile y se implemente en casos reales.",
+    "Los equipos que venden con método comercial y reciben acompañamiento de coaching dinámico, venden un 28% más que los que no lo tienen.",
+    "Un coach comercial acompaña al equipo en su día a día, sus procesos, sus dificultades, de manera aplicada a sus casos reales.",
+    "Y lo más importante, sostenido en el tiempo, dinámico. No es eventual. Esto hace que el conocimiento se asimile y se implemente en casos reales.",
   ],
   faq: [
     {
