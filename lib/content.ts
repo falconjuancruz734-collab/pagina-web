@@ -85,9 +85,9 @@ export const whyCoach = {
   ],
   faq: [
     {
-      question: "¿Por qué no alcanza con el gerente?",
+      question: "¿No es el rol del gerente?",
       answer:
-        "Porque el negocio no le da el tiempo ni el espacio para hacerlo de forma consistente. El gerente gestiona resultados — el coach trabaja las habilidades que los generan.",
+        "La realidad del negocio no le da el tiempo ni el espacio para hacerlo de forma consistente. El gerente gestiona resultados — el coach trabaja las habilidades que los generan. Es la dinámica más exitosa para lograr resultados.",
     },
     {
       question: "¿Por qué externo?",
