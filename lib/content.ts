@@ -77,7 +77,7 @@ export const problem = {
 
 export const whyCoach = {
   headlineStart: "Un equipo con método y acompañamiento",
-  headlineAccent: "rinde más.",
+  headlineAccent: "RINDE MÁS.",
   paragraphs: [
     "Los equipos que venden con método comercial y reciben acompañamiento de coaching dinámico, venden un 28% más que los que no lo tienen.",
     "Un coach comercial acompaña al equipo en su día a día, sus procesos, sus dificultades, de manera aplicada a sus casos reales.",
