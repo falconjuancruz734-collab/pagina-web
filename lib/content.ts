@@ -43,7 +43,8 @@ export const hero = {
   hookEnd: ", no.",
   title: "Coach de venta consultiva para equipos comerciales",
   subtitle:
-    "Acompaño a tu equipo a cumplir sus objetivos y lo potencio para lograr su máxima performance.",
+    "Acompaño a tu equipo a cumplir sus objetivos y lo potencio para lograr su máxima performance, con un enfoque práctico en venta consultiva.",
+  cta: "Hablemos",
 };
 
 /* Empresas para el carrusel de logos — mezcla de marcas donde trabajó Juan
@@ -61,46 +62,47 @@ export const companies: { name: string; logo?: string }[] = [
 ];
 
 export const problem = {
-  headline: "El negocio exige resultados. Nadie trabaja cómo lograrlos.",
+  headline: "El desafío de liderar el área comercial sin descuidar el negocio.",
   paragraphs: [
-    "Los directores miran el P&L. Los gerentes, el número que lo componen. Es lo que exige el negocio.",
-    "Pero en ese foco en el resultado, algo queda afuera: el día a día del equipo. El proceso. El método. El acompañamiento humano que determina si los objetivos se cumplen o no.",
-    "No porque no quieran. Sino porque el negocio no les deja espacio para hacerlo.",
-    "El resultado es predecible: cada vendedor intenta llegar a la meta a su manera, sin un camino claro. Algunos llegan. La mayoría no. La empresa termina en el 20/80. El 20% del equipo logra el 80% de las ventas.",
+    "Los dueños y directores comerciales suelen estar absorbidos por los resultados, los clientes y las decisiones del negocio.",
+    "Y mientras las urgencias ocupan su agenda, el desarrollo de los vendedores queda postergado.",
   ],
-  highlight: {
-    before: "Eso no es una estrategia. ",
-    emphasis: "Es un riesgo.",
-    after: "",
-  },
+  /** Íconos: ver components/ui/Icons.tsx */
+  pains: [
+    { icon: "chart", text: "Presión por resultados" },
+    { icon: "clock", text: "Poco tiempo para desarrollar al equipo" },
+    { icon: "scatter", text: "Oportunidades que se pierden" },
+    { icon: "user", text: "Vendedores con poca autonomía" },
+  ],
 };
 
 export const whyCoach = {
-  headlineStart: "Un equipo con método y acompañamiento",
-  headlineAccent: "rinde más.",
+  headlineStart: "Tu equipo, con método, criterio",
+  headlineAccent: "y mayor autonomía.",
   paragraphs: [
-    "Los equipos que venden con método comercial y reciben acompañamiento de coaching dinámico, venden un 28% más que los que no lo tienen.",
-    "Un coach comercial acompaña al equipo en su día a día, sus procesos, sus dificultades, de manera aplicada a sus casos reales.",
-    "Y lo más importante, sostenido en el tiempo, dinámico. No es eventual. Esto hace que el conocimiento se asimile y se implemente en casos reales.",
+    "Trabajo en cercanía con tu equipo para desarrollar habilidades de venta consultiva, fortalecer su criterio comercial y aumentar su autonomía.",
+    "Vos podés enfocarte en la gestión del negocio, mientras yo acompaño al equipo a cumplir y superar sus objetivos.",
   ],
-  faq: [
-    {
-      question: "¿No es el rol del gerente?",
-      answer:
-        "La realidad del negocio no le da el tiempo ni el espacio para hacerlo de forma consistente. El gerente gestiona resultados — el coach trabaja las habilidades que los generan. Es la dinámica más exitosa para lograr resultados.",
-    },
-    {
-      question: "¿Por qué externo?",
-      answer:
-        "Porque tiene distancia y objetividad. No está atrapado en la dinámica interna del equipo. Ve lo que desde adentro es difícil ver.",
-    },
-    {
-      question: "¿Por qué venta consultiva específicamente?",
-      answer:
-        "Porque es el enfoque que más impacta en venta de productos y servicios de tickets altos, con ciclos largos, múltiples decisores, y de alto impacto para el negocio del cliente. El cliente no compra un producto. Compra la solución a un problema que a veces ni sabe articular bien.",
-    },
+  card: {
+    title: "Un coach no reemplaza al liderazgo interno.",
+    accent: "Lo complementa.",
+    text: "Trabajo junto a vos y tu equipo, sumando una mirada externa, experiencia práctica y acompañamiento sostenido para desarrollar las capacidades necesarias para alcanzar sus objetivos.",
+  },
+};
+
+/* Impacto — cifras del mockup del cliente (oct 2026).
+   [PLACEHOLDER] Confirmar con Juan la fuente de +40% y +50%; el +28% es el
+   dato que ya usaba la web anterior. */
+export const impact = {
+  headline: "Equipos que logran mejores resultados.",
+  intro:
+    "Las empresas que trabajan con un enfoque de venta consultiva y acompañamiento comercial logran, en promedio:",
+  stats: [
+    { icon: "bars", value: "+28%", label: "en ventas" },
+    { icon: "funnel", value: "+40%", label: "en conversión de oportunidades" },
+    { icon: "users", value: "+50%", label: "en productividad del equipo" },
+    { icon: "gear", label: "Equipos más autónomos y con mayor compromiso" },
   ],
-  closing: "Un coach no reemplaza al liderazgo interno. Lo complementa.",
 };
 
 /** Texto de los CTA repartidos en la página — todos apuntan al formulario. */
@@ -111,14 +113,23 @@ export const inlineCta = {
 };
 
 export const about = {
+  headlineStart: "Experiencia comercial y empresarial puesta al servicio del",
+  headlineAccent: "desarrollo de equipos",
   intro:
-    "Soy Juan Cruz Falcón. Coach de venta consultiva y desarrollo de equipos comerciales.",
-  paragraphs: [
-    "Pasé más de 15 años liderando equipos de ventas y marketing en empresas como Hewlett Packard, Renault y GA.MA Italy. Desarrollé y lancé productos y servicios en diferentes mercados, escalé y regionalicé compañías. Viví de cerca lo que significa llevar un equipo a resultados — con todo lo que eso implica.",
-    "Esa experiencia me llevó a fundar Wyder, empresa tecnológica de trade marketing hoy operando en México, Argentina, Uruguay y Centroamérica, con más de 200 empresas clientes en Latinoamérica.",
-    "Crear, escalar y regionalizar una empresa te enseña algo fundamental: los resultados los logran las personas. Y las personas rinden cuando tienen método, acompañamiento y alguien que crea en su potencial.",
+    "Soy Juan Cruz Falcón, coach de venta consultiva y fundador y CEO de Wyder.",
+  highlights: [
+    { icon: "users", value: "+300 empresas", label: "clientes en LATAM" },
+    { icon: "globe", value: "Operación en México", label: "y la región" },
+    {
+      icon: "trend",
+      value: "Experiencia real",
+      label: "en desarrollo de equipos comerciales",
+    },
   ],
-  closing: "Por eso hago lo que hago.",
+  paragraphs: [
+    "Mi experiencia vendiendo, liderando equipos y construyendo una empresa me permitió conocer de cerca los desafíos que enfrentan los responsables comerciales.",
+    "Hoy combino esa experiencia con mi pasión por desarrollar personas, acompañando a vendedores y equipos comerciales para que construyan su propio método, ganen autonomía y mejoren sus resultados.",
+  ],
   brands: ["Hewlett Packard", "Renault", "GA.MA Italy", "Wyder"],
 };
 
@@ -134,24 +145,47 @@ export const lente = {
   ],
 };
 
+/* Servicios — cada tarjeta: número, nombre, bajada y párrafos. */
+export const modalitiesHeading = {
+  start: "Soluciones que se adaptan a tu",
+  accent: "necesidad",
+  intro: "Podemos trabajar en diferentes formatos, según los objetivos de tu equipo:",
+};
+
 export const modalities = [
   {
-    title: "Capacitaciones",
-    tag: "De 3 horas a 4 semanas",
-    description:
-      "Programas intensivos o progresivos sobre venta consultiva, adaptados a tu industria, tu equipo y tus objetivos.",
+    number: "01",
+    title: "Coaching por proyecto",
+    tagline: "Objetivos concretos. Un plan de mejora. Resultados medibles.",
+    paragraphs: [
+      "Para empresas que necesitan mejorar aspectos específicos del desempeño de su equipo comercial.",
+      "A partir del conocimiento del negocio y del equipo, identificamos oportunidades de mejora y diseñamos un plan de trabajo con objetivos, actividades y plazos definidos.",
+      "A través de sesiones de coaching, prácticas y trabajo sobre situaciones comerciales reales, desarrollamos las habilidades necesarias para alcanzar esos objetivos.",
+      "El proyecto finaliza con una evaluación de avances, resultados y recomendaciones para sostener las mejoras.",
+    ],
   },
   {
-    title: "Sesiones de coaching",
-    tag: "Individual o grupal",
-    description:
-      "Para trabajar situaciones concretas, desarrollar habilidades específicas o acompañar al equipo en el día a día comercial.",
+    number: "02",
+    title: "Acompañamiento comercial continuo",
+    badge: "Servicio principal",
+    tagline: "Un coach cerca de tu equipo. Una mejora que no se detiene.",
+    paragraphs: [
+      "Para dueños y directores que necesitan desarrollar a sus vendedores de manera sostenida, sin descuidar la gestión del negocio.",
+      "Trabajo junto al equipo comercial mediante un proceso continuo de coaching, práctica, observación y feedback, con foco en mejorar la calidad de las conversaciones comerciales y los resultados.",
+      "A través de ciclos de mejora, identificamos prioridades, desarrollamos habilidades, evaluamos avances y definimos nuevos desafíos.",
+      "Un coach no reemplaza al liderazgo interno. Lo complementa.",
+    ],
   },
   {
-    title: "Acompañamiento de coaching mensual",
-    tag: "Desarrollo continuo",
-    description:
-      "Un proceso sostenido en el tiempo: el método se afianza mes a mes y la evolución del equipo se consolida en vez de diluirse.",
+    number: "03",
+    title: "Capacitaciones a medida",
+    tagline: "Habilidades concretas. Aprendizaje práctico. Aplicación inmediata.",
+    paragraphs: [
+      "Para empresas que buscan fortalecer habilidades específicas de venta consultiva mediante capacitaciones puntuales.",
+      "Diseño talleres adaptados a las necesidades del equipo, combinando conceptos, ejemplos, ejercicios y situaciones reales de venta.",
+      "Podemos trabajar temas como prospección, preguntas de diagnóstico, escucha activa, manejo de objeciones, negociación y cierre.",
+      "Las capacitaciones se desarrollan en formatos breves y flexibles, como encuentros de 3 horas o dos jornadas de 2 horas, según el tema y las necesidades de la empresa.",
+    ],
   },
 ];
 
@@ -418,8 +452,8 @@ export const testimonials: Testimonial[] = [
 ];
 
 export const cta = {
-  headline: "¿Empezamos?",
-  text: "Si tu equipo tiene la meta y le falta el cómo, hablemos.",
+  headline: "¿Hablamos?",
+  text: "Conversemos sobre cómo puedo acompañar a tu equipo comercial.",
 };
 
 /* Formulario de contacto — los envíos llegan a la casilla de `site.email`

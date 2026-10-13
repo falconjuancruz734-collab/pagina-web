@@ -3,10 +3,10 @@ import { phones, site } from "@/lib/content";
 
 const secciones = [
   { href: "#el-problema", label: "El problema" },
-  { href: "#por-que-coach", label: "Por qué un coach" },
-  { href: "#quien-soy", label: "Quién soy" },
-  { href: "#modalidades", label: "Modalidades" },
-  { href: "#lente-ai", label: "Lente" },
+  { href: "#por-que-coach", label: "Propuesta de valor" },
+  { href: "#impacto", label: "Impacto" },
+  { href: "#modalidades", label: "Servicios" },
+  { href: "#quien-soy", label: "Sobre mí" },
   { href: "#testimonios", label: "Testimonios" },
   { href: "#newsletter", label: "Newsletter" },
 ];

@@ -11,13 +11,10 @@ import {
 import { site } from "@/lib/content";
 
 const links = [
-  { href: "#el-problema", label: "El problema" },
-  { href: "#por-que-coach", label: "Por qué un coach" },
-  { href: "#quien-soy", label: "Quién soy" },
-  { href: "#modalidades", label: "Modalidades" },
-  { href: "#lente-ai", label: "Lente AI" },
+  { href: "#inicio", label: "Inicio" },
+  { href: "#quien-soy", label: "Sobre mí" },
+  { href: "#modalidades", label: "Servicios" },
   { href: "#testimonios", label: "Testimonios" },
-  { href: "#newsletter", label: "Newsletter" },
 ];
 
 export function Navbar() {
@@ -36,7 +33,7 @@ export function Navbar() {
       }`}
     >
       {/* max-w-7xl (y no 6xl como el resto del sitio): con la firma + el nombre
-          + 7 secciones + el CTA, a 1152px el menú quedaba pegado al logo.
+          + las secciones + el CTA, a 1152px el menú quedaba pegado al logo.
           El gap-8 garantiza aire entre ambos bloques aunque falte espacio. */}
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-8 px-6 py-4 lg:px-8">
         <a href="#inicio" className="flex items-center gap-2 sm:gap-2.5">
@@ -74,8 +71,8 @@ export function Navbar() {
         </a>
 
         {/* Desktop */}
-        {/* Con 7 secciones el menú necesita ancho: recién desde lg entra en
-            una línea; abajo de eso va la hamburguesa. */}
+        {/* Recién desde lg el menú entra en una línea junto al logo;
+            abajo de eso va la hamburguesa. */}
         <div className="hidden items-center gap-6 lg:flex xl:gap-8">
           {links.map((link) => (
             <a
