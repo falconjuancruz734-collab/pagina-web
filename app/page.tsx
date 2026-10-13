@@ -3,7 +3,7 @@ import { Hero } from "@/components/Hero";
 import { Problem } from "@/components/Problem";
 import { WhyCoach } from "@/components/WhyCoach";
 import { About } from "@/components/About";
-import { LenteAI } from "@/components/LenteAI";
+import { Impact } from "@/components/Impact";
 import { Modalities } from "@/components/Modalities";
 import { Newsletter } from "@/components/Newsletter";
 import { Testimonials } from "@/components/Testimonials";
@@ -19,10 +19,12 @@ export default function Home() {
           El componente sigue en components/LogosMarquee.tsx para reactivarlo. */}
       <Problem />
       <WhyCoach />
-      <About />
+      <Impact />
       {/* Sección "Cómo trabajo" (Method) dada de baja por pedido del cliente. */}
       <Modalities />
-      <LenteAI />
+      <About />
+      {/* Lente AI sacada por pedido del cliente (oct 2026). El componente
+          sigue en components/LenteAI.tsx para reactivarlo. */}
       <Testimonials />
       {/* Las tarjetas de notas y prensa (components/Work.tsx) se
           reemplazaron por el alta al newsletter (ago 2026). */}

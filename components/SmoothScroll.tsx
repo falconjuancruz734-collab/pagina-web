@@ -3,9 +3,6 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
-/** Altura del navbar fijo — para que los anclas no queden tapadas. */
-const NAV_OFFSET = -88;
-
 /**
  * Scroll suave con inercia (Lenis) para toda la página.
  * Se desactiva si el usuario pidió reducir movimiento.
@@ -30,7 +27,9 @@ export function SmoothScroll() {
     };
     frame = requestAnimationFrame(raf);
 
-    // Los links internos scrollean suave y con offset del navbar
+    // Los links internos scrollean suave. El hueco del navbar sale del
+    // `scroll-margin-top` de globals.css, que Lenis ya respeta: sumarle un
+    // offset acá lo duplicaba y la sección quedaba 88px más abajo.
     const onClick = (event: MouseEvent) => {
       const anchor = (event.target as HTMLElement)?.closest?.<HTMLAnchorElement>(
         'a[href^="#"]',
@@ -44,7 +43,7 @@ export function SmoothScroll() {
       if (!target) return;
 
       event.preventDefault();
-      lenis.scrollTo(target as HTMLElement, { offset: NAV_OFFSET });
+      lenis.scrollTo(target as HTMLElement);
       history.pushState(null, "", id);
     };
 

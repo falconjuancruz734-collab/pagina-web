@@ -43,9 +43,17 @@ html:not(.lenis) {
   scroll-behavior: smooth;
 }
 
-/* Las anclas no quedan tapadas por el navbar fijo */
+/* Las anclas no quedan tapadas por el navbar fijo: la sección arranca
+   justo debajo de él. Igual a su altura real (logo h-11 / sm:h-16 + py-4).
+   Lenis también lee este valor, así que el offset vive solo acá. */
 section[id] {
-  scroll-margin-top: 5.5rem;
+  scroll-margin-top: 76px;
+}
+
+@media (min-width: 640px) {
+  section[id] {
+    scroll-margin-top: 96px;
+  }
 }
 
 body {

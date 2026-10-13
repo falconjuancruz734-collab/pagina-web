@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { FadeIn } from "@/components/ui/FadeIn";
 import { InlineCta } from "@/components/ui/InlineCta";
+import { Icon } from "@/components/ui/Icons";
 import { about, inlineCta } from "@/lib/content";
 
 export function About() {
@@ -26,11 +27,16 @@ export function About() {
             <FadeIn>
               <p className="mb-5 flex items-center gap-3 text-[13px] font-medium uppercase tracking-[0.35em] text-sand">
                 <span className="h-px w-8 bg-sand" aria-hidden />
-                Quién soy
+                Sobre mí
               </p>
-              <h2 className="text-4xl font-normal leading-[1.02] tracking-[-0.06em] text-ivory md:text-5xl">
-                Los números los mueven las{" "}
-                <em className="font-semibold italic text-sand">personas</em>.
+              {/* Un punto más chico que el resto: el título es largo y a text-5xl
+                  ocupaba seis renglones. */}
+              <h2 className="text-3xl font-normal leading-[1.05] tracking-[-0.05em] text-ivory md:text-4xl">
+                {about.headlineStart}{" "}
+                <em className="font-semibold italic text-sand">
+                  {about.headlineAccent}
+                </em>
+                .
               </h2>
             </FadeIn>
 
@@ -43,9 +49,24 @@ export function About() {
                   <p key={p.slice(0, 24)}>{p}</p>
                 ))}
               </div>
-              <p className="mt-5 text-lg font-medium text-sand">
-                {about.closing}
-              </p>
+            </FadeIn>
+
+            <FadeIn delay={0.25}>
+              <ul className="mt-10 grid gap-6 border-t border-ivory/15 pt-8 sm:grid-cols-3 sm:gap-5">
+                {about.highlights.map((item) => (
+                  <li key={item.value} className="flex gap-3 sm:flex-col">
+                    <span className="shrink-0 text-sand">
+                      <Icon name={item.icon} className="h-7 w-7" />
+                    </span>
+                    <p className="text-sm leading-snug text-ivory/70">
+                      <span className="block font-semibold text-ivory">
+                        {item.value}
+                      </span>
+                      {item.label}
+                    </p>
+                  </li>
+                ))}
+              </ul>
             </FadeIn>
 
           </div>

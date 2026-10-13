@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import { FadeIn } from "@/components/ui/FadeIn";
-import { hero, inlineCta } from "@/lib/content";
+import { hero } from "@/lib/content";
 
 export function Hero() {
   return (
@@ -76,7 +76,7 @@ export function Hero() {
                 href="#contacto"
                 className="flex shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-slate-blue px-5 py-3.5 text-center text-sm font-semibold leading-tight text-ivory sm:leading-normal transition-all hover:scale-105 hover:shadow-xl hover:shadow-slate-blue/25 sm:px-8 sm:py-4 sm:text-base"
               >
-                {inlineCta.label}
+                {hero.cta}
               </a>
             </div>
           </FadeIn>
