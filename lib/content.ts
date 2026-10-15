@@ -331,18 +331,6 @@ export const testimonials: Testimonial[] = [
   },
   {
     quote:
-      "Juan Cruz nos acompañó en los últimos 2 años para verdaderamente entender los puntos de dolor que necesitamos resolver de nuestros clientes.",
-    name: "Francisco Laplume",
-    company: "Grosomono",
-    role: "Co-founder & CEO",
-    initials: "G",
-    country: "AR",
-    photo: "/testimonios/francisco-laplume.png",
-    fullQuote:
-      "Juan Cruz nos acompañó en los últimos 2 años para verdaderamente entender los puntos de dolor que necesitamos resolver de nuestros clientes. Hoy la relación con ellos es mucho más cercana y personal, y esto genera resultados positivos en el negocio.",
-  },
-  {
-    quote:
       "Su experiencia en venta consultiva B2B transformó el pipeline de leads y conversiones, y en marzo de 2025 ya habíamos superado el período crítico, lo que nos permitió cumplir también los objetivos de 2026.",
     name: "Martín Bergada",
     company: "Educación Tecnológica SA",
