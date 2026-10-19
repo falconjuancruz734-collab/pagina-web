@@ -166,13 +166,13 @@ export const modalities = [
   },
   {
     number: "02",
-    title: "Acompañamiento comercial continuo",
+    title: "Consultative Sales Team Building",
     badge: "Servicio principal",
-    tagline: "Un coach cerca de tu equipo. Una mejora que no se detiene.",
+    tagline: "Construimos equipos de venta consultiva a través de un proceso de desarrollo continuo, para lograr mejoras sostenibles.",
     paragraphs: [
-      "Para dueños y directores que necesitan desarrollar a sus vendedores de manera sostenida, sin descuidar la gestión del negocio.",
-      "Trabajo junto al equipo comercial mediante un proceso continuo de coaching, práctica, observación y feedback, con foco en mejorar la calidad de las conversaciones comerciales y los resultados.",
-      "A través de ciclos de mejora, identificamos prioridades, desarrollamos habilidades, evaluamos avances y definimos nuevos desafíos.",
+      "Para dueños y directores de empresas B2B que necesitan desarrollar las capacidades de sus vendedores de manera sostenida, sin descuidar la gestión del negocio.",
+      "Trabajo junto al equipo comercial mediante un proceso continuo de coaching, práctica, observación y feedback sobre situaciones reales de venta, para desarrollar habilidades consultivas, un método compartido y mayor autonomía.",
+      "A través de ciclos de mejora, identificamos prioridades, trabajamos sobre los desafíos comerciales del equipo, evaluamos avances y consolidamos nuevas formas de vender que permanezcan en la empresa.",
       "Un coach no reemplaza al liderazgo interno. Lo complementa.",
     ],
   },
