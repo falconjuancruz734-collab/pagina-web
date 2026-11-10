@@ -118,7 +118,7 @@ export const about = {
   intro:
     "Soy Juan Cruz Falcón, coach de venta consultiva y fundador y CEO de Wyder.",
   highlights: [
-    { icon: "users", value: "+300 empresas", label: "clientes en LATAM" },
+    { icon: "users", value: "+200 empresas", label: "clientes en LATAM" },
     { icon: "globe", value: "Operación en México", label: "y la región" },
     {
       icon: "trend",
@@ -238,7 +238,7 @@ export const press: PressItem[] = [
 export const newsletter = {
   /** ID del formulario en Kit — sale del embed de la landing */
   formId: "9817644",
-  text: "Cada quince días, una idea corta y aplicable sobre venta consultiva: lo que veo adentro de las empresas que acompaño.",
+  text: "Cada semana, una idea corta y aplicable sobre venta consultiva: lo que veo adentro de las empresas que acompaño.",
   placeholder: "tu@correo.com",
   submit: "Suscribirme",
   sending: "Suscribiendo…",

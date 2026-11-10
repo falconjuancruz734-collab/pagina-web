@@ -257,7 +257,7 @@ tocar el contenido.
 
 Desde ago 2026 la sección **"Lo que escribo, lo que pienso"** (`#newsletter`,
 `components/Newsletter.tsx`) no muestra tarjetas de notas: es el alta al
-newsletter, que sale cada quince días.
+newsletter, que sale cada semana.
 
 El alta va directo a **Kit** (ex ConvertKit), al formulario `9817644` — el
 mismo de `juan-cruz-falcon.kit.com/fac92f94df`. Kit usa doble opt-in: manda un
